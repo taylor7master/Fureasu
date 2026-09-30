@@ -1,0 +1,75 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+$font_shippori: 'Shippori Mincho', serif;
+$font_noto: 'Noto Sans JP', sans-serif;
+$font_zen_kaku: 'Zen Kaku Gothic New', sans-serif;
+$font_inter: 'Inter', sans-serif;
+$font_serif: 'Noto Serif JP', serif;
+
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// Font Sizes
+$font-size-base: 1.6rem;
+$font-size-sm: 1.4rem;
+$font-size-lg: 1.8rem;
+$font-size-xl: 2.4rem;
+$font-size-xxl: 3.2rem;
+
+// Line Heights
+$line-height-base: 1.5;
+$line-height-tight: 1.2;
+$line-height-loose: 1.8;
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+$color-btn: #B10080;
+$color-cyan-light: #E7FEFF;
+$color-cyan-pale: #FBF9F6;
+$color-calendar-open: #FFFDBA;
+$color-calendar-closed: #FACFCF;
+$color-calendar-seitai: #EBF9FA;
+$color-base: #B10080;
+$color-primary: #231815;
+$color-secondary: #F6D900;
+$color-gray: #5A5858;
+$color-white: #FFFFFF;
+$color-brown: #46322C;
+$color-cyan: #00B4BC;
+$color-black: #000000;
+$color-pink: #AF1E87;
+$color-yellow: #F6D900;
+$color-border: #EEEEEE;
+$color-footer: #F5F4F9;
+$color-bg-soft: #F5F4F9;
+$color-bg-light: #EBF9FA;
+$color-note: #C83737;
+
+// ==========================================================================
+// Spacing
+// ==========================================================================
+$spacing-unit: 1.0rem;
+$spacing-xs: $spacing-unit;
+$spacing-sm: $spacing-unit * 2;
+$spacing-md: $spacing-unit * 3;
+$spacing-lg: $spacing-unit * 4;
+$spacing-xl: $spacing-unit * 5;
+
+// ==========================================================================
+// Z-index
+// ==========================================================================
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;

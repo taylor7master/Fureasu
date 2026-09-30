@@ -1,0 +1,448 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+// Font Families
+$font_shippori: 'Shippori Mincho', serif;
+$font_noto: 'Noto Sans JP', sans-serif;
+$font_zen_kaku: 'Zen Kaku Gothic New', sans-serif;
+$font_inter: 'Inter', sans-serif;
+$font_serif: 'Noto Serif JP', serif;
+
+
+// ==========================================================================
+// Breakpoints
+// ==========================================================================
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+$color-btn: #B10080;
+$color-cyan-light: #E7FEFF;
+$color-cyan-pale: #FBF9F6;
+$color-calendar-open: #FFFDBA;
+$color-calendar-closed: #FACFCF;
+$color-calendar-seitai: #EBF9FA;
+$color-base: #B10080;
+$color-primary: #231815;
+$color-secondary: #F6D900;
+$color-gray: #5A5858;
+$color-white: #FFFFFF;
+$color-brown: #46322C;
+$color-cyan: #00B4BC;
+$color-black: #000000;
+$color-pink: #AF1E87;
+$color-yellow: #F6D900;
+$color-border: #EEEEEE;
+$color-footer: #F5F4F9;
+$color-bg-soft: #F5F4F9;
+$color-bg-light: #EBF9FA;
+$color-note: #C83737;
+
+@mixin sp {
+  @media only screen and (max-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media print, screen and (min-width: #{$breakpoint-md + 1}) {
+    @content;
+  }
+}
+
+html {
+  font-size: 10px;
+}
+
+#tinymce,
+body.wp-autoresize {
+  position: relative;
+  display: block;
+  font-family: $font_inter;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.75;
+  color: $color-primary;
+  text-align: left;
+  max-width: 90.0rem;
+  width: 100%;
+  margin: 0 auto;
+  @include sp {
+    font-size: 1.4rem;
+  }
+
+  div,
+  span,
+  applet,
+  object,
+  iframe,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  blockquote,
+  pre,
+  a,
+  abbr,
+  acronym,
+  address,
+  big,
+  cite,
+  code,
+  del,
+  dfn,
+  em,
+  img,
+  ins,
+  kbd,
+  q,
+  s,
+  samp,
+  small,
+  strike,
+  strong,
+  sub,
+  sup,
+  tt,
+  var,
+  b,
+  u,
+  i,
+  center,
+  dl,
+  dt,
+  dd,
+  ol,
+  ul,
+  li,
+  fieldset,
+  form,
+  label,
+  legend,
+  table,
+  caption,
+  tbody,
+  tfoot,
+  thead,
+  tr,
+  th,
+  td,
+  article,
+  aside,
+  canvas,
+  details,
+  embed,
+  figure,
+  figcaption,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  output,
+  ruby,
+  section,
+  summary,
+  time,
+  mark,
+  audio,
+  video {
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+
+  article,
+  aside,
+  details,
+  figcaption,
+  figure,
+  footer,
+  header,
+  hgroup,
+  menu,
+  nav,
+  section {
+    display: block;
+  }
+
+  a {
+    color: $color-primary;
+    text-decoration: underline;
+  }
+
+  strong,
+  b {
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0 0 2.4rem;
+  }
+
+  h1, h2 {
+    position: relative;
+    display: block;
+    font-size: 3.0rem;
+    font-weight: 600;
+    line-height: 4.0rem;
+    color: $color-base;
+    text-align: left;
+    margin: 0 0 2.0rem;
+    @include sp {
+      font-size: 2.4rem;
+      line-height: 3.2rem;
+    }
+  }
+
+  h3 {
+    position: relative;
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 3.2rem;
+    color: $color-base;
+    text-align: left;
+    margin-bottom: 2.0rem;
+    @include sp {
+      font-size: 2.0rem;
+      line-height: 2.8rem;
+    }
+  }
+
+  h4 {
+    position: relative;
+    display: block;
+    font-size: 2.0rem;
+    font-weight: 600;
+    line-height: 2.8rem;
+    color: $color-base;
+    text-align: left;
+    margin-bottom: 2.0rem;
+    @include sp {
+      font-size: 1.8rem;
+      line-height: 2.5rem;
+    }
+  }
+  h5, h6 {
+    position: relative;
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    color: $color-base;
+    text-align: left;
+    margin-bottom: 2.0rem;
+    @include sp {
+      font-size: 1.6rem;
+      line-height: 1.5;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    width: initial;
+    height: auto;
+    margin: 3.0rem 0;
+    @include sp {
+      margin: 2.4rem 0;
+    }
+  }
+  figure {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 3.0rem 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 0;
+    @include sp {
+      margin: 2.4rem 0;
+    }
+
+    img {
+      position: relative;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    figcaption {
+      position: relative;
+      display: block;
+      margin-top: 1.6rem;
+      font-size: 1.4rem;
+      text-align: left;
+    }
+  }
+
+  > img,
+  p img {
+    position: relative;
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  
+  ul:not(.toc_list),
+  ol:not(.toc_list),
+  .wp-block-list {
+    position: relative;
+    display: block;
+    margin: 0 0 3.0rem;
+    padding: 0;
+    list-style: none;
+    @include sp {
+      margin: 0 0 2.4rem;
+    }
+  }
+
+  ul:not(.toc_list) > li,
+  .wp-block-list > li {
+    position: relative;
+    margin: 0 0 0.6rem;
+    padding-left: 1.6rem;
+    @include sp {
+      padding-left: 1.3rem;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.0rem;
+      width: 0.6rem;
+      height: 0.6rem;
+      border-radius: 50%;
+      background: $color-base;
+      @include sp {
+        top: 0.9rem;
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+    }
+  }
+
+  ol:not(.toc_list):not(.blog-summary__list) {
+    counter-reset: blog-ol;
+
+    > li {
+      position: relative;
+      margin: 0 0 0.6rem;
+      padding-left: 2.0rem;
+      counter-increment: blog-ol;
+
+      &::before {
+        content: counter(blog-ol) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-weight: 600;
+        color: $color-base;
+      }
+    }
+  }
+
+  blockquote {
+    position: relative;
+    display: block;
+    margin: 0 0 3.0rem;
+    padding: 2.0rem 2.4rem;
+    background: $color-bg-soft;
+    font: inherit;
+    text-align: left;
+    @include sp {
+      padding: 1.6rem 2.0rem;
+      margin: 0 0 2.4rem;
+    }
+    p {
+      margin-bottom: 0.6rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    position: relative;
+    margin: 0 0 3.0rem;
+    border-collapse: collapse;
+    font: inherit;
+    text-align: left;
+    @include sp {
+      margin: 0 0 2.4rem;
+    }
+    th,
+    td {
+      padding: 1.2rem 1.6rem;
+      border: 1px solid $color-border;
+      vertical-align: top;
+    }
+
+    th {
+      color: $color-white;
+      background: $color-base;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  .underbg {
+    position: relative;
+    display: inline;
+    background: linear-gradient(to bottom, transparent 60%, $color-yellow 60%);
+  }
+
+  .mt-0 {
+    margin-top: 0;
+  }
+
+  .mb-0 {
+    margin-bottom: 0;
+  }
+
+  .mt-1 {
+    margin-top: 1rem;
+  }
+
+  .mb-1 {
+    margin-bottom: 1rem;
+  }
+
+  .mt-2 {
+    margin-top: 2rem;
+  }
+
+  .mb-2 {
+    margin-bottom: 2rem;
+  }
+
+  .mt-3 {
+    margin-top: 3rem;
+  }
+
+  .mb-3 {
+    margin-bottom: 3rem;
+  }
+
+  .mt-4 {
+    margin-top: 4rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 4rem;
+  }
+}

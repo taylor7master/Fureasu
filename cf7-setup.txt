@@ -1,0 +1,304 @@
+====================================================================
+page-contact.php 用 Contact Form 7 セットアップ手順
+====================================================================
+
+1. WP管理画面 > 「お問い合わせ」> 「新規追加」でフォームを作成
+   ※すでに「資料請求・お問い合わせ」がある場合は、それを開いて上書きしてよい
+2. タイトル例：資料請求・お問い合わせ
+3. 下記の「■フォーム」の内容をまるごと「フォーム」タブに貼り付け
+   ※プライバシーポリシーのリンク（href="プライバシーポリシーのURL"）は、
+     公開サイトのプライバシーポリシーページのURLに差し替える
+     （このテーマの固定ページスラッグは privacy）
+   ※郵便番号の入力欄 id（your-zip1 / your-zip2）と住所欄 id（your-prefecture）、
+     「郵便番号検索」ボタンは消さないこと（既存の郵便番号検索がこの id を使う）
+4. 「メール」タブに「■メール（管理者宛）」の内容を設定
+5. 「メール」タブ下部の「メール（2）」にチェックを入れ、
+   「■メール（2）（送信者宛の受付メール）」の内容を設定
+   ※「メール（2）はメール（1）が失敗した場合のみ送信」のチェックは
+     入れないこと（常に送信者へ受付メールを送るため）
+   ※送信元アドレス（wordpress@example.com）は仮のため、実際に送信可能な
+     ドメイン・アドレスに差し替える（未設定のドメインだと送信エラーになる）
+6. 保存後、フォーム一覧に表示される shortcode の id（例: id="123" または id="72efb77"）を確認
+7. theme/page-contact.php のお問い合わせフォーム出力部分にある
+     $cf7_form_id = '';
+   を、確認した id に書き換える
+     例: $cf7_form_id = '123';
+   ※html_class="contact-form" はデザイン用のため、消さないこと
+8. 固定ページ「資料請求・お問い合わせ」（スラッグ contact）は作成済み。
+   page-contact.php がそのページのテンプレートになる。
+   固定ページの本文にショートコードを貼る必要はない。
+   送信に成功すると /thanks/ へ移動する。
+
+--------------------------------------------------------------------
+■フォーム（「フォーム」タブに貼り付け）
+--------------------------------------------------------------------
+
+<div class="contact-form">
+  <ul class="form-inputs">
+    <li>
+      <div class="input-group">
+        <div class="input-label"><label>種別<span class="required">必須</span></label></div>
+        <div class="input-field">
+          [radio* your-type use_label_element "資料請求" "お問い合わせ"]
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="input-group">
+        <div class="input-label"><label>氏名（漢字）<span class="required">必須</span></label></div>
+        <div class="input-field name-field">
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <label class="label" for="your-firstname">姓</label>
+              <div class="input w-200">
+                [text* your-firstname id:your-firstname placeholder "山田"]
+              </div>
+            </div>
+            <div class="wpcf7-column">
+              <label class="label" for="your-second">名</label>
+              <div class="input w-200">
+                [text* your-second id:your-second placeholder "太郎"]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="input-group">
+        <div class="input-label"><label>郵便番号<span class="required">必須</span></label></div>
+        <div class="input-field zip-field">
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <div class="input w-200">
+                [text* your-zip1 id:your-zip1 placeholder "000"]
+              </div>
+            </div>
+            <div class="wpcf7-column"><label class="label">ー</label></div>
+            <div class="wpcf7-column">
+              <div class="input w-200">
+                [text* your-zip2 id:your-zip2 placeholder "0000"]
+              </div>
+            </div>
+            <div class="wpcf7-column">
+              <button type="button" class="search-zip-btn"><span>郵便番号検索</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="input-group">
+        <div class="input-label"><label>住所<span class="required">必須</span></label></div>
+        <div class="input-field address-field">
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <div class="input w-500">
+                [text* your-prefecture id:your-prefecture placeholder "市区町村"]
+              </div>
+            </div>
+            <div class="wpcf7-column"><label class="label" for="your-prefecture">例）品川区西五反田</label></div>
+          </div>
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <div class="input w-500">
+                [text* your-address id:your-address placeholder "番地"]
+              </div>
+            </div>
+            <div class="wpcf7-column"><label class="label" for="your-address">例）二丁目27番3号</label></div>
+          </div>
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <div class="input w-500">
+                [text* your-apartment id:your-apartment placeholder "マンション・アパート名"]
+              </div>
+            </div>
+            <div class="wpcf7-column"><label class="label" for="your-apartment">例）A-PLACE五反田3F</label></div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="input-group">
+        <div class="input-label"><label>事業形態<span class="required">必須</span></label></div>
+        <div class="input-field business-field">
+          [radio* your-business use_label_element "個人" "個人事業主" "法人"]
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="input-group">
+        <div class="input-label"><label>電話番号<span class="required">必須</span></label></div>
+        <div class="input-field tel-field">
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <div class="input w-200">
+                [text* your-tel1 id:your-tel1 placeholder "000"]
+              </div>
+            </div>
+            <div class="wpcf7-column"><label class="label">ー</label></div>
+            <div class="wpcf7-column">
+              <div class="input w-200">
+                [text* your-tel2 id:your-tel2 placeholder "0000"]
+              </div>
+            </div>
+            <div class="wpcf7-column"><label class="label">ー</label></div>
+            <div class="wpcf7-column">
+              <div class="input w-200">
+                [text* your-tel3 id:your-tel3 placeholder "0000"]
+              </div>
+            </div>
+          </div>
+          <div class="wpcf7-note">※英数半角でご入力ください</div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="input-group">
+        <label class="input-label">E-mail<span class="required">必須</span></label>
+        <div class="input-field email-field">
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <div class="input w-500">
+                [email* your-email id:your-email placeholder "半角英数字"]
+                <div class="wpcf7-note">例）mail@email.com</div>
+              </div>
+            </div>
+          </div>
+          <div class="wpcf7-row">
+            <div class="wpcf7-column">
+              <div class="input w-500">
+                [email* your-email-confirm id:your-email-confirm placeholder "確認のためもう一度ご入力してください"]
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="input-group">
+        <label class="input-label">お問い合わせ内容<span class="required">必須</span></label>
+        <div class="input-field">
+          <div class="input w-760">
+            [textarea* your-message id:your-message placeholder "内容をご入力ください"]
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div class="form-accept">
+    <div class="accept-note">当サイトは、ご利用者の個人情報について、ご利用者の承諾がない限り第三者に開示、提供を一切行いません。<br>詳しくは<a href="/privacy/" target="_blank" rel="noopener noreferrer">「プライバシーポリシー（個人情報保護方針について）」</a>をご確認ください。<br>個人情報の取扱いについて、同意の上送信します。よろしければチェックを入れてください。</div>
+    [acceptance accept]プライバシーポリシーに同意する[/acceptance]
+  </div>
+  <div class="form-submit">
+    <button type="submit" class="link-btn link-btn--submit wpcf7-form-control wpcf7-submit">
+      <span>送信する</span>
+    </button>
+  </div>
+</div>
+
+--------------------------------------------------------------------
+■メール（管理者宛・「メール」タブ）
+--------------------------------------------------------------------
+送信先: 管理者のメールアドレス（[_site_admin_email] でも可）
+送信元: 株式会社フレアス <wordpress@example.com>
+件名  : 【フレアス】[your-type]（[your-firstname] [your-second]）
+追加ヘッダー: Reply-To: [your-email]
+
+メッセージ本文:
+----
+資料請求・お問い合わせがありました。
+
+■種別
+[your-type]
+
+■氏名
+[your-firstname] [your-second]
+
+■郵便番号
+[your-zip1]-[your-zip2]
+
+■住所
+[your-prefecture] [your-address] [your-apartment]
+
+■事業形態
+[your-business]
+
+■電話番号
+[your-tel1]-[your-tel2]-[your-tel3]
+
+■メールアドレス
+[your-email]
+
+■お問い合わせ内容
+[your-message]
+
+
+送信日時: [_date] [_time]
+----
+
+--------------------------------------------------------------------
+■メール（2）（送信者宛の受付メール・「メール」タブ下部）
+--------------------------------------------------------------------
+※「メール（2）を有効にする」にチェックを入れて設定
+※「メール（2）はメール（1）が失敗した場合のみ送信する」はチェックしない
+  （常に送信者本人へ受付メールを届けるため）
+
+送信先: [your-email]
+送信元: 株式会社フレアス <wordpress@example.com>
+件名  : 【フレアス】お問い合わせを受け付けました
+
+メッセージ本文:
+----
+[your-firstname] [your-second] 様
+
+この度はお問い合わせありがとうございます。
+下記の内容でお問い合わせを受け付けました。
+
+■種別
+[your-type]
+
+■氏名
+[your-firstname] [your-second]
+
+■郵便番号
+[your-zip1]-[your-zip2]
+
+■住所
+[your-prefecture] [your-address] [your-apartment]
+
+■事業形態
+[your-business]
+
+■電話番号
+[your-tel1]-[your-tel2]-[your-tel3]
+
+■メールアドレス
+[your-email]
+
+■お問い合わせ内容
+[your-message]
+
+担当者より改めてご連絡いたしますので、今しばらくお待ちください。
+
+--
+運営：株式会社フレアス
+〒141-0031 東京都品川区西五反田二丁目27番3号（A-PLACE五反田3F）
+----
+
+--------------------------------------------------------------------
+■メッセージ（「メッセージ」タブ・任意で調整）
+--------------------------------------------------------------------
+プライバシーポリシー同意チェック（必須）: プライバシーポリシーへの同意にチェックを入れてください。
+
+--------------------------------------------------------------------
+補足
+--------------------------------------------------------------------
+・メールアドレスと確認用メールアドレスの一致チェックは、
+  inc/contact.php の fureasu_cf7_confirm_email() で
+  サーバー側でも検証しています（フィールド名 your-email / your-email-confirm 固定）。
+・プライバシーポリシーへの同意チェックボックスは、CF7の[acceptance]タグの標準機能により
+  未チェックのままではサーバー側でも送信できません。
+・送信に成功すると、お問い合わせページから /thanks/ へ移動します。
+・送信元アドレスが未設定、または送信できないドメインのまま保存すると、
+  画面上は送信失敗になります。wordpress@example.com は必ず差し替えてください。

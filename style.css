@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/*
+Theme Name: 株式会社フレアス
+Author: 望月
+Author URI: https://wordpress.org/
+Description: フレアス株式会社の公式テーマです。
+Requires at least: 4.9.6
+Requires PHP: 7.2.4
+Version: 1.0
+Text Domain: fureasu
+*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+
+#wpadminbar {
+  display: none;
+}
+
+.contact-form .wpcf7-not-valid-tip {
+  display: block;
+  margin-top: 1.2rem;
+  color: #b42318;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.contact-form .wpcf7-not-valid {
+  border-color: #b42318;
+}
+
+.page-privacy .privacy-section a {
+  color: #B10080;
+  text-decoration: underline;
+}
+
+html.is-mono #header,
+html.is-mono #main,
+html.is-mono #footer,
+html.is-mono .footer-copyright,
+html.is-mono #mobile-nav,
+html.is-mono .mobile-nav-toggle,
+html.is-mono .mobile-nav-overly {
+  filter: grayscale(100%);
+}

@@ -1,0 +1,103 @@
+
+// ==========================================================================
+// Media Queries
+// ==========================================================================
+@mixin sp {
+  @media only screen and (max-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin pc {
+
+  @media print,
+  screen and (min-width: #{$breakpoint-md + 1}) {
+    @content;
+  }
+}
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+@mixin font-size($size) {
+  font-size: $size;
+  line-height: $line-height-base;
+}
+
+@mixin font-family($family) {
+  font-family: $family;
+}
+
+// ==========================================================================
+// Flexbox
+// ==========================================================================
+@mixin flex($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// ==========================================================================
+// Grid
+// ==========================================================================
+@mixin grid($columns: 12) {
+  display: grid;
+  grid-template-columns: repeat($columns, minmax(0, 1fr));
+  gap: $spacing-md;
+}
+
+// ==========================================================================
+// Background
+// ==========================================================================
+@mixin background-image($url, $position: center center, $repeat: no-repeat, $size: contain) {
+  background-image: url($url);
+  background-position: $position;
+  background-repeat: $repeat;
+  background-size: $size;
+}
+
+// ==========================================================================
+// Transitions
+// ==========================================================================
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// ==========================================================================
+// Box Shadow
+// ==========================================================================
+@mixin box-shadow($x: 0, $y: 2px, $blur: 4px, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $color;
+}
+
+// ==========================================================================
+// Position
+// ==========================================================================
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// ==========================================================================
+// Text Overflow
+// ==========================================================================
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ==========================================================================
+// Clearfix
+// ==========================================================================
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

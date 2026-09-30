@@ -1,0 +1,365 @@
+.voice-intro-section {
+    position: relative;
+    padding: 9.0rem 0 10.0rem;
+    background: #F5F4F9;
+    @include sp {
+        padding: 6.0rem 0 6.0rem;
+    }
+    .container {
+        position: relative;
+        max-width: 148.0rem;
+    }
+    .section-wrapper {
+        position: relative;
+        display: block;
+        &::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .section-body {
+            position: relative;
+            max-width: 100%;
+            @include pc {
+                width: 57.4rem;
+                float: left;
+                margin-top: 2.0rem;
+            }
+            .meta {
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                gap: 1.0rem 1.0rem;
+                margin-bottom: 3.0rem;
+                @include sp {
+                    gap: 0.8rem;
+                    margin-bottom: 2.4rem;
+                }
+                & > li {
+                    position: relative;
+                    flex: 0 0 auto;
+                    width: fit-content;
+                }
+                .tag {
+                    position: relative;
+                    display: block;
+                    padding: 0.8rem 2.0rem;
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    line-height: 2.0rem;
+                    color: $color-base;
+                    text-align: center;
+                    min-width: 12.0rem;
+                    background: transparent;
+                    border: 1px solid $color-base;
+                    border-radius: 0;
+                    max-width: 100%;
+                    text-decoration: none;
+                    margin: 0;
+                    @include sp {
+                        padding: 0.6rem 1.6rem;
+                    }
+                }
+            }
+            .lead {
+                position: relative;
+                display: block;
+                font-size: 4.5rem;
+                font-weight: 600;
+                line-height: 5.6rem;
+                color: $color-primary;
+                text-align: left;
+                margin-bottom: 3.0rem;
+                @include sp {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                    margin-bottom: 2.0rem;
+                }
+            }
+            .desc {
+                position: relative;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 1.875;
+                color: $color-primary;
+                text-align: left;
+                @include sp {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        .section-side {
+            position: relative;
+            max-width: 100%;
+            &::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+            @include pc {
+                width: 72.2rem;
+                float: right;
+                margin-right: 4.0rem;
+            }
+            @include sp {
+                margin-bottom: 5.0rem;
+            }
+            .thumb {
+                position: relative;
+                width: 100%;
+                z-index: 0;
+            }
+            .profile {
+                position: relative;
+                padding: 1.2rem 2.4rem 1.2rem 5.0rem;
+                background: $color-base;
+                min-width: 43.0rem;
+                color: $color-white;
+                text-align: left;
+                z-index: 3;
+                @include pc {
+                    position: absolute;
+                    bottom: 4.0rem;
+                    right: -8.0rem;
+                }
+                @include sp {
+                    margin-right: -1.0rem;
+                    margin-top: -3.0rem;
+                    float: right;
+                    min-width: 30.2rem;
+                    padding: 1.2rem 1.6rem 1.2rem 2.4rem;
+                }
+                .pos {
+                    position: relative;
+                    display: block;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    line-height: 2.5rem;
+                    margin: 0;
+                }
+                .name {
+                    position: relative;
+                    font-size: 3.0rem;
+                    font-weight: 600;
+                    line-height: 4.0rem;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.voice-faq-section {
+    position: relative;
+    padding: 10.0rem 0 11.0rem;
+    @include sp {
+        padding: 6.0rem 0 7.0rem;
+    }
+    .container {
+        position: relative;
+    }
+    .section-content {
+        position: relative;
+        .faq-list {
+            position: relative;
+            display: block;
+            & > li {
+                position: relative;
+                &:not(:last-child) {
+                    margin-bottom: 10.0rem;
+                    @include sp {
+                        margin-bottom: 5.0rem;
+                    }
+                }
+            }
+        }
+        .faq-item {
+            position: relative;
+            display: block;
+            .faq-q {
+                position: relative;
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                text-align: right;
+                margin-bottom: 5.6rem;
+                @include sp {
+                    flex-direction: column;
+                    align-items: flex-end;
+                    margin-bottom: 4.0rem;
+                }
+                .num {
+                    position: relative;
+                    flex: 0 0 auto;
+                    width: 8.0rem;
+                    background: $color-base;
+                    font-size: 3.6rem;
+                    font-weight: 600;
+                    line-height: 8.0rem;
+                    color: $color-white;
+                    text-align: center;
+                    @include sp {
+                        width: 6.0rem;
+                        height: 6.0rem;
+                        font-size: 2.6rem;
+                        line-height: 6.0rem;
+                    }
+                }
+                .label {
+                    position: relative;
+                    flex: 0 0 auto;
+                    width: calc(100% - 10.4rem);
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                    font-weight: 700;
+                    color: $color-base;
+                    text-align: inherit;
+                    padding: 2.3rem 1.6rem 2.3rem 3.0rem;
+                    border-top: 1px solid $color-base;
+                    border-bottom: 1px solid $color-base;
+                    @include sp {
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+                        padding: 1.8rem 0;
+                        width: 100%;
+                    }
+                }
+            }
+            .faq-a {
+                position: relative;
+                display: block;
+                &::after {
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+                .thumb {
+                    position: relative;
+                    max-width: 100%;
+                    @include pc {
+                        width: 54.0rem;
+                        float: right;
+                    }
+                    @include sp {
+                        margin-bottom: 2.4rem;
+                    }
+                }
+                .lead {
+                    position: relative;
+                    display: block;
+                    font-size: 3.0rem;
+                    font-weight: 600;
+                    line-height: 1.5;
+                    color: $color-primary;
+                    text-align: left;
+                    margin-bottom: 2.0rem;
+                    @include sp {
+                        font-size: 2.0rem;
+                        margin-bottom: 1.6rem;
+                    }
+                }
+                .desc {
+                    position: relative;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 1.875;
+                    color: $color-primary;
+                    text-align: left;
+                    @include sp {
+                        font-size: 1.4rem;
+                    }
+                }
+                @include pc {
+                    &:has(.thumb) {
+                        .lead, .desc {
+                            width: calc(100% - 58.0rem);
+                            float: left;
+                        }
+                    }
+                }
+
+            }
+            @include pc {
+                &.reverse {
+                    .faq-q {
+                        flex-direction: row;
+                    }
+                    .faq-a {
+                        .thumb {
+                            float: left;
+                        }
+                        .lead, .desc {
+                            float: right;
+                        }
+                    }
+                }
+            }
+            @include sp {
+                &.reverse {
+                    .faq-q {
+                        align-items: flex-start;
+                        text-align: left;
+                    }
+                }
+            }
+        }
+        .faq-bottom {
+            position: relative;
+            width: 79.0rem;
+            max-width: 100%;
+            margin: 12.0rem auto 0;
+            @include sp {
+                margin-top: 8.0rem;
+            }
+            &.full-width {
+                width: 100%;
+            }
+            .lead {
+                position: relative;
+                display: block;
+                font-size: 3.0rem;
+                font-weight: 600;
+                line-height: 1.5;
+                color: $color-base;
+                text-align: center;
+                margin-bottom: 2.0rem;
+                @include sp {
+                    font-size: 2.4rem;
+                    line-height: 3.2rem;
+                }
+            }
+            .desc {
+                position: relative;
+                font-size: 1.6rem;
+                font-weight: 500;
+                line-height: 1.875;
+                color: $color-primary;
+                text-align: center;
+                @include sp {
+                    font-size: 1.4rem;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+.voice-related-section {
+    position: relative;
+    padding: 10.0rem 0 11.0rem;
+    background: #F5F4F9;
+    @include sp {
+        padding: 6.0rem 0 7.0rem;
+    }
+    .container {
+        position: relative;
+    }
+    .section-title {
+        position: relative;
+        margin-left: 0;
+    }
+    .section-content {
+        position: relative;
+    }
+}
