@@ -23,6 +23,10 @@ function fureasu_seed_pages() {
         'privacy' => 'プライバシーポリシー',
         'terms'   => '利用規約',
         'thanks'  => '送信完了',
+        'faq'     => 'よくあるご質問',
+        'news'    => 'お知らせ・ニュース',
+        'company' => '会社情報',
+        'recruit' => '採用情報',
     ];
 
     foreach ( $pages as $slug => $title ) {

@@ -244,7 +244,7 @@ get_header();
                 <li>
                     <div class="guide-line">
                         <p class="label">加盟費用</p>
-                        <div class="desc">480万（研修費・加盟金・物件・什器等を含む目安）。<br>すでに治療院を開業されている方向けプラン等もございます。</div>
+                        <div class="desc">480万円（研修費・加盟金・物件・什器等を含む目安）。<br>すでに治療院を開業されている方向けプラン等もございます。</div>
                     </div>
                 </li>
                 <li>

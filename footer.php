@@ -16,34 +16,34 @@
                 <nav class="footer-nav">
                     <ul class="footer-menu">
                         <li>
-                            <a href="<?php echo HOME . 'about/'; ?>" class="menu-link scrollto">FCについて</a>
+                            <a href="<?php echo HOME . 'about/'; ?>" class="menu-link">FCについて</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'support/'; ?>" class="menu-link scrollto">開業までの流れ</a>
+                            <a href="<?php echo HOME . 'support/'; ?>" class="menu-link">開業までの流れ</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'model/'; ?>" class="menu-link scrollto">収益モデル</a>
+                            <a href="<?php echo HOME . 'model/'; ?>" class="menu-link">収益モデル</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'voice/'; ?>" class="menu-link scrollto">加盟オーナーの声</a>
+                            <a href="<?php echo HOME . 'voice/'; ?>" class="menu-link">加盟オーナーの声</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'faq/'; ?>" class="menu-link scrollto">よくあるご質問</a>
+                            <a href="<?php echo HOME . 'faq/'; ?>" class="menu-link">よくあるご質問</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'column/'; ?>" class="menu-link scrollto">コラム</a>
+                            <a href="<?php echo HOME . 'column/'; ?>" class="menu-link">コラム</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'support/'; ?>" class="menu-link scrollto">開業サポート</a>
+                            <a href="<?php echo HOME . 'support/'; ?>" class="menu-link">開業サポート</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'news/'; ?>" class="menu-link scrollto">お知らせ・ニュース</a>
+                            <a href="<?php echo HOME . 'column/'; ?>" class="menu-link">お知らせ・ニュース</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'company/'; ?>" class="menu-link scrollto">会社情報</a>
+                            <a href="https://fureasu.jp/" class="menu-link" target="_blank" rel="noopener noreferrer">会社情報</a>
                         </li>
                         <li>
-                            <a href="<?php echo HOME . 'recruit/'; ?>" class="menu-link scrollto">採用情報</a>
+                            <a href="https://recruit.fureasu.jp/" class="menu-link" target="_blank" rel="noopener noreferrer">採用情報</a>
                         </li>
                     </ul>
                 </nav>
@@ -96,7 +96,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https://fureasu.jp/" class="related-link" target="_blank" rel="noopener noreferrer">
+                            <a href="https://recruit.fureasu.jp/" class="related-link" target="_blank" rel="noopener noreferrer">
                                 <span>採用サイト</span>
                                 <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
                                     <path d="M0.910476 6L0 5.08952L3.84381 1.2419H0.95619L0.963809 0H5.99619V5.03619H4.74667L4.75429 2.15238L0.910476 6Z"/>

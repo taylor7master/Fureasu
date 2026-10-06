@@ -39,7 +39,7 @@ $column_url = home_url( '/column/' );
     <div class="container">
         <div class="section-title">
             <h2 class="en">COLUMN</h2>
-            <p class="jp">コラム サポート</p>
+            <p class="jp">コラム</p>
         </div>
         <?php if ( is_search() ) : ?>
         <p class="section-desc">「<?php echo esc_html( get_search_query() ); ?>」の検索結果</p>

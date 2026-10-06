@@ -535,8 +535,8 @@ figure img {
   border-radius: 0;
   background: #B10080;
   font-family: "Noto Sans JP", sans-serif;
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 600;
   line-height: 1.5;
   letter-spacing: 0.1em;
   color: #FFFFFF;
@@ -5037,8 +5037,8 @@ body.mobile-nav-active #mobile-nav {
   position: relative;
   height: 8rem;
   width: 28.4rem;
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 600;
   letter-spacing: 0;
   border-radius: 0;
   padding: 1.2rem 2rem 1rem;
@@ -5264,8 +5264,8 @@ body.mobile-nav-active #mobile-nav {
   position: relative;
   height: 8rem;
   width: 28.4rem;
-  font-size: 2.4rem;
-  font-weight: 700;
+  font-size: 2.2rem;
+  font-weight: 600;
   letter-spacing: 0;
   line-height: 3rem;
   text-align: center;
@@ -7320,6 +7320,13 @@ body.mobile-nav-active #mobile-nav {
   .model-intro-section .intro-price-wrapper .plus, .model-intro-section .intro-price-wrapper .equal {
     font-size: 2.8rem;
   }
+}
+.model-intro-section .intro-price-wrapper .plus {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  transform-box: fill-box;
 }
 @media only screen and (max-width: 768px) {
   .model-intro-section .intro-price-wrapper .equal {
@@ -10341,11 +10348,12 @@ body.mobile-nav-active #mobile-nav {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    text-align: left;
   }
   .voice-faq-section .section-content .faq-item.reverse .faq-a .thumb {
     float: left;
   }
-  .voice-faq-section .section-content .faq-item.reverse .faq-a .lead, .voice-faq-section .section-content .faq-item.reverse .faq-a .desc {
+  .voice-faq-section .section-content .faq-item.reverse .faq-a:has(.thumb) .lead, .voice-faq-section .section-content .faq-item.reverse .faq-a:has(.thumb) .desc {
     float: right;
   }
 }

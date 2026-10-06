@@ -51,6 +51,9 @@
   var scrolltoOffset = getScrollOffset();
 
   $(document).on('click', 'a.link, .scrollto, .nav-menu a, .mobile-nav-menu a, .footer-menu a', function(e) {
+    if (!this.hash || this.hash === '#') {
+      return;
+    }
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {

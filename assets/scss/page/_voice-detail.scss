@@ -284,13 +284,16 @@
                 &.reverse {
                     .faq-q {
                         flex-direction: row;
+                        text-align: left;
                     }
                     .faq-a {
                         .thumb {
                             float: left;
                         }
-                        .lead, .desc {
-                            float: right;
+                        &:has(.thumb) {   
+                            .lead, .desc {
+                                float: right;
+                            }
                         }
                     }
                 }

@@ -96,7 +96,7 @@ get_header();
 <section class="model-reason-section">
     <div class="container">
         <div class="section-label">
-            <h2>大金は投資に見えても、<br>直実に回収へ向かえる理由があります。</h2>
+            <h2>大金は投資に見えても、<br>着実に回収へ向かえる理由があります。</h2>
             <p>在宅マッサージは、単価を国が定め、利用者は費用の1〜3割の負担で続けられるストック型。<br>売上が読める仕組みに集客も人材も本部がサポートするので、先行投資でも着実に回収へ向かえます。</p>
         </div>
         <div class="section-content">
@@ -140,7 +140,7 @@ get_header();
                         <div class="card-body">
                             <h4 class="label">
                                 <em>3</em>
-                                <span>オーナーは<br>資格・未経験でOK</span>
+                                <span>オーナーは<br>無資格・未経験でOK</span>
                             </h4>
                             <figure class="icon">
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/model/reason03.png" alt="オーナーは資格・未経験でOK" loading="lazy">

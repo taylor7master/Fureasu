@@ -12,7 +12,7 @@ get_header();
                     <p class="jp">フレアスグループの想い</p>
                 </div>
                 <h3 class="section-lead">同じ景色を、<br>一緒に見てくれる人へ。</h3>
-                <div class="section-desc">急速に広がる全国の在宅ケアニーズへ、地域密着でスピーディに応えてくいきたい。<br>オーナー様の情熱と地元の信頼を持つオーナー様の想いと私たちのノウハウを掛け合わせ、<br>共に持続可能な社会課題の解決を目指します。</div>
+                <div class="section-desc">急速に広がる全国の在宅ケアニーズへ、地域密着でスピーディに応えていきたい。<br>オーナー様の情熱と地元の信頼を持つオーナー様の想いと私たちのノウハウを掛け合わせ、<br>共に持続可能な社会課題の解決を目指します。</div>
             </div>
             <div class="section-pictures">
                 <figure class="image1 scrt-cover">

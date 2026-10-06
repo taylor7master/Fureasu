@@ -51,7 +51,7 @@ get_header();
             <ul class="mainvisual-actions">
                 <li>
                     <a href="https://fureasu.youcanbook.me/" class="link-btn link-btn--outline" target="_blank" rel="noopener noreferrer">
-                        <span>無料説明に参加</span>
+                        <span>無料説明会に参加</span>
                     </a>
                 </li>
                 <li>
@@ -319,7 +319,7 @@ get_header();
             <ul class="section-actions">
                 <li>
                     <a href="https://fureasu.youcanbook.me/" class="action-btn action-btn--outline" target="_blank" rel="noopener noreferrer">
-                        <span>無料説明に参加</span>
+                        <span>無料説明会に参加</span>
                     </a>
                 </li>
                 <li>
