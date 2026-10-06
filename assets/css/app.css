@@ -3904,6 +3904,11 @@ body.mobile-nav-active #mobile-nav {
   background-size: 1920px auto;
   z-index: 0;
 }
+@media print, screen and (min-width: 1921px) {
+  .top-care-section::before {
+    background-size: cover;
+  }
+}
 @media only screen and (max-width: 768px) {
   .top-care-section::before {
     top: 40.8rem;
@@ -4122,6 +4127,18 @@ body.mobile-nav-active #mobile-nav {
     line-height: 2.8rem;
     margin-bottom: 2.4rem;
   }
+}
+.top-care-section .section-intro .intro-lead span {
+  position: relative;
+  display: inline;
+  z-index: 1;
+}
+.top-care-section .section-intro .intro-lead em {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  font-style: normal;
+  -webkit-text-stroke: 0.5rem #FFFFFF;
 }
 .top-care-section .section-intro .intro-points {
   position: relative;
@@ -4953,7 +4970,7 @@ body.mobile-nav-active #mobile-nav {
 
 .top-request-section {
   position: relative;
-  padding: 10rem 0 11rem;
+  padding: 14rem 0 15rem;
   background-image: url(../image/request-bg.jpg);
   background-size: cover;
   background-position: center;
@@ -4979,7 +4996,7 @@ body.mobile-nav-active #mobile-nav {
 .top-request-section .section-lead h2 {
   position: relative;
   display: block;
-  font-size: 3rem;
+  font-size: 2.4rem;
   font-weight: 700;
   line-height: 4.2rem;
   color: #231815;
@@ -4988,7 +5005,7 @@ body.mobile-nav-active #mobile-nav {
 @media only screen and (max-width: 768px) {
   .top-request-section .section-lead h2 {
     font-size: 1.8rem;
-    line-height: 3rem;
+    line-height: 3.2rem;
   }
 }
 .top-request-section .section-note {
@@ -6620,6 +6637,11 @@ body.mobile-nav-active #mobile-nav {
   background-size: 1920px auto;
   z-index: 0;
 }
+@media print, screen and (min-width: 1921px) {
+  .about-intro-section::before {
+    background-size: cover;
+  }
+}
 @media only screen and (max-width: 768px) {
   .about-intro-section::before {
     top: 50.8rem;
@@ -7112,6 +7134,11 @@ body.mobile-nav-active #mobile-nav {
   background-repeat: no-repeat;
   background-size: 1920px auto;
   z-index: 0;
+}
+@media print, screen and (min-width: 1921px) {
+  .model-intro-section::before {
+    background-size: cover;
+  }
 }
 @media only screen and (max-width: 768px) {
   .model-intro-section::before {
@@ -7858,6 +7885,11 @@ body.mobile-nav-active #mobile-nav {
   background-size: 1920px auto;
   z-index: 0;
 }
+@media print, screen and (min-width: 1921px) {
+  .support-intro-section::before {
+    background-size: cover;
+  }
+}
 @media only screen and (max-width: 768px) {
   .support-intro-section::before {
     top: 79.6rem;
@@ -8199,6 +8231,11 @@ body.mobile-nav-active #mobile-nav {
   background-repeat: no-repeat;
   background-size: 1920px auto;
   z-index: 0;
+}
+@media print, screen and (min-width: 1921px) {
+  .support-operation-section::before {
+    background-size: cover;
+  }
 }
 @media only screen and (max-width: 768px) {
   .support-operation-section::before {

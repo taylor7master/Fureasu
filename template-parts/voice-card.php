@@ -12,7 +12,7 @@ $alt     = $data['name'] !== '' ? $data['name'] : get_the_title( $post_id );
 <article class="swiper-slide voice-card">
     <figure class="voice-image scrt-cover">
         <?php if ( $label !== '' ) : ?>
-        <figcaption><?php echo esc_html( $label ); ?></figcaption>
+        <!-- <figcaption><?php // echo esc_html( $label ); ?></figcaption> -->
         <?php endif; ?>
         <img src="<?php echo esc_url( $image ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy">
     </figure>

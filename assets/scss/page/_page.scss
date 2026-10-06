@@ -402,6 +402,9 @@
     background-repeat: no-repeat;
     background-size: 1920px auto;
     z-index: 0;
+    @include full {
+      background-size: cover;
+    }
     @include sp {
       top: 40.8rem;
       background-image: url(../image/care-bg-sp.png);
@@ -583,6 +586,18 @@
         font-size: 2.0rem;
         line-height: 2.8rem;
         margin-bottom: 2.4rem;
+      }
+      span {
+        position: relative;
+        display: inline;
+        z-index: 1;
+      }
+      em {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        font-style: normal;
+        -webkit-text-stroke: 0.5rem $color-white;
       }
     }
     .intro-points {
@@ -1331,7 +1346,7 @@
 // ==========================================================================
 .top-request-section {
   position: relative;
-  padding: 10.0rem 0 11.0rem;
+  padding: 14.0rem 0 15.0rem;
   background-image: url(../image/request-bg.jpg);
   background-size: cover;
   background-position: center;
@@ -1351,14 +1366,14 @@
     h2 {
       position: relative;
       display: block;
-      font-size: 3.0rem;
+      font-size: 2.4rem;
       font-weight: 700;
       line-height: 4.2rem;
       color: $color-primary;
       text-align: left;
       @include sp {
         font-size: 1.8rem;
-        line-height: 3.0rem;
+        line-height: 3.2rem;
       }
     }
   }
@@ -2776,6 +2791,9 @@
     background-repeat: no-repeat;
     background-size: 1920px auto;
     z-index: 0;
+    @include full {
+      background-size: cover;
+    }
     @include sp {
       top: 50.8rem;
       background-image: url(../image/about/about-bg-sp.png);
@@ -3203,6 +3221,9 @@
     background-repeat: no-repeat;
     background-size: 1920px auto;
     z-index: 0;
+    @include full {
+      background-size: cover;
+    }
     @include sp {
       top: 84.0rem;
       background-image: url(../image/model/model-bg-sp.png);
@@ -3818,6 +3839,9 @@
     background-repeat: no-repeat;
     background-size: 1920px auto;
     z-index: 0;
+    @include full {
+      background-size: cover;
+    }
     @include sp {
       top: 79.6rem;
       background-image: url(../image/support/support-bg-sp.png);
@@ -4098,6 +4122,9 @@
     background-repeat: no-repeat;
     background-size: 1920px auto;
     z-index: 0;
+    @include full {
+      background-size: cover;
+    }
     @include sp {
       height: 32.8rem;
       background-image: url(../image/support/support-bg-sp.png);

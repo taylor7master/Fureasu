@@ -118,7 +118,10 @@ get_header();
                 </figure>
             </div>
             <div class="section-intro">
-                <h3 class="intro-lead">「こういう人を助けたい」<br>これを、あなたの事業にしませんか。</h3>
+                <h3 class="intro-lead">
+                    <em>「こういう人を助けたい」<br>これを、あなたの事業にしませんか。</em>
+                    <span>「こういう人を助けたい」<br>これを、あなたの事業にしませんか。</span>
+                </h3>
                 <ul class="intro-points">
                     <li>
                         <div class="point-card">
@@ -126,8 +129,8 @@ get_header();
                                 <img src="<?php echo T_DIRE_URI; ?>/assets/image/care-intro01.png" alt="こういう人を助けたい" loading="lazy">
                             </figure>
                             <div class="info">
-                                <p class="num">POINT1/</p>
-                                <h4 class="lead">マッサージではなく、<br>国が認めた「訪問型サービス」。</h4>
+                                <p class="num">POINT1.</p>
+                                <h4 class="lead">国が認めた健康保険適用の<br>「訪問型マッサージサービス」です。</h4>
                                 <p class="desc">リラクゼーションのマッサージとは違い、国に認められた「訪問型サービス」です。寝たきりの方や歩くことが難しい方のもとへ、国家資格を持つ鍼灸マッサージ師が伺い、かかりつけ医の同意があれば健康保険で受けられます。</p>
                             </div>
                         </div>
@@ -138,7 +141,7 @@ get_header();
                                 <img src="<?php echo T_DIRE_URI; ?>/assets/image/care-intro02.png" alt="こういう人を助けたい" loading="lazy">
                             </figure>
                             <div class="info">
-                                <p class="num">POINT2/</p>
+                                <p class="num">POINT2.</p>
                                 <h4 class="lead">需要はある。<br>でも、"届ける手"が足りていない。</h4>
                                 <p class="desc">この仕組みがあること自体を知らない方は、まだ驚くほど多くいます。「うちも受けられたなんて」その気づきが、今も各地で生まれています。必要とされているのに、届ける手が足りない。ここに、この事業のチャンスがあります。</p>
                             </div>
@@ -150,8 +153,8 @@ get_header();
                                 <img src="<?php echo T_DIRE_URI; ?>/assets/image/care-intro03.png" alt="こういう人を助けたい" loading="lazy">
                             </figure>
                             <div class="info">
-                                <p class="num">POINT3/</p>
-                                <h4 class="lead">あなたは、施術しない。<br>"運営"する。</h4>
+                                <p class="num">POINT3.</p>
+                                <h4 class="lead">あなた自身は資格は不要です。<br>地域を支える仕組みを作る経営に専念できます。</h4>
                                 <p class="desc">オーナーであるあなたに、資格は要りません。施術をするのは、あなたが雇う国家資格者。あなたの役割は、開業エリアの運営とマネジメントです。「助けたい」を形にする仕組みを、地域につくっていきます。</p>
                             </div>
                         </div>
@@ -197,7 +200,7 @@ get_header();
     <section id="why" class="top-why-section">
         <div class="container">
             <div class="section-title">
-                <h2 class="en">WHY CARE</h2>
+                <h2 class="en">ESSENTIAL</h2>
                 <p class="jp">社会に必要とされる仕事</p>
             </div>
             <p class="section-lead">なぜ、この仕事は必要とされ続けるのか</p>
@@ -313,9 +316,8 @@ get_header();
     <section id="request" class="top-request-section">
         <div class="container">
             <div class="section-lead">
-                <h2>この事業には、価格競争がありません。<br><br class="sp-only">お客様をゼロから探す必要も、<br>ほとんどありません。</h2>
+                <h2>この事業には、価格競争がありません。<br>詳しくは、資料請求もしくは<br class="sp-only">無料説明会でお話しさせて頂きます。</h2>
             </div>
-            <div class="section-note">なぜなのか？<br class="sp-only">30分でお話しさせて頂きます。</div>
             <ul class="section-actions">
                 <li>
                     <a href="https://fureasu.youcanbook.me/" class="action-btn action-btn--outline" target="_blank" rel="noopener noreferrer">

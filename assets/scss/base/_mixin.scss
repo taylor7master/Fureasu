@@ -9,9 +9,13 @@
 }
 
 @mixin pc {
+  @media print, screen and (min-width: #{$breakpoint-md + 1}) {
+    @content;
+  }
+}
 
-  @media print,
-  screen and (min-width: #{$breakpoint-md + 1}) {
+@mixin full {
+  @media print, screen and (min-width: #{$breakpoint-full + 1}) {
     @content;
   }
 }
