@@ -29,17 +29,25 @@
     </title>
 
     <!-- favicon -->
-    <link rel="icon" href="<?php echo T_DIRE_URI; ?>/assets/image/favicon.png" type="image/x-icon">
+    <link rel="icon" href="<?php echo T_DIRE_URI; ?>/assets/image/favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Noto+Sans+JP:wght@500;600;700;800&display=swap" rel="stylesheet">
     <script>
     (function () {
         try {
-            if (localStorage.getItem('fureasuMono') === '1') {
-                document.documentElement.classList.add('is-mono');
+            var mono = localStorage.getItem('fureasuMono') === '1';
+            if (!mono) {
+                var saved = JSON.parse(localStorage.getItem('fr_a11y') || '{}');
+                mono = !!(saved && saved.mono);
+            }
+            if (mono) {
+                document.documentElement.setAttribute('data-a11y-mono', '1');
             }
         } catch (e) {}
     })();
@@ -71,113 +79,120 @@ if ( is_singular( 'voice' ) || is_post_type_archive( 'voice' ) || is_tax( 'voice
 
 <body>
 
-    <header id="header">
-        <div class="container">
-            <div class="header-wrapper">
-                <h1 class="header-logo">
-                    <a href="<?php echo HOME; ?>">
-                        <img src="<?php echo T_DIRE_URI; ?>/assets/image/logo.svg" alt="株式会社フレアス" loading="lazy">
-                    </a>
-                    <span>フランチャイズ<br>加盟店募集サイト</span>
-                </h1>
-                <nav class="header-nav">
-                    <div class="nav-top">
-                        <ul class="nav-actions">
-                            <li>
-                                <a href="tel:0120142013" class="action-btn action-btn--phone scrollto">
-                                    <svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor">
-                                        <path d="M3.88086 0.84955C4.67765 0.158019 5.77052 -0.00859887 6.73438 0.414003C7.22265 0.631706 7.55668 0.952489 7.87793 1.36225L9.18848 3.039L10.3838 4.56342C10.6665 4.93479 10.834 5.34448 10.9111 5.8183C10.9368 6.01034 10.975 6.20244 10.9365 6.39447C10.8851 6.66338 10.8463 6.94511 10.7178 7.18842L10.5508 7.50873L10.3838 7.76459C10.2553 7.96944 10.05 8.12354 9.87012 8.28998L9.56152 8.61029L9.39453 8.77631L9.00879 9.18646L8.57227 9.60932C8.36665 9.86544 8.54582 10.3007 8.71289 10.6464L8.8291 10.8769C9.08611 11.3891 9.38156 11.8759 9.72852 12.3369L10.2295 13.0156L10.7695 13.6689L11.0391 13.9755L12.1191 15.0517L12.3242 15.2304L13.2373 15.9736L13.9434 16.4863L14.6123 16.8954L14.8818 17.0497C15.0617 17.1522 15.2935 17.2418 15.499 17.2802C15.7301 17.3313 15.8587 17.2158 16 17.0878L17.5547 15.5634C17.8888 15.2305 18.3266 15.0515 18.7764 14.9619L19.1611 14.9238H19.418C19.932 14.9622 20.4337 15.1027 20.832 15.4228L21.2559 15.7685L22.6826 16.9726L23.5176 17.6767L23.7236 17.8564L23.9678 18.0615L24.1865 18.2402L24.1602 18.2275C24.7384 18.6885 25.0856 19.3288 25.1885 20.0458C25.2784 20.7244 25.0475 21.4286 24.6621 22.0048L24.3408 22.3769L23.8389 22.915L22.9014 23.9267L22.1426 24.6943C21.8213 25.0272 21.3848 25.2452 20.9736 25.4628C20.4854 25.7061 19.663 25.9243 19.1104 25.9755L18.7764 26.0009H17.9795L17.3496 25.9628L15.8975 25.706L14.2266 25.2197L13.2109 24.8095L12.376 24.4257L11.8623 24.1699C9.97322 23.235 7.86509 21.5958 6.34863 20.1103C4.67795 18.4711 3.27725 16.6007 2.15918 14.5517L1.61914 13.4638L1.3877 12.9638L1.2334 12.5927L1.02832 12.081L0.822266 11.4912C0.423943 10.3387 0.153891 9.17331 0.0253906 7.96967L0 7.3681V6.84271L0.0253906 6.35639C0.141044 5.52406 0.385232 4.71704 0.834961 3.99994L1.10547 3.60248C1.25959 3.38499 1.45194 3.18005 1.64453 3.00092L2.20996 2.46283L3.11035 1.59271L3.88086 0.84955ZM6.40039 1.66889C5.75782 1.2719 5.14034 1.42617 4.60059 1.93842L3.90723 2.60443L3.48242 3.01361L2.94336 3.52631L2.6084 3.84662C2.15889 4.2818 1.83755 4.67858 1.61914 5.29291C1.50349 5.61304 1.40102 5.93361 1.34961 6.26654L1.31055 6.57416L1.28516 6.75287V7.41889L1.32324 7.86713C1.42605 8.92996 1.6324 9.92887 1.99219 10.9277L2.33887 11.8759L2.5957 12.4902L2.77539 12.8749L2.96875 13.2587L3.32812 13.9501C4.03494 15.3332 4.9348 16.6012 5.96289 17.7665L6.25879 18.0995L6.60547 18.4706L7.71094 19.5595L8.10938 19.9306L8.41797 20.2128C9.26605 20.9683 10.166 21.6337 11.1426 22.2099L11.9258 22.6708L12.3633 22.9013C13.8797 23.7209 15.7428 24.4005 17.4648 24.6054C17.6318 24.631 17.7862 24.6308 17.9531 24.6308C18.2359 24.6948 18.5063 24.6691 18.7891 24.6435L19.1104 24.6054C19.6629 24.5414 20.1639 24.3615 20.665 24.1054C21.0505 23.9005 21.3722 23.5935 21.6807 23.2734L21.6543 23.2861L22.3096 22.5947L22.7988 22.082L23.2734 21.5829C23.4019 21.4421 23.5564 21.301 23.6592 21.1474C23.8647 20.8401 23.9421 20.456 23.8779 20.1103C23.8137 19.7518 23.6341 19.4951 23.3643 19.2646L21.5645 17.7412L21.2432 17.4716L20.999 17.2675L19.958 16.4091C19.4697 16.0506 18.7886 16.1533 18.3389 16.6015L16.8994 18.0351C16.7323 18.2016 16.5523 18.3174 16.3467 18.4199C15.73 18.7269 14.9465 18.5858 14.3555 18.2402L13.3525 17.6513L12.749 17.2412L11.7979 16.4863L11.5664 16.2939L11.1934 15.9609C9.85684 14.7571 8.72576 13.3611 7.82617 11.7988L7.4541 11.082C7.00434 10.2112 6.93971 9.3274 7.65918 8.61029L8.8418 7.41889L9.22754 7.00971C9.66449 6.54869 9.75386 5.8695 9.35547 5.37006L8.7002 4.52533L7.85254 3.43646L7.0166 2.36029L6.8623 2.16889C6.72098 2.00246 6.59307 1.78417 6.40039 1.66889ZM16.8232 4.20697C17.4915 4.28381 18.0962 4.42426 18.7002 4.706C19.0599 4.87246 19.3808 5.10359 19.7148 5.32123C20.8585 6.11519 21.7194 7.72821 21.8223 9.12396L21.874 9.76459L21.8867 9.77728C21.9124 10.1614 21.6942 10.4944 21.2959 10.5585C20.8976 10.6226 20.589 10.2512 20.5889 9.86713V9.36713C20.4216 7.30552 18.8279 5.6536 16.7461 5.49994L16.1162 5.46185C15.7823 5.44882 15.5645 5.12846 15.5645 4.82123C15.5645 4.51392 15.8085 4.20697 16.1426 4.20697H16.8232ZM16.6025 0.00482341C18.1447 -0.0464011 19.649 0.312538 21.0498 0.978456L21.7695 1.37494C22.2963 1.66946 22.7584 2.02857 23.1953 2.45111C24.3904 3.57799 25.2515 4.9991 25.6885 6.57416L25.8691 7.48334C25.9848 8.04668 26.0099 8.62302 25.9971 9.19916V9.60932C26.0356 10.0063 25.8043 10.3136 25.4316 10.4033C25.2262 10.4416 25.0466 10.3906 24.9053 10.2372C24.6868 10.0195 24.6867 9.71158 24.751 9.40424C24.7765 9.30182 24.751 9.11018 24.751 9.00775L24.7246 8.57221L24.7383 8.55951L24.7119 8.12396C24.6348 7.43243 24.4807 6.77892 24.2236 6.13861L23.748 5.15326C23.6195 4.87153 23.4397 4.64071 23.2598 4.3974C22.6043 3.52659 21.7821 2.80917 20.8311 2.28412L20.1758 1.95111C19.7132 1.72066 19.2249 1.56713 18.7109 1.47748L17.9141 1.33685L17.4893 1.29779C17.2966 1.28498 17.1039 1.25951 16.8984 1.2851C16.5772 1.32352 16.2688 1.23371 16.0889 0.964784C15.9734 0.760039 15.9862 0.555462 16.0889 0.325136C16.1788 0.197139 16.3586 0.0177909 16.6025 0.00482341Z"/>
-                                    </svg>
-                                    <span>
-                                        <small>お電話でのお申し込み・ご相談はこちら</small>
-                                        <strong>0120-14-2013</strong>
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://fureasu.youcanbook.me/" class="action-btn action-btn--outline scrollto" target="_blank" rel="noopener noreferrer">
-                                    <span>無料説明会</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="<?php echo HOME . 'contact/'; ?>" class="action-btn scrollto">
-                                    <span>無料資料請求・<br>お問い合わせ</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <ul class="nav-menu">
-                        <li><a href="<?php echo HOME; ?>" class="menu-link scrollto<?php echo is_home() || is_front_page() ? ' active' : ''; ?>">TOP</a></li>
-                        <li><a href="<?php echo HOME . 'about/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'about' ? ' active' : ''; ?>">FCについて</a></li>
-                        <li><a href="<?php echo HOME . 'support/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'support' ? ' active' : ''; ?>">開業サポート</a></li>
-                        <li><a href="<?php echo HOME . 'model/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'model' ? ' active' : ''; ?>">収益モデル</a></li>
-                        <li><a href="<?php echo HOME . 'voice/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'voice' ? ' active' : ''; ?>">オーナーの声</a></li>
-                        <li><a href="<?php echo HOME . 'column/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'column' ? ' active' : ''; ?>">コラム</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
+<?php
+$fc_meet    = 'https://fureasu.youcanbook.me/';
+$fc_contact = HOME . 'contact/';
+$fc_tel     = 'tel:0120142013';
+$fc_nav     = array(
+    array( 'url' => HOME, 'label' => 'TOP', 'current' => is_front_page() || is_home() ),
+    array( 'url' => HOME . 'about/', 'label' => 'FCについて', 'current' => $post_slug === 'about' ),
+    array( 'url' => HOME . 'support/', 'label' => '開業サポート', 'current' => $post_slug === 'support' ),
+    array( 'url' => HOME . 'model/', 'label' => '収益モデル', 'current' => $post_slug === 'model' ),
+    array( 'url' => HOME . 'voice/', 'label' => 'オーナーの声', 'current' => $post_slug === 'voice' ),
+    array( 'url' => HOME . 'faq/', 'label' => 'FAQ', 'current' => $post_slug === 'faq' ),
+    array( 'url' => HOME . 'column/', 'label' => 'コラム', 'current' => $post_slug === 'column' ),
+);
+$rc = T_DIRE_URI . '/assets/image/recruit';
+?>
 
-    <div id="mobile-nav" data-lenis-prevent>
-        <div class="mobile-nav-header">
-            <div class="mobile-logo">
-                <a href="<?php echo HOME; ?>">
-                    <img src="<?php echo T_DIRE_URI; ?>/assets/image/logo.svg" alt="株式会社フレアス" loading="lazy">
-                </a>
-                <span>フランチャイズ<br>加盟店募集サイト</span>
-            </div>
+<a href="#main" class="skip-link">本文へ移動</a>
+<header class="hd">
+  <div class="hd__inner">
+    <a href="<?php echo esc_url( HOME ); ?>" class="hd__logo">
+      <img src="<?php echo esc_url( $rc . '/logo_fureasu.svg' ); ?>" alt="fureasu" class="hd__logo-img"><span class="hd__logo-sub">フランチャイズ<br>加盟店募集サイト</span>
+    </a>
+    <div class="hd__right">
+      <div class="hd__navblock">
+        <div class="hd__a11y">
+          <p class="hd__note">本サイトは、視覚的に閲覧が難しい方へ音声読み上げ対応をしております</p>
+          <div class="a11y-bar" data-a11y-bar>
+            <button type="button" class="a11y-btn a11y-btn--mono" data-a11y-mono aria-pressed="false">モノクロモード <span data-a11y-state>OFF</span></button>
+          </div>
         </div>
-        <nav class="mobile-nav-container">
-            <div class="mobile-switch-color">
-                <button type="button" class="switch-color-btn" aria-pressed="false">
-                    <svg width="16" height="10" viewBox="0 0 16 10" fill="currentColor">
-                        <path d="M8 0C4 0 0.945455 2.57143 0 5C0.945455 7.42857 4 10 8 10C12 10 15.0545 7.42857 16 5C15.0545 2.57143 12 0 8 0ZM8 8.21429C7.13202 8.21429 6.29959 7.87564 5.68583 7.27284C5.07208 6.67005 4.72727 5.85248 4.72727 5C4.72727 4.14752 5.07208 3.32995 5.68583 2.72716C6.29959 2.12436 7.13202 1.78571 8 1.78571C8.86798 1.78571 9.70041 2.12436 10.3142 2.72716C10.9279 3.32995 11.2727 4.14752 11.2727 5C11.2727 5.85248 10.9279 6.67005 10.3142 7.27284C9.70041 7.87564 8.86798 8.21429 8 8.21429ZM8 3.21429C7.51779 3.21429 7.05533 3.40242 6.71435 3.73731C6.37338 4.0722 6.18182 4.5264 6.18182 5C6.18182 5.4736 6.37338 5.9278 6.71435 6.26269C7.05533 6.59758 7.51779 6.78571 8 6.78571C8.48221 6.78571 8.94467 6.59758 9.28565 6.26269C9.62662 5.9278 9.81818 5.4736 9.81818 5C9.81818 4.5264 9.62662 4.0722 9.28565 3.73731C8.94467 3.40242 8.48221 3.21429 8 3.21429Z"/>
-                    </svg>
-                    <span>モノクロモード<em>OFF</em></span>
-                </button>
-            </div>
-            <ul class="mobile-nav-menu">
-                <li><a href="<?php echo HOME; ?>" class="menu-link scrollto<?php echo is_home() || is_front_page() ? ' active' : ''; ?>">TOP</a></li>
-                <li><a href="<?php echo HOME . 'about/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'about' ? ' active' : ''; ?>">フレアスグループの想い</a></li>
-                <li><a href="<?php echo HOME . 'support/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'support' ? ' active' : ''; ?>">開業サポート</a></li>
-                <li><a href="<?php echo HOME . 'model/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'model' ? ' active' : ''; ?>">収益モデル</a></li>
-                <li><a href="<?php echo HOME . 'voice/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'voice' ? ' active' : ''; ?>">オーナーの声</a></li>
-                <li><a href="<?php echo HOME . 'faq/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'faq' ? ' active' : ''; ?>">FAQ</a></li>
-                <li><a href="<?php echo HOME . 'column/'; ?>" class="menu-link scrollto<?php echo $post_slug === 'column' ? ' active' : ''; ?>">コラム</a></li>
-            </ul>
-            <div class="mobile-nav-action">
-                <a href="tel:0120142013" class="action-btn action-btn--phone scrollto">
-                    <svg width="26" height="26" viewBox="0 0 26 26" fill="currentColor">
-                        <path d="M3.88086 0.84955C4.67765 0.158019 5.77052 -0.00859887 6.73438 0.414003C7.22265 0.631706 7.55668 0.952489 7.87793 1.36225L9.18848 3.039L10.3838 4.56342C10.6665 4.93479 10.834 5.34448 10.9111 5.8183C10.9368 6.01034 10.975 6.20244 10.9365 6.39447C10.8851 6.66338 10.8463 6.94511 10.7178 7.18842L10.5508 7.50873L10.3838 7.76459C10.2553 7.96944 10.05 8.12354 9.87012 8.28998L9.56152 8.61029L9.39453 8.77631L9.00879 9.18646L8.57227 9.60932C8.36665 9.86544 8.54582 10.3007 8.71289 10.6464L8.8291 10.8769C9.08611 11.3891 9.38156 11.8759 9.72852 12.3369L10.2295 13.0156L10.7695 13.6689L11.0391 13.9755L12.1191 15.0517L12.3242 15.2304L13.2373 15.9736L13.9434 16.4863L14.6123 16.8954L14.8818 17.0497C15.0617 17.1522 15.2935 17.2418 15.499 17.2802C15.7301 17.3313 15.8587 17.2158 16 17.0878L17.5547 15.5634C17.8888 15.2305 18.3266 15.0515 18.7764 14.9619L19.1611 14.9238H19.418C19.932 14.9622 20.4337 15.1027 20.832 15.4228L21.2559 15.7685L22.6826 16.9726L23.5176 17.6767L23.7236 17.8564L23.9678 18.0615L24.1865 18.2402L24.1602 18.2275C24.7384 18.6885 25.0856 19.3288 25.1885 20.0458C25.2784 20.7244 25.0475 21.4286 24.6621 22.0048L24.3408 22.3769L23.8389 22.915L22.9014 23.9267L22.1426 24.6943C21.8213 25.0272 21.3848 25.2452 20.9736 25.4628C20.4854 25.7061 19.663 25.9243 19.1104 25.9755L18.7764 26.0009H17.9795L17.3496 25.9628L15.8975 25.706L14.2266 25.2197L13.2109 24.8095L12.376 24.4257L11.8623 24.1699C9.97322 23.235 7.86509 21.5958 6.34863 20.1103C4.67795 18.4711 3.27725 16.6007 2.15918 14.5517L1.61914 13.4638L1.3877 12.9638L1.2334 12.5927L1.02832 12.081L0.822266 11.4912C0.423943 10.3387 0.153891 9.17331 0.0253906 7.96967L0 7.3681V6.84271L0.0253906 6.35639C0.141044 5.52406 0.385232 4.71704 0.834961 3.99994L1.10547 3.60248C1.25959 3.38499 1.45194 3.18005 1.64453 3.00092L2.20996 2.46283L3.11035 1.59271L3.88086 0.84955ZM6.40039 1.66889C5.75782 1.2719 5.14034 1.42617 4.60059 1.93842L3.90723 2.60443L3.48242 3.01361L2.94336 3.52631L2.6084 3.84662C2.15889 4.2818 1.83755 4.67858 1.61914 5.29291C1.50349 5.61304 1.40102 5.93361 1.34961 6.26654L1.31055 6.57416L1.28516 6.75287V7.41889L1.32324 7.86713C1.42605 8.92996 1.6324 9.92887 1.99219 10.9277L2.33887 11.8759L2.5957 12.4902L2.77539 12.8749L2.96875 13.2587L3.32812 13.9501C4.03494 15.3332 4.9348 16.6012 5.96289 17.7665L6.25879 18.0995L6.60547 18.4706L7.71094 19.5595L8.10938 19.9306L8.41797 20.2128C9.26605 20.9683 10.166 21.6337 11.1426 22.2099L11.9258 22.6708L12.3633 22.9013C13.8797 23.7209 15.7428 24.4005 17.4648 24.6054C17.6318 24.631 17.7862 24.6308 17.9531 24.6308C18.2359 24.6948 18.5063 24.6691 18.7891 24.6435L19.1104 24.6054C19.6629 24.5414 20.1639 24.3615 20.665 24.1054C21.0505 23.9005 21.3722 23.5935 21.6807 23.2734L21.6543 23.2861L22.3096 22.5947L22.7988 22.082L23.2734 21.5829C23.4019 21.4421 23.5564 21.301 23.6592 21.1474C23.8647 20.8401 23.9421 20.456 23.8779 20.1103C23.8137 19.7518 23.6341 19.4951 23.3643 19.2646L21.5645 17.7412L21.2432 17.4716L20.999 17.2675L19.958 16.4091C19.4697 16.0506 18.7886 16.1533 18.3389 16.6015L16.8994 18.0351C16.7323 18.2016 16.5523 18.3174 16.3467 18.4199C15.73 18.7269 14.9465 18.5858 14.3555 18.2402L13.3525 17.6513L12.749 17.2412L11.7979 16.4863L11.5664 16.2939L11.1934 15.9609C9.85684 14.7571 8.72576 13.3611 7.82617 11.7988L7.4541 11.082C7.00434 10.2112 6.93971 9.3274 7.65918 8.61029L8.8418 7.41889L9.22754 7.00971C9.66449 6.54869 9.75386 5.8695 9.35547 5.37006L8.7002 4.52533L7.85254 3.43646L7.0166 2.36029L6.8623 2.16889C6.72098 2.00246 6.59307 1.78417 6.40039 1.66889ZM16.8232 4.20697C17.4915 4.28381 18.0962 4.42426 18.7002 4.706C19.0599 4.87246 19.3808 5.10359 19.7148 5.32123C20.8585 6.11519 21.7194 7.72821 21.8223 9.12396L21.874 9.76459L21.8867 9.77728C21.9124 10.1614 21.6942 10.4944 21.2959 10.5585C20.8976 10.6226 20.589 10.2512 20.5889 9.86713V9.36713C20.4216 7.30552 18.8279 5.6536 16.7461 5.49994L16.1162 5.46185C15.7823 5.44882 15.5645 5.12846 15.5645 4.82123C15.5645 4.51392 15.8085 4.20697 16.1426 4.20697H16.8232ZM16.6025 0.00482341C18.1447 -0.0464011 19.649 0.312538 21.0498 0.978456L21.7695 1.37494C22.2963 1.66946 22.7584 2.02857 23.1953 2.45111C24.3904 3.57799 25.2515 4.9991 25.6885 6.57416L25.8691 7.48334C25.9848 8.04668 26.0099 8.62302 25.9971 9.19916V9.60932C26.0356 10.0063 25.8043 10.3136 25.4316 10.4033C25.2262 10.4416 25.0466 10.3906 24.9053 10.2372C24.6868 10.0195 24.6867 9.71158 24.751 9.40424C24.7765 9.30182 24.751 9.11018 24.751 9.00775L24.7246 8.57221L24.7383 8.55951L24.7119 8.12396C24.6348 7.43243 24.4807 6.77892 24.2236 6.13861L23.748 5.15326C23.6195 4.87153 23.4397 4.64071 23.2598 4.3974C22.6043 3.52659 21.7821 2.80917 20.8311 2.28412L20.1758 1.95111C19.7132 1.72066 19.2249 1.56713 18.7109 1.47748L17.9141 1.33685L17.4893 1.29779C17.2966 1.28498 17.1039 1.25951 16.8984 1.2851C16.5772 1.32352 16.2688 1.23371 16.0889 0.964784C15.9734 0.760039 15.9862 0.555462 16.0889 0.325136C16.1788 0.197139 16.3586 0.0177909 16.6025 0.00482341Z"/>
-                    </svg>
-                    <span>
-                        <small>お電話でのお申し込み・ご相談はこちら</small>
-                        <strong>0120-14-2013</strong>
-                    </span>
-                </a>
-            </div>
+        <nav class="gnav" aria-label="メインメニュー">
+          <ul>
+            <?php foreach ( $fc_nav as $item ) : ?>
+            <li><a href="<?php echo esc_url( $item['url'] ); ?>"<?php echo $item['current'] ? ' aria-current="page"' : ''; ?>><?php echo esc_html( $item['label'] ); ?></a></li>
+            <?php endforeach; ?>
+          </ul>
         </nav>
-        <section class="mobile-nav-contact">
-            <div class="container">
-                <div class="section-lead">
-                    <h2>あなたのフランチャイズ<br class="sp-only">経営を成功に導く</h2>
-                </div>
-                <div class="section-desc">まずはお気軽にお問い合わせ、<br class="sp-only">または無料資料請求をご利用ください！</div>
-                <ul class="section-actions">
-                    <li>
-                        <a href="https://fureasu.youcanbook.me/" class="action-btn action-btn--secondary" target="_blank" rel="noopener noreferrer">
-                            <span>無料説明会</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<?php echo HOME . 'contact'; ?>" class="action-btn action-btn--white">
-                            <span>資料請求（無料）<br>・お問い合わせ</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
+      </div>
+      <div class="hd__ctas">
+        <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="hcta hcta--form">
+          <span class="hcta__lead">ご予約はこちら</span>
+          <span class="hcta__ttl">無料<br>説明会</span>
+        </a>
+        <a href="<?php echo esc_url( $fc_contact ); ?>" class="hcta hcta--line">
+          <span class="hcta__lead">無料でお届け</span>
+          <span class="hcta__ttl">資料請求</span>
+        </a>
+        <a href="<?php echo esc_url( $fc_tel ); ?>" class="hcta hcta--tel">
+          <span class="hcta__lead">お問い合わせ</span>
+          <span class="hcta__tel">0120-14-2013</span>
+          <span class="hcta__lead">平日 9:00〜18:00</span>
+        </a>
+      </div>
     </div>
+  </div>
+  <div class="hd__sp">
+    <a href="<?php echo esc_url( HOME ); ?>" class="hd__sp-logo">
+      <img src="<?php echo esc_url( $rc . '/logo_fureasu.svg' ); ?>" alt="fureasu"><span>フランチャイズ<br>加盟店募集サイト</span>
+    </a>
+    <a href="<?php echo esc_url( $fc_meet ); ?>" class="hd__sp-entry" target="_blank" rel="noopener">
+      <small>ご予約はこちら</small>
+      <b>無料説明会</b>
+      <span class="hd__sp-pill">説明会に参加</span>
+    </a>
+    <button class="hd__sp-menu" type="button" aria-label="メニュー" aria-expanded="false" aria-controls="drawer"><span></span><span></span><span></span></button>
+  </div>
+</header>
 
-    <main id="main">
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="メニュー">
+  <div class="drawer__panel">
+    <div class="drawer__fixed">
+      <div class="drawer__head">
+        <a href="<?php echo esc_url( HOME ); ?>" class="drawer__logo"><img src="<?php echo esc_url( $rc . '/logo_fureasu.svg' ); ?>" alt="fureasu"><span class="drawer__logo-sub">フランチャイズ<br>加盟店募集サイト</span></a>
+        <button class="drawer__close" type="button" aria-label="閉じる">×</button>
+      </div>
+      <div class="a11y-bar" data-a11y-bar>
+        <button type="button" class="a11y-btn a11y-btn--mono" data-a11y-mono aria-pressed="false">モノクロモード <span data-a11y-state>OFF</span></button>
+      </div>
+    </div>
+    <nav aria-label="メニュー">
+      <ul>
+        <?php foreach ( $fc_nav as $item ) : ?>
+        <li><a href="<?php echo esc_url( $item['url'] ); ?>"<?php echo $item['current'] ? ' aria-current="page"' : ''; ?>><?php echo esc_html( $item['label'] ); ?></a></li>
+        <?php endforeach; ?>
+      </ul>
+    </nav>
+    <div class="drawer__cta">
+      <span class="drawer__cta-lead">説明会・資料請求は<br>こちらから</span>
+      <a href="<?php echo esc_url( $fc_contact ); ?>" class="drawer__cta-btn">資料請求はこちら</a>
+    </div>
+    <div class="drawer__ctas">
+      <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="fcta fcta--form">
+        <span class="fcta__lead">ご予約はこちら</span>
+        <span class="fcta__ttl">無料説明会</span>
+        <span class="fcta__btn">説明会に参加 →</span>
+      </a>
+      <a href="<?php echo esc_url( $fc_contact ); ?>" class="fcta fcta--line">
+        <span class="fcta__lead">無料でお届け</span>
+        <span class="fcta__ttl">資料請求</span>
+        <span class="fcta__btn">フォームで請求 →</span>
+      </a>
+      <a href="<?php echo esc_url( $fc_tel ); ?>" class="fcta fcta--tel">
+        <span class="fcta__lead">お電話</span>
+        <span class="fcta__ttl">0120-14-2013</span>
+        <span class="fcta__lead">平日 9:00〜18:00</span>
+      </a>
+      <a href="<?php echo esc_url( $fc_contact ); ?>" class="fcta fcta--contact">加盟に関する<br>お問い合わせ</a>
+    </div>
+    <div class="drawer__visit">
+      <p class="drawer__visit-ttl">無料説明会</p>
+      <p class="drawer__visit-txt">まずは説明会でご相談ください。<br>オンラインでご参加いただけます。</p>
+      <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="btn-yl drawer__visit-btn">説明会に参加</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">

@@ -14,7 +14,7 @@ html {
 @media only screen and (max-width: 768px) {
   html {
     font-size: 10px;
-    font-size: clamp(6px, 2.56411vw, 10px);
+    font-size: clamp(6px, 2.56411vw, 20px);
   }
 }
 
@@ -1364,23 +1364,6 @@ figure img {
     margin-bottom: 0.8rem;
   }
 }
-.voice-card .voice-body .year {
-  position: relative;
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #231815;
-}
-.voice-card .voice-body .price {
-  position: relative;
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: #231815;
-  margin-top: 0.2rem;
-}
 .voice-card .voice-body .desc {
   position: relative;
   display: block;
@@ -1911,7 +1894,7 @@ html.lenis body {
   left: 0;
   width: 100%;
   background: rgba(255, 255, 255, 0.92);
-  padding: 1.8rem 0 1.8rem;
+  padding: 1.95rem 0;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   z-index: 991;
@@ -1929,8 +1912,10 @@ html.lenis body {
   }
 }
 #header .container {
-  max-width: 100%;
-  width: 100%;
+  width: min(100%, 156rem);
+  max-width: 156rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 #header .header-wrapper {
   position: relative;
@@ -1970,28 +1955,28 @@ html.lenis body {
 #header .header-wrapper .header-logo a {
   position: relative;
   display: block;
-  width: 26.8rem;
+  width: auto;
   max-width: 100%;
-}
-@media only screen and (max-width: 768px) {
-  #header .header-wrapper .header-logo a {
-    width: 16.4rem;
-  }
 }
 #header .header-wrapper .header-logo a > img {
   position: relative;
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 4.05rem;
   margin: 0;
   border: none;
 }
+@media only screen and (max-width: 768px) {
+  #header .header-wrapper .header-logo a > img {
+    height: 2.62rem;
+  }
+}
 #header .header-wrapper .header-logo span {
   position: relative;
-  font-size: 1.4rem;
-  font-weight: 600;
-  line-height: 1.8rem;
-  letter-spacing: 0.05em;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
   color: #B10080;
   white-space: nowrap;
 }
@@ -2102,7 +2087,7 @@ html.lenis body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  padding: 0 2.5rem 0 2.4rem;
+  padding: 0 0.9rem;
 }
 #header .header-wrapper .header-nav .nav-menu > li::before {
   content: "";
@@ -2115,7 +2100,7 @@ html.lenis body {
   z-index: 0;
 }
 #header .header-wrapper .header-nav .nav-menu > li:first-child {
-  padding-left: 2.5rem;
+  padding-left: 0.9rem;
 }
 #header .header-wrapper .header-nav .nav-menu > li:first-child::after {
   content: "";
@@ -2133,10 +2118,10 @@ html.lenis body {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  font-size: 1.6rem;
-  font-weight: 500;
-  line-height: 2rem;
-  letter-spacing: 0.1em;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
   color: #000000;
   padding: 0;
   margin: 0;
@@ -2400,12 +2385,12 @@ html.lenis body {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.5;
-  letter-spacing: 0.05em;
+  letter-spacing: 0;
   color: #231815;
-  padding: 2rem 0.4rem;
+  padding: 1.4rem 0.2rem;
   -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
@@ -2551,6 +2536,19 @@ body.mobile-nav-active #mobile-nav {
 #footer {
   position: relative;
   padding: 8rem 0 8rem;
+}
+#footer .container {
+  width: min(100% - 4.8rem, 145.4rem);
+  max-width: 145.4rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+@media only screen and (max-width: 768px) {
+  #footer .container {
+    width: min(100% - 3.2rem, 36rem);
+  }
+}
+#footer {
   background: #FFFFFF;
   z-index: 0;
 }
@@ -2600,19 +2598,21 @@ body.mobile-nav-active #mobile-nav {
 #footer .footer-brand .footer-logo a {
   position: relative;
   display: block;
-  width: 32.1rem;
+  width: auto;
   max-width: 100%;
-}
-@media only screen and (max-width: 768px) {
-  #footer .footer-brand .footer-logo a {
-    width: 25.6rem;
-  }
 }
 #footer .footer-brand .footer-logo a > img {
   position: relative;
   display: block;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 5.65rem;
+}
+@media only screen and (max-width: 768px) {
+  #footer .footer-brand .footer-logo a > img {
+    height: 3.29rem;
+  }
+}
+#footer .footer-brand .footer-logo a > img {
   margin: 0;
   border: none;
 }
@@ -2643,6 +2643,7 @@ body.mobile-nav-active #mobile-nav {
 @media only screen and (max-width: 768px) {
   #footer .footer-brand .footer-info {
     margin-top: 3.2rem;
+    font-size: 1.2rem;
     text-align: left;
   }
 }
@@ -2932,6 +2933,7 @@ body.mobile-nav-active #mobile-nav {
     -ms-grid-rows: auto 1rem auto 1rem auto 1rem auto 1rem auto;
     grid-template-rows: repeat(5, auto);
     gap: 1rem 3.6rem;
+    font-size: 1.5rem;
   }
   #footer .footer-nav .footer-menu > *:nth-child(1) {
     -ms-grid-row: 1;
@@ -3400,8 +3402,8 @@ body.mobile-nav-active #mobile-nav {
 
 .footer-copyright {
   position: relative;
-  padding: 1.2rem 2rem;
-  font-size: 1.4rem;
+  padding: 1.6rem 2rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.4rem;
   color: #FFFFFF;

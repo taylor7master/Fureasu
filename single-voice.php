@@ -75,7 +75,7 @@ if ( have_posts() ) :
                 <h4 class="lead"><?php echo esc_html( $data['bottom_lead'] ); ?></h4>
                 <?php endif; ?>
                 <?php if ( $data['bottom_desc'] !== '' ) : ?>
-                <p class="desc"><?php echo esc_html( $data['bottom_desc'] ); ?></p>
+                <p class="desc"><?php echo fureasu_kses_inline( $data['bottom_desc'] ); ?></p>
                 <?php endif; ?>
             </div>
             <?php endif; ?>

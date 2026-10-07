@@ -1,12 +1,20 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+function fureasu_sanitize_textarea( $text ) {
+    $text = wp_check_invalid_utf8( (string) $text );
+    return trim( wp_kses( $text, [
+        'br' => [ 'class' => true ],
+    ] ) );
+}
+
 function fureasu_kses_inline( $html ) {
-    return wp_kses( (string) $html, [
+    $html = wp_kses( (string) $html, [
         'br'   => [ 'class' => true ],
         'em'   => [],
         'span' => [ 'class' => true ],
     ] );
+    return nl2br( $html, false );
 }
 
 function fureasu_theme_image( $relative, $fallback = 'voice01.png' ) {
@@ -28,8 +36,6 @@ function fureasu_voice_defaults() {
         'lead_html'   => '',
         'desc_html'   => '',
         'image'       => '',
-        'year'        => '',
-        'sales'       => '',
         'excerpt'     => '',
         'faqs'        => [],
         'bottom_lead' => '',

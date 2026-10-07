@@ -1,6 +1,16 @@
 #footer {
   position: relative;
   padding: 8.0rem 0 8.0rem;
+
+  .container {
+    width: min(100% - 4.8rem, 145.4rem);
+    max-width: 145.4rem;
+    padding-left: 0;
+    padding-right: 0;
+    @include sp {
+      width: min(100% - 3.2rem, 36rem);
+    }
+  }
   background: $color-white;
   z-index: 0;
   @include sp {
@@ -35,16 +45,16 @@
       a {
         position: relative;
         display: block;
-        width: 32.1rem;
+        width: auto;
         max-width: 100%;
-        @include sp {
-          width: 25.6rem;
-        }
         & > img {
           position: relative;
           display: block;
-          width: 100%;
-          height: auto;
+          width: auto;
+          height: 5.65rem;
+          @include sp {
+            height: 3.29rem;
+          }
           margin: 0;
           border: none;
         }
@@ -73,6 +83,7 @@
       margin-top: 4.8rem;
       @include sp {
         margin-top: 3.2rem;
+        font-size: 1.2rem;
         text-align: left;
       }
       a {
@@ -259,6 +270,7 @@
         grid-template-columns: auto auto;
         grid-template-rows: repeat(5, auto);
         gap: 1.0rem 3.6rem;
+        font-size: 1.5rem;
       }
       & > li {
         position: relative;
@@ -590,8 +602,8 @@
 
 .footer-copyright {
   position: relative;
-  padding: 1.2rem 2.0rem;
-  font-size: 1.4rem;
+  padding: 1.6rem 2.0rem;
+  font-size: 1.6rem;
   font-weight: 500;
   line-height: 2.4rem;
   color: $color-white;

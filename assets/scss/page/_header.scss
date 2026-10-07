@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   background: rgba($color-white, 0.92);
-  padding: 1.8rem 0 1.8rem;
+  padding: 1.95rem 0;
   transition: all 0.2s ease-in-out;
   z-index: 991;
   @include sp {
@@ -15,8 +15,10 @@
   }
 
   .container {
-    max-width: 100%;
-    width: 100%;
+    width: min(100%, 156rem);
+    max-width: 156rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .header-wrapper {
@@ -45,26 +47,26 @@
       a {
         position: relative;
         display: block;
-        width: 26.8rem;
+        width: auto;
         max-width: 100%;
-        @include sp {
-          width: 16.4rem;
-        }
         & > img {
           position: relative;
           display: block;
-          width: 100%;
-          height: auto;
+          width: auto;
+          height: 4.05rem;
           margin: 0;
           border: none;
+          @include sp {
+            height: 2.62rem;
+          }
         }
       }
       span {
         position: relative;
-        font-size: 1.4rem;
-        font-weight: 600;
-        line-height: 1.8rem;
-        letter-spacing: 0.05em;
+        font-size: 1.15rem;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: 0;
         color: $color-base;
         white-space: nowrap;
         @include sp {
@@ -142,7 +144,7 @@
           position: relative;
           flex: 0 0 auto;
           width: fit-content;
-          padding: 0 2.5rem 0 2.4rem;
+          padding: 0 0.9rem;
           &::before {
             content: "";
             position: absolute;
@@ -154,7 +156,7 @@
             z-index: 0;
           }
           &:first-child {
-            padding-left: 2.5rem;
+            padding-left: 0.9rem;
             &::after {
               content: "";
               position: absolute;
@@ -170,10 +172,10 @@
             position: relative;
             display: block;
             width: fit-content;
-            font-size: 1.6rem;
-            font-weight: 500;
-            line-height: 2.0rem;
-            letter-spacing: 0.1em;
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: 0;
             color: $color-black;
             padding: 0;
             margin: 0;
@@ -407,12 +409,12 @@
         display: flex;
         align-items: center;
         width: 100%;
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: 700;
         line-height: 1.5;
-        letter-spacing: 0.05em;
+        letter-spacing: 0;
         color: $color-primary;
-        padding: 2.0rem 0.4rem;
+        padding: 1.4rem 0.2rem;
         transition: color 0.2s ease;
         &:hover {
           color: $color-base;

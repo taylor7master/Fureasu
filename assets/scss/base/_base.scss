@@ -12,7 +12,7 @@ html {
   margin: 0;
   @include sp {
     font-size: 10px;
-    font-size: clamp(6px, 2.56411vw, 10px);
+    font-size: clamp(6px, 2.56411vw, 20px);
   }
 }
 

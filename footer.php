@@ -1,179 +1,103 @@
     </main>
-    <!-- END  #main -->
 
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-wrapper">
-                <div class="footer-brand">
-                    <div class="footer-logo">
-                        <a href="<?php echo HOME; ?>">
-                            <img src="<?php echo T_DIRE_URI; ?>/assets/image/logo.svg" alt="株式会社フレアス" loading="lazy">
-                        </a>
-                        <span>フランチャイズ<br>加盟店募集サイト</span>
-                    </div>
-                    <div class="footer-info">〒141-0031 東京都品川区西五反田二丁目27番3号<br class="sp-only">（A-PLACE五反田3F）</div>
-                </div>
-                <nav class="footer-nav">
-                    <ul class="footer-menu">
-                        <li>
-                            <a href="<?php echo HOME . 'about/'; ?>" class="menu-link">FCについて</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'support/'; ?>" class="menu-link">開業までの流れ</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'model/'; ?>" class="menu-link">収益モデル</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'voice/'; ?>" class="menu-link">加盟オーナーの声</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'faq/'; ?>" class="menu-link">よくあるご質問</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'column/'; ?>" class="menu-link">コラム</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'support/'; ?>" class="menu-link">開業サポート</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'column/'; ?>" class="menu-link">お知らせ・ニュース</a>
-                        </li>
-                        <li>
-                            <a href="https://fureasu.jp/" class="menu-link" target="_blank" rel="noopener noreferrer">会社情報</a>
-                        </li>
-                        <li>
-                            <a href="https://recruit.fureasu.jp/" class="menu-link" target="_blank" rel="noopener noreferrer">採用情報</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="footer-contact">
-                    <ul class="contact-list">
-                        <li>
-                            <a href="https://fureasu.youcanbook.me/" class="contact-card outline" target="_blank" rel="noopener noreferrer">
-                                <div class="inner">
-                                    <p class="sup">24時間いつでも応募OK</p>
-                                    <p class="lead">無料説明会</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'contact/'; ?>" class="contact-card fill">
-                                <div class="inner">
-                                    <p class="sup">DOWNLOAD</p>
-                                    <p class="lead">無料<br>資料請求</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'contact/'; ?>" class="contact-card secondary">
-                                <div class="inner">
-                                    <p class="sup">CONTACT</p>
-                                    <p class="lead">お問い合わせ</p>
-                                    <p class="time">平日 9:00〜18:00</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-related">
-                    <h4 class="related-title">関連サイト</h4>
-                    <ul class="related-list">
-                        <li>
-                            <a href="https://fureasu.jp/" class="related-link" target="_blank" rel="noopener noreferrer">
-                                <span>コーポレートサイト</span>
-                                <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
-                                    <path d="M0.910476 6L0 5.08952L3.84381 1.2419H0.95619L0.963809 0H5.99619V5.03619H4.74667L4.75429 2.15238L0.910476 6Z"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://fureasu.jp/" class="related-link secondary" target="_blank" rel="noopener noreferrer">
-                                <span>サービスサイト</span>
-                                <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
-                                    <path d="M0.910476 6L0 5.08952L3.84381 1.2419H0.95619L0.963809 0H5.99619V5.03619H4.74667L4.75429 2.15238L0.910476 6Z"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://recruit.fureasu.jp/" class="related-link" target="_blank" rel="noopener noreferrer">
-                                <span>採用サイト</span>
-                                <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
-                                    <path d="M0.910476 6L0 5.08952L3.84381 1.2419H0.95619L0.963809 0H5.99619V5.03619H4.74667L4.75429 2.15238L0.910476 6Z"/>
-                                </svg>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://fureasu.jp/" class="related-link secondary" target="_blank" rel="noopener noreferrer">
-                                <span>グループサイト</span>
-                                <svg width="6" height="6" viewBox="0 0 6 6" fill="currentColor">
-                                    <path d="M0.910476 6L0 5.08952L3.84381 1.2419H0.95619L0.963809 0H5.99619V5.03619H4.74667L4.75429 2.15238L0.910476 6Z"/>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer-other">
-                    <ul class="other-list">
-                        <!-- <li>
-                            <ol class="sns">
-                                <li>
-                                    <a href="https://www.instagram.com/fureasu_group/" class="sns-link" target="_blank" rel="noopener noreferrer">
-                                        <img src="<?php echo T_DIRE_URI; ?>/assets/image/sns01.png" alt="Instagram" loading="lazy">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://x.com/fureasu_group" class="sns-link" target="_blank" rel="noopener noreferrer">
-                                        <img src="<?php echo T_DIRE_URI; ?>/assets/image/sns02.png" alt="Twitter" loading="lazy">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.tiktok.com/@fureasu_group" class="sns-link" target="_blank" rel="noopener noreferrer">
-                                        <img src="<?php echo T_DIRE_URI; ?>/assets/image/sns03.png" alt="TikTok" loading="lazy">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://www.youtube.com/@fureasu_group" class="sns-link" target="_blank" rel="noopener noreferrer">
-                                        <img src="<?php echo T_DIRE_URI; ?>/assets/image/sns04.png" alt="YouTube" loading="lazy">
-                                    </a>
-                                </li>
-                            </ol>
-                        </li> -->
-                        <li>
-                            <ol class="other">
-                                <li>
-                                    <a href="https://fureasu.jp/" class="other-link" target="_blank" rel="noopener noreferrer">
-                                        <img src="<?php echo T_DIRE_URI; ?>/assets/image/ohter01.png" alt="コーポレートサイト" loading="lazy">
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://fureasu.jp/" class="other-link" target="_blank" rel="noopener noreferrer">
-                                        <img src="<?php echo T_DIRE_URI; ?>/assets/image/ohter02.png" alt="コーポレートサイト" loading="lazy">
-                                    </a>
-                                </li>
-                            </ol>
-                        </li>
-                    </ul>
-                    <ul class="term-list">
-                        <li>
-                            <a href="<?php echo HOME . 'privacy/'; ?>" class="term-link">
-                                <span>プライバシーポリシー</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="<?php echo HOME . 'terms/'; ?>" class="term-link">
-                                <span>利用規約</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                
-            </div>
+<?php
+$fc_meet    = 'https://fureasu.youcanbook.me/';
+$fc_contact = HOME . 'contact/';
+$fc_tel     = 'tel:0120142013';
+$rc         = T_DIRE_URI . '/assets/image/recruit';
+?>
+
+<footer class="ft">
+  <div class="wrap">
+    <div class="ft__inner">
+      <div>
+        <div class="ft__logo-row">
+          <p class="ft__logo"><img src="<?php echo esc_url( $rc . '/logo_fureasu.svg' ); ?>" alt="fureasu" class="ft__logo-img"></p>
+          <div class="ft__searchwrap">
+            <p class="ft__search-lead">説明会・資料請求は<br>こちらから</p>
+            <a href="<?php echo esc_url( $fc_contact ); ?>" class="ft__search">資料請求はこちら</a>
+          </div>
         </div>
-    </footer>
-    <div class="footer-copyright">
-        <p>© fureasu group All Rights Reserved</p>
+        <p class="ft__addr">〒141-0031 東京都品川区西五反田二丁目27番3号（A-PLACE五反田3F）</p>
+        <div class="ft__group ft__group--related">
+          <p class="ft__group-ttl ft__group-ttl--related">関連サイト</p>
+          <div class="ft__pills">
+            <a href="https://fureasu.jp/" target="_blank" rel="noopener" class="ft__pill ft__pill--corporate">コーポレートサイト ↗</a>
+            <a href="https://fureasu.jp/business/" target="_blank" rel="noopener" class="ft__pill ft__pill--service">サービスサイト ↗</a>
+            <a href="https://recruit.fureasu.jp/" target="_blank" rel="noopener" class="ft__pill ft__pill--fc">採用サイト ↗</a>
+          </div>
+        </div>
+        <div class="ft__group ft__group--brands">
+          <p class="ft__group-ttl ft__group-ttl--brands">グループサイト</p>
+          <div class="ft__pills">
+            <a href="https://leis.jp/" target="_blank" rel="noopener" class="ft__pill ft__pill--leis">株式会社オルテンシア<br class="br-sp">ハーモニー ↗</a>
+            <a href="https://kindcare.fureasu.jp/" target="_blank" rel="noopener" class="ft__pill ft__pill--kindcare">フレアスカインドケア<br class="br-sp">株式会社 ↗</a>
+          </div>
+        </div>
+        <div class="ft__ctas">
+          <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="fcta fcta--form">
+            <span class="fcta__lead">ご予約はこちら</span>
+            <span class="fcta__ttl">無料説明会</span>
+            <span class="fcta__btn">説明会に参加 →</span>
+          </a>
+          <a href="<?php echo esc_url( $fc_contact ); ?>" class="fcta fcta--line">
+            <span class="fcta__lead">無料でお届け</span>
+            <span class="fcta__ttl">資料請求</span>
+            <span class="fcta__btn">フォームで請求 →</span>
+          </a>
+          <a href="<?php echo esc_url( $fc_tel ); ?>" class="fcta fcta--tel">
+            <span class="fcta__lead">お問い合わせ</span>
+            <span class="fcta__ttl">0120-14-2013</span>
+            <span class="fcta__lead">平日 9:00〜18:00</span>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="ft__cols">
+          <div class="fcol fcol--other">
+            <ul>
+              <li><a href="<?php echo esc_url( HOME . 'about/' ); ?>">FCについて</a></li>
+              <li><a href="<?php echo esc_url( HOME . 'support/' ); ?>">開業までの流れ</a></li>
+              <li><a href="<?php echo esc_url( HOME . 'model/' ); ?>">収益モデル</a></li>
+            </ul>
+          </div>
+          <div class="fcol fcol--other">
+            <ul>
+              <li><a href="<?php echo esc_url( HOME . 'voice/' ); ?>">加盟オーナーの声</a></li>
+              <li><a href="<?php echo esc_url( HOME . 'column/' ); ?>">コラム</a></li>
+              <li><a href="<?php echo esc_url( HOME . 'faq/' ); ?>">よくあるご質問</a></li>
+            </ul>
+          </div>
+          <div class="fcol fcol--other">
+            <ul>
+              <li><a href="<?php echo esc_url( HOME . 'support/' ); ?>">開業サポート</a></li>
+              <li><a href="https://recruit.fureasu.jp/news/" target="_blank" rel="noopener">お知らせ・ニュース</a></li>
+            </ul>
+          </div>
+          <div class="fcol fcol--other">
+            <ul>
+              <li><a href="https://fureasu.jp/" target="_blank" rel="noopener">会社情報</a></li>
+              <li><a href="https://recruit.fureasu.jp/" target="_blank" rel="noopener">採用情報</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ft__right-bottom">
+          <div class="ft__sns">
+            <a href="https://www.instagram.com/fureasu_recruit/" target="_blank" rel="noopener" class="sns-ic sns-ic--ig" aria-label="Instagram（新しいタブで開きます）"><img src="<?php echo esc_url( $rc . '/sns/instagram.png' ); ?>" alt="Instagram"></a>
+            <a href="https://x.com/fureasu_recruit" target="_blank" rel="noopener" class="sns-ic sns-ic--x" aria-label="X（新しいタブで開きます）"><img src="<?php echo esc_url( $rc . '/sns/xcom.png' ); ?>" alt="X"></a>
+            <a href="https://www.tiktok.com/@fureasu_recruit/" target="_blank" rel="noopener" class="sns-ic sns-ic--tiktok" aria-label="TikTok（新しいタブで開きます）"><img src="<?php echo esc_url( $rc . '/sns/tiktok.png' ); ?>" alt="TikTok"></a>
+          </div>
+          <div class="ft__japhic"><img src="<?php echo esc_url( $rc . '/sns/japhic1.png' ); ?>" alt="JAPHICマーク" class="ft__japhic-1"><img src="<?php echo esc_url( $rc . '/sns/japhic2.png' ); ?>" alt="JAPHICマーク（メディカル）" class="ft__japhic-2"></div>
+        </div>
+        <div class="ft__legal">
+          <a href="<?php echo esc_url( HOME . 'privacy/' ); ?>">プライバシーポリシー</a><span aria-hidden="true">｜</span>
+          <a href="<?php echo esc_url( HOME . 'terms/' ); ?>">利用規約</a>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="ft__band">© fureasu group All Rights Reserved</div>
+</footer>
 
     <?php wp_footer(); ?>
 

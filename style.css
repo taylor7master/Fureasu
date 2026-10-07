@@ -54,3 +54,115 @@ html.is-mono .mobile-nav-toggle,
 html.is-mono .mobile-nav-overly {
   filter: grayscale(100%);
 }
+
+/* 採用サイト（1600px基準）のヘッダー・フッター幅と文字サイズ */
+#header {
+  padding: 1.95rem 0;
+}
+
+#header .container {
+  width: min(100%, 156rem);
+  max-width: 156rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#header .header-wrapper .header-logo a {
+  width: auto;
+}
+
+#header .header-wrapper .header-logo a > img {
+  width: auto;
+  height: 4.05rem;
+}
+
+#header .header-wrapper .header-logo span {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+#header .header-wrapper .header-nav .nav-menu > li {
+  padding: 0 0.9rem;
+}
+
+#header .header-wrapper .header-nav .nav-menu > li:first-child {
+  padding-left: 0.9rem;
+}
+
+#header .header-wrapper .header-nav .nav-menu > li .menu-link {
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+#footer .container {
+  width: min(100% - 4.8rem, 145.4rem);
+  max-width: 145.4rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#footer .footer-brand .footer-logo a {
+  width: auto;
+}
+
+#footer .footer-brand .footer-logo a > img {
+  width: auto;
+  height: 5.65rem;
+}
+
+#footer .footer-brand .footer-info {
+  font-size: 1.4rem;
+}
+
+#footer .footer-nav .footer-menu {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+#footer .term-list {
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.footer-copyright {
+  padding: 1.6rem 2rem;
+  font-size: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+  #header .header-wrapper .header-logo a > img {
+    height: 2.62rem;
+  }
+
+  #header .header-wrapper .header-logo span {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  #mobile-nav .mobile-nav-menu > li > a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    padding: 1.4rem 0.2rem;
+  }
+
+  #footer .container {
+    width: min(100% - 3.2rem, 36rem);
+  }
+
+  #footer .footer-brand .footer-logo a > img {
+    height: 3.29rem;
+  }
+
+  #footer .footer-brand .footer-info {
+    font-size: 1.2rem;
+  }
+
+  #footer .footer-nav .footer-menu {
+    font-size: 1.5rem;
+  }
+}

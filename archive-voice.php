@@ -30,9 +30,10 @@ if ( $type !== '' ) {
 $voice_query = new WP_Query( $args );
 $archive_url = get_post_type_archive_link( 'voice' );
 $filters = [
-    ''           => '全て',
-    'corporate'  => '法人',
-    'individual' => '個人',
+    ''      => '全て',
+    'north' => '北日本',
+    'east'  => '東日本',
+    'west'  => '西日本',
 ];
 ?>
 <section class="voice-firstview">

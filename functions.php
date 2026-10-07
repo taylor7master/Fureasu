@@ -79,7 +79,8 @@ function theme_add_files() {
     wp_enqueue_style('c-scroll-hint', 'https://unpkg.com/scroll-hint@latest/css/scroll-hint.css', [], '1.0', 'all');
     wp_enqueue_style('c-aos', 'https://unpkg.com/aos@2.3.0/dist/aos.css', [], '1.0', 'all');
     wp_enqueue_style('c-app', T_DIRE_URI.'/assets/css/app.css', [], '1.0', 'all');
-    wp_enqueue_style('c-theme', T_DIRE_URI.'/style.css', [], '1.0', 'all');
+    wp_enqueue_style('c-style', T_DIRE_URI.'/style.css', [], '1.2', 'all');
+    wp_enqueue_style('c-theme', T_DIRE_URI.'/assets/css/theme.css', [], '1.1', 'all');
 
     // WordPress本体のjquery.jsを読み込まない
     if(!is_admin()) {
@@ -90,7 +91,8 @@ function theme_add_files() {
     wp_enqueue_script('s-swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '1.0', true);
     wp_enqueue_script('s-scroll-hint', 'https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js', [], '1.0', true);
     wp_enqueue_script('s-aos', 'https://unpkg.com/aos@2.3.0/dist/aos.js', [], '1.0', true);
-    wp_enqueue_script('s-app', T_DIRE_URI.'/assets/js/app.js', [], '1.0', true);
+    wp_enqueue_script('s-app', T_DIRE_URI.'/assets/js/app.js', [], '1.1', true);
+    wp_enqueue_script('s-theme', T_DIRE_URI.'/assets/js/theme.js', [], '1.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'theme_add_files', 100);

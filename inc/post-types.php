@@ -77,18 +77,17 @@ function fureasu_voice_meta_box_html( $post ) {
     ?>
     <p><label>肩書き<br><textarea name="voice_position" rows="2" class="large-text"><?php echo esc_textarea( $data['position'] ); ?></textarea></label></p>
     <p><label>氏名<br><input type="text" name="voice_name" class="large-text" value="<?php echo esc_attr( $data['name'] ); ?>"></label></p>
-    <p><label>見出し（改行は &lt;br&gt;）<br><textarea name="voice_lead_html" rows="2" class="large-text"><?php echo esc_textarea( $data['lead_html'] ); ?></textarea></label></p>
+    <p><label>見出し<br><textarea name="voice_lead_html" rows="2" class="large-text"><?php echo esc_textarea( $data['lead_html'] ); ?></textarea></label></p>
     <p><label>紹介文<br><textarea name="voice_desc_html" rows="5" class="large-text"><?php echo esc_textarea( $data['desc_html'] ); ?></textarea></label></p>
     <p><label>一覧用タグ（カンマ区切り）<br><input type="text" name="voice_tags" class="large-text" value="<?php echo esc_attr( implode( ', ', (array) $data['tags'] ) ); ?>"></label></p>
-    <p><label>開業年数<br><input type="text" name="voice_year" class="regular-text" value="<?php echo esc_attr( $data['year'] ); ?>"></label></p>
-    <p><label>売上<br><input type="text" name="voice_sales" class="regular-text" value="<?php echo esc_attr( $data['sales'] ); ?>"></label></p>
     <p><label>画像パス（テーマ assets/image からの相対パス。アイキャッチがあればそちらを優先）<br><input type="text" name="voice_image" class="large-text" value="<?php echo esc_attr( $data['image'] ); ?>"></label></p>
     <p>
-        <label>区分<br>
+        <label>エリア<br>
             <select name="voice_type">
                 <option value="">未設定</option>
-                <option value="corporate" <?php selected( $current_type, 'corporate' ); ?>>法人</option>
-                <option value="individual" <?php selected( $current_type, 'individual' ); ?>>個人</option>
+                <option value="north" <?php selected( $current_type, 'north' ); ?>>北日本</option>
+                <option value="east" <?php selected( $current_type, 'east' ); ?>>東日本</option>
+                <option value="west" <?php selected( $current_type, 'west' ); ?>>西日本</option>
             </select>
         </label>
     </p>
@@ -125,9 +124,9 @@ function fureasu_save_voice_meta( $post_id ) {
     $faqs = [];
     $posted_faqs = isset( $_POST['voice_faq'] ) && is_array( $_POST['voice_faq'] ) ? wp_unslash( $_POST['voice_faq'] ) : [];
     foreach ( $posted_faqs as $index => $faq ) {
-        $question = isset( $faq['q'] ) ? wp_kses( $faq['q'], [ 'br' => [ 'class' => true ] ] ) : '';
-        $lead     = isset( $faq['lead'] ) ? wp_kses( $faq['lead'], [ 'br' => [ 'class' => true ] ] ) : '';
-        $desc     = isset( $faq['desc'] ) ? sanitize_textarea_field( $faq['desc'] ) : '';
+        $question = isset( $faq['q'] ) ? fureasu_sanitize_textarea( $faq['q'] ) : '';
+        $lead     = isset( $faq['lead'] ) ? fureasu_sanitize_textarea( $faq['lead'] ) : '';
+        $desc     = isset( $faq['desc'] ) ? fureasu_sanitize_textarea( $faq['desc'] ) : '';
         if ( $question === '' && $lead === '' && $desc === '' ) {
             continue;
         }
@@ -143,24 +142,22 @@ function fureasu_save_voice_meta( $post_id ) {
     }
 
     $data = [
-        'position'    => wp_kses( wp_unslash( $_POST['voice_position'] ?? '' ), [ 'br' => [ 'class' => true ] ] ),
+        'position'    => fureasu_sanitize_textarea( wp_unslash( $_POST['voice_position'] ?? '' ) ),
         'name'        => sanitize_text_field( wp_unslash( $_POST['voice_name'] ?? '' ) ),
         'tags'        => $tags,
-        'lead_html'   => wp_kses( wp_unslash( $_POST['voice_lead_html'] ?? '' ), [ 'br' => [ 'class' => true ] ] ),
-        'desc_html'   => sanitize_textarea_field( wp_unslash( $_POST['voice_desc_html'] ?? '' ) ),
+        'lead_html'   => fureasu_sanitize_textarea( wp_unslash( $_POST['voice_lead_html'] ?? '' ) ),
+        'desc_html'   => fureasu_sanitize_textarea( wp_unslash( $_POST['voice_desc_html'] ?? '' ) ),
         'image'       => sanitize_text_field( wp_unslash( $_POST['voice_image'] ?? '' ) ),
-        'year'        => sanitize_text_field( wp_unslash( $_POST['voice_year'] ?? '' ) ),
-        'sales'       => sanitize_text_field( wp_unslash( $_POST['voice_sales'] ?? '' ) ),
         'excerpt'     => '',
         'faqs'        => $faqs,
         'bottom_lead' => sanitize_text_field( wp_unslash( $_POST['voice_bottom_lead'] ?? '' ) ),
-        'bottom_desc' => sanitize_textarea_field( wp_unslash( $_POST['voice_bottom_desc'] ?? '' ) ),
+        'bottom_desc' => fureasu_sanitize_textarea( wp_unslash( $_POST['voice_bottom_desc'] ?? '' ) ),
     ];
     $data['excerpt'] = wp_strip_all_tags( $data['desc_html'] );
     update_post_meta( $post_id, '_voice_data', $data );
 
     $type = sanitize_text_field( wp_unslash( $_POST['voice_type'] ?? '' ) );
-    if ( in_array( $type, [ 'corporate', 'individual' ], true ) ) {
+    if ( in_array( $type, [ 'north', 'east', 'west' ], true ) ) {
         wp_set_object_terms( $post_id, $type, 'voice_type' );
     } else {
         wp_set_object_terms( $post_id, [], 'voice_type' );

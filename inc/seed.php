@@ -50,11 +50,15 @@ function fureasu_seed_voice_terms() {
     if ( ! taxonomy_exists( 'voice_type' ) ) {
         return;
     }
-    if ( ! term_exists( 'corporate', 'voice_type' ) ) {
-        wp_insert_term( '法人', 'voice_type', [ 'slug' => 'corporate' ] );
-    }
-    if ( ! term_exists( 'individual', 'voice_type' ) ) {
-        wp_insert_term( '個人', 'voice_type', [ 'slug' => 'individual' ] );
+    $areas = [
+        'north' => '北日本',
+        'east'  => '東日本',
+        'west'  => '西日本',
+    ];
+    foreach ( $areas as $slug => $name ) {
+        if ( ! term_exists( $slug, 'voice_type' ) ) {
+            wp_insert_term( $name, 'voice_type', [ 'slug' => $slug ] );
+        }
     }
 }
 
@@ -103,13 +107,16 @@ function fureasu_seed_voices() {
             'lead_html'   => $voice['lead_html'],
             'desc_html'   => $voice['desc_html'],
             'image'       => $voice['image'],
-            'year'        => $voice['year'],
-            'sales'       => $voice['sales'],
             'excerpt'     => $voice['excerpt'],
             'faqs'        => $voice['faqs'],
             'bottom_lead' => $voice['bottom_lead'],
             'bottom_desc' => $voice['bottom_desc'],
         ] );
+
+        $area = isset( $voice['area'] ) ? $voice['area'] : '';
+        if ( in_array( $area, [ 'north', 'east', 'west' ], true ) ) {
+            wp_set_object_terms( $post_id, $area, 'voice_type' );
+        }
     }
 
     update_option( 'fureasu_voices_seeded', 1 );

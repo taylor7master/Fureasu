@@ -30,7 +30,8 @@
   var isFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   function getScrollOffset() {
-    return $('#header').outerHeight() || 80;
+    var $bar = $('.hd').length ? $('.hd') : $('#header');
+    return $bar.outerHeight() || 80;
   }
 
   function smoothScrollTo(top, durationSec) {
@@ -97,7 +98,8 @@
     }
   });
 
-  // Mobile Navigation
+  // Mobile Navigation（採用サイト由来の .hd があるときはそちらを使う）
+  if (!$('.hd').length) {
   $('body').prepend('<button type="button" class="mobile-nav-toggle" aria-label="メニュー"><span class="toggle-icon"><span></span><span></span><span></span></span></button>');
   $('body').append('<div class="mobile-nav-overly"></div>');
 
@@ -127,6 +129,7 @@
       }
     }
   });
+  }
 
   $(document).on('keydown', function(e) {
     if (e.key === 'Escape') {
@@ -404,11 +407,13 @@
     } catch (e) {}
   }
 
+  if ($('.switch-color-btn').length) {
   setMonoMode(document.documentElement.classList.contains('is-mono'));
 
   $(document).on('click', '.switch-color-btn', function() {
     setMonoMode(!document.documentElement.classList.contains('is-mono'));
   });
+  }
 
   $(document).on('click', '.search-zip-btn', function() {
     var zip = (($('#your-zip1').val() || '') + ($('#your-zip2').val() || '')).replace(/\D/g, '');
