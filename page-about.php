@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
 ?>
 
-<section class="about-intro-section">
+<section class="about-intro-section" id="about-intro">
     <div class="intro-main-wrapper">
         <div class="container">
             <div class="section-body">
@@ -24,7 +24,7 @@ get_header();
             </div>
         </div>
     </div>
-    <div class="intro-profile-wrapper">
+    <div class="intro-profile-wrapper" id="about-message">
         <div class="container">
             <div class="profile-body">
                 <h3 class="lead">看取り難民ゼロを目指して</h3>
@@ -59,12 +59,12 @@ get_header();
     </div>
 </section>
 
-<section class="about-vision-section">
+<section class="about-vision-section" id="about-vision">
     <div class="container">
         <div class="vision-wrapper">
             <div class="section-lead">
                 <p>こんな方と一緒にやりたい</p>
-                <h2>未経験・無資格からでも大丈夫です。</h2>
+                <h2>未経験・無資格からでも、<br class="sp-only">強固な事業基盤が築けます。</h2>
             </div>
             <div class="section-content">
                 <ul class="vision-list">

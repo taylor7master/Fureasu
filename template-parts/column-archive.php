@@ -89,5 +89,6 @@ $column_url = home_url( '/column/' );
             <p class="section-desc">記事が見つかりません。</p>
             <?php endif; ?>
         </div>
+        <!-- <div class="page-preparing">掲載準備中</div> -->
     </div>
 </section>

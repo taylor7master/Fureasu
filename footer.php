@@ -54,30 +54,37 @@ $rc         = T_DIRE_URI . '/assets/image/recruit';
       </div>
       <div>
         <div class="ft__cols">
-          <div class="fcol fcol--other">
-            <ul>
-              <li><a href="<?php echo esc_url( HOME . 'about/' ); ?>">FCについて</a></li>
-              <li><a href="<?php echo esc_url( HOME . 'support/' ); ?>">開業までの流れ</a></li>
-              <li><a href="<?php echo esc_url( HOME . 'model/' ); ?>">収益モデル</a></li>
+          <div class="fcol fcol--about">
+            <p class="fcol__ttl"><a href="<?php echo esc_url( HOME . 'about/' ); ?>">FCについて</a></p>
+            <ul class="au-top-ft-ul1">
+              <li class="au-top-ft-li1"><a class="au-top-ft-a2 scrollto" href="<?php echo esc_url( HOME . 'about/#about-intro' ); ?>">グループの想い</a></li>
+              <li class="au-top-ft-li2"><a class="au-top-ft-a3 scrollto" href="<?php echo esc_url( HOME . 'about/#about-message' ); ?>">代表メッセージ</a></li>
+              <li class="au-top-ft-li3"><a class="au-top-ft-a4 scrollto" href="<?php echo esc_url( HOME . 'about/#about-vision' ); ?>">こんな方と一緒に</a></li>
+            </ul>
+          </div>
+          <div class="fcol fcol--support">
+            <p class="fcol__ttl"><a href="<?php echo esc_url( HOME . 'support/' ); ?>">開業サポート</a></p>
+            <ul class="au-top-ft-ul2">
+              <li class="au-top-ft-li5"><a class="au-top-ft-a5 scrollto" href="<?php echo esc_url( HOME . 'support/#support-system' ); ?>">サポート体制</a></li>
+              <li class="au-top-ft-li5"><a class="au-top-ft-a6 scrollto" href="<?php echo esc_url( HOME . 'support/#support-ba' ); ?>">開業サポート</a></li>
+              <li class="au-top-ft-li7"><a class="au-top-ft-a7 scrollto" href="<?php echo esc_url( HOME . 'support/#support-guide' ); ?>">募集要項</a></li>
+              <li class="au-top-ft-li8"><a class="au-top-ft-a8 scrollto" href="<?php echo esc_url( HOME . 'support/#support-steps' ); ?>">開業までの流れ</a></li>
+            </ul>
+          </div>
+          <div class="fcol fcol--model">
+            <p class="fcol__ttl"><a href="<?php echo esc_url( HOME . 'model/' ); ?>">収益モデル</a></p>
+            <ul class="au-top-ft-ul3">
+              <li class="au-top-ft-li9"><a class="au-top-ft-a9 scrollto" href="<?php echo esc_url( HOME . 'model/#model-calc' ); ?>">収益の考え方</a></li>
+              <li class="au-top-ft-li10"><a class="au-top-ft-a10 scrollto" href="<?php echo esc_url( HOME . 'model/#model-stock' ); ?>">ストック型ビジネス</a></li>
+              <li class="au-top-ft-li11"><a class="au-top-ft-a11 scrollto" href="<?php echo esc_url( HOME . 'model/#model-reason' ); ?>">収益のロジック</a></li>
             </ul>
           </div>
           <div class="fcol fcol--other">
-            <ul>
-              <li><a href="<?php echo esc_url( HOME . 'voice/' ); ?>">加盟オーナーの声</a></li>
-              <li><a href="<?php echo esc_url( HOME . 'column/' ); ?>">コラム</a></li>
-              <li><a href="<?php echo esc_url( HOME . 'faq/' ); ?>">よくあるご質問</a></li>
-            </ul>
-          </div>
-          <div class="fcol fcol--other">
-            <ul>
-              <li><a href="<?php echo esc_url( HOME . 'support/' ); ?>">開業サポート</a></li>
-              <li><a href="https://recruit.fureasu.jp/news/" target="_blank" rel="noopener">お知らせ・ニュース</a></li>
-            </ul>
-          </div>
-          <div class="fcol fcol--other">
-            <ul>
-              <li><a href="https://fureasu.jp/" target="_blank" rel="noopener">会社情報</a></li>
-              <li><a href="https://recruit.fureasu.jp/" target="_blank" rel="noopener">採用情報</a></li>
+            <p class="fcol__ttl fcol__ttl--other sp-only">その他</p>
+            <ul class="au-top-ft-ul4">
+              <li class="au-top-ft-li12"><a href="<?php echo esc_url( HOME . 'voice/' ); ?>">オーナーの声</a></li>
+              <li class="au-top-ft-li13"><a href="<?php echo esc_url( HOME . 'column/' ); ?>">コラム</a></li>
+              <li class="au-top-ft-li14"><a href="<?php echo esc_url( HOME . 'contact/' ); ?>">お問い合わせ</a></li>
             </ul>
           </div>
         </div>

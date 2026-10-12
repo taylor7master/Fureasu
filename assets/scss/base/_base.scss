@@ -10,6 +10,9 @@ html {
   font-size: 10px;
   font-size: clamp(6px, 0.6666666667vw, 10px);
   margin: 0;
+  @include full {
+    font-size: clamp(10px, 0.520833333vw, 10000px);
+  }
   @include sp {
     font-size: 10px;
     font-size: clamp(6px, 2.56411vw, 20px);

@@ -10,7 +10,7 @@ get_header();
                 <h2 class="en">SUPPORT</h2>
                 <p class="jp">フランチャイズ サポート</p>
             </div>
-            <div class="section-desc">開業前から開業後まで、フレアスグループが<br class="sp-only">ずっと伴走します！</div>
+            <div class="section-desc">開業前から開業後まで、フレアスグループが<br class="sp-only">伴走します！</div>
         </div>
     </div>
     <div class="intro-worry-wrapper">
@@ -25,9 +25,9 @@ get_header();
                             <div class="inner">
                                 <p class="count">ISSUE1</p>
                                 <figure class="icon">
-                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry01.png" alt="施術者は本当に集まる？" loading="lazy">
+                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry01.png" alt="国家資格を持つ施術者は本当に採用できる？" loading="lazy">
                                 </figure>
-                                <p class="lead">施術者は<br>本当に集まる？</p>
+                                <p class="lead">国家資格を持つ施術者は<br>本当に採用できる？</p>
                             </div>
                         </div>
                     </li>
@@ -36,9 +36,9 @@ get_header();
                             <div class="inner">
                                 <p class="count">ISSUE2</p>
                                 <figure class="icon">
-                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry02.png" alt="保険の事務作業が不安" loading="lazy">
+                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry02.png" alt="煩雑な保険請求（レセプト）業務が不安" loading="lazy">
                                 </figure>
-                                <p class="lead">保険の事務作業が<br>不安</p>
+                                <p class="lead">煩雑な保険請求<br>（レセプト）業務が不安</p>
                             </div>
                         </div>
                     </li>
@@ -58,9 +58,9 @@ get_header();
                             <div class="inner">
                                 <p class="count">ISSUE4</p>
                                 <figure class="icon">
-                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry01.png" alt="施術者は本当に集まる？" loading="lazy">
+                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry01.png" alt="未経験からでも早期に投資回収（黒字化）できる？" loading="lazy">
                                 </figure>
-                                <p class="lead">未経験でも<br>黒字化できる？</p>
+                                <p class="lead fs">未経験からでも早期に<br>投資回収（黒字化）できる？</p>
                             </div>
                         </div>
                     </li>
@@ -69,6 +69,7 @@ get_header();
         </div>
     </div>
     <div class="intro-group-wrapper">
+        <div class="scroll-to" id="support-system"></div>
         <div class="container">
             <div class="section-label section-label--center">
                 <h2>フレアスグループは<br>万全のサポート体制をご用意しています！</h2>
@@ -83,7 +84,7 @@ get_header();
                                     <figure class="icon">
                                         <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/group01.png" alt="開業前サポート" loading="lazy">
                                     </figure>
-                                    <div class="desc pt">採用（人材確保）<br>教育・研修サポート<br>資金調達支援<br>出店準備サポート</div>
+                                    <div class="desc pt">採用（人材確保）<br>オーナー・施術者向け 初期研修<br>資金調達支援<br>出店準備サポート</div>
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -99,7 +100,7 @@ get_header();
                                     <figure class="icon">
                                         <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/group02.png" alt="開業後サポート" loading="lazy">
                                     </figure>
-                                    <div class="desc">事務・地域サポート<br>教育・研修サポート<br>施術者の教育・品質管理<br>利用者確保<br>経営支援</div>
+                                    <div class="desc">レセプト事務・運営サポート<br>継続的な技術・運営研修<br>施術者の教育・品質管理<br>利用者獲得サポート（営業支援）<br>経営支援</div>
                                 </div>
                             </div>
                             <div class="card-footer">
@@ -113,11 +114,11 @@ get_header();
     </div>
 </section>
 
-<section class="support-operation-section">
-    <div class="operation-before-wrapper" id="support-before">
+<section id="support-ba" class="support-operation-section">
+    <div class="operation-before-wrapper">
         <div class="container">
             <div class="section-label section-label--center">
-                <h2>徹底した開業サポート<br class="sp-only">開業前</h2>
+                <h2>徹底した開業前サポート</h2>
             </div>
             <div class="section-content">
                 <ul class="operation-list">
@@ -127,7 +128,7 @@ get_header();
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/operation01.png" alt="開業前サポート" loading="lazy">
                             </figure>
                             <div class="title">
-                                <p>人材確保もおまかせ！</p>
+                                <p>＼ 業界屈指の採用インフラを活用 ／</p>
                                 <h4>
                                     <em>1</em>
                                     <span>採用（人材確保）</span>
@@ -142,7 +143,7 @@ get_header();
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/operation02.png" alt="開業前サポート" loading="lazy">
                             </figure>
                             <div class="title">
-                                <p>育成もおまかせ！</p>
+                                <p>＼ 現場品質を担保する圧倒的な教育体制 ／</p>
                                 <h4>
                                     <em>2</em>
                                     <span>教育・研修サポート</span>
@@ -157,23 +158,23 @@ get_header();
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/operation03.png" alt="開業前サポート" loading="lazy">
                             </figure>
                             <div class="title">
-                                <p>お金の不安を解消！</p>
+                                <p>＼ スムーズな初期投資・資金調達をバックアップ ／</p>
                                 <h4>
                                     <em>3</em>
                                     <span>資金調達支援</span>
                                 </h4>
                             </div>
-                            <div class="desc">ご要望に応じて、経産省より「経営革新等支援機関」の認定を受けたパートナー企業が、開業までの資金調達させていただき、開業後は記帳・決算・税務申告・経営改善まで経営面をサポートします。</div>
+                            <div class="desc">ご要望に応じて、経産省より「経営革新等支援機関」の認定を受けたパートナー企業が、開業までの資金調達を強力にサポートし、開業後は記帳・決算・税務申告・経営改善まで経営面をバックアップします。</div>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="operation-after-wrapper" id="support-after">
+    <div class="operation-after-wrapper">
         <div class="container">
             <div class="section-label section-label--center">
-                <h2>徹底した開業サポート<br class="sp-only">開業後</h2>
+                <h2>徹底した開業後サポート</h2>
             </div>
             <div class="section-content">
                 <ul class="operation-list">
@@ -183,13 +184,13 @@ get_header();
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/operation04.png" alt="徹底した開業サポート開業後" loading="lazy">
                             </figure>
                             <div class="title">
-                                <p>事務負担を大幅軽減！</p>
+                                <p>＼ 煩雑な請求業務を大幅軽減！ ／</p>
                                 <h4>
                                     <em>1</em>
-                                    <span>事務代行サポート</span>
+                                    <span>事務（レセプト請求）代行サポート</span>
                                 </h4>
                             </div>
-                            <div class="desc">本部専門チームによる事務代行サポートを受けられます。<br>経験豊富な本部スタッフから適切な保険運用を支援します。</div>
+                            <div class="desc">本部専門チームが毎月のレセプト（療養費支給申請）業務を代行します。経験豊富なスタッフが正確かつ適正な保険請求をサポートすることで、オーナー様の事務負担とコンプライアンスリスクを大幅に軽減します。</div>
                         </div>
                     </li>
                     <li>
@@ -198,13 +199,13 @@ get_header();
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/operation05.png" alt="徹底した開業サポート開業後" loading="lazy">
                             </figure>
                             <div class="title">
-                                <p>研修で質を担保！</p>
+                                <p>＼ 研修で質を担保！ ／</p>
                                 <h4>
                                     <em>2</em>
                                     <span>施術者の教育・<br class="sp-only">品質管理</span>
                                 </h4>
                             </div>
-                            <div class="desc">施術者という技能者へ、技術指導、知識テスト、スキルチェック、治療計画の相談、アピアランスから接遇まで継続的な関わりを持ちます。また全国の症例から情報共有することができ、治療計画の修正立案が可能です。日々のサービス品質の向上により選ばれる店舗づくりと施術者の定着に働きかけます。</div>
+                            <div class="desc">技術指導からアピアランス・接遇まで、現場の施術者へ継続的な教育を行います。全国の症例データの共有や治療計画の相談にも対応し、日々のサービス品質向上を通じて「地域から選ばれる店舗づくり」と「施術者の定着」を力強く後押しします。</div>
                         </div>
                     </li>
                     <li>
@@ -213,13 +214,13 @@ get_header();
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/operation06.png" alt="徹底した開業サポート開業後" loading="lazy">
                             </figure>
                             <div class="title">
-                                <p>開業後もずっと伴走！</p>
+                                <p>＼ 開業後も伴走！ ／</p>
                                 <h4>
                                     <em>3</em>
-                                    <span>利用者確保</span>
+                                    <span>利用者獲得サポート</span>
                                 </h4>
                             </div>
-                            <div class="desc">本部スタッフの支援を受けながら活動していただきます。本部スタッフは実働経験があり、自身の成功失敗体験を踏まえてサポートさせていただきます。未経験の方でもできる仕組みがあります。</div>
+                            <div class="desc">地域の営業先との関係構築や集客開拓において、実務経験豊富な本部SV（スーパーバイザー）が現場同行や的確なアドバイスを行います。未経験からでも着実に、地域に根ざした営業活動が展開できる仕組みを提供します。</div>
                         </div>
                     </li>
                 </ul>
@@ -234,7 +235,7 @@ get_header();
     </div>
 </section>
 
-<section class="support-guide-section">
+<section class="support-guide-section" id="support-guide">
     <div class="container">
         <div class="section-label section-label--center">
             <h2>フランチャイズ募集要項</h2>
@@ -264,7 +265,7 @@ get_header();
     </div>
 </section>
 
-<section class="support-step-section">
+<section class="support-step-section" id="support-steps">
     <div class="container">
         <div class="section-label section-label--center">
             <h2>開業までのステップ</h2>

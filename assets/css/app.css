@@ -11,6 +11,11 @@ html {
   font-size: clamp(6px, 0.6666666667vw, 10px);
   margin: 0;
 }
+@media print, screen and (min-width: 1921px) {
+  html {
+    font-size: clamp(10px, 0.520833333vw, 10000px);
+  }
+}
 @media only screen and (max-width: 768px) {
   html {
     font-size: 10px;
@@ -1719,6 +1724,24 @@ figure img {
   .page-wrapper .case-deco-shape {
     -webkit-animation: none;
             animation: none;
+  }
+}
+
+.page-preparing {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 8rem 0 12rem;
+  font-size: 4.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: #231815;
+  line-height: 1.5;
+}
+@media only screen and (max-width: 768px) {
+  .page-preparing {
+    padding: 6rem 0 10rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -7486,6 +7509,16 @@ body.mobile-nav-active #mobile-nav {
     margin-top: 12rem;
   }
 }
+.model-intro-section .intro-partner-wrapper .scroll-to {
+  position: absolute;
+  top: -8rem;
+  left: 0;
+}
+@media only screen and (max-width: 768px) {
+  .model-intro-section .intro-partner-wrapper .scroll-to {
+    top: -6rem;
+  }
+}
 .model-intro-section .intro-partner-wrapper .container {
   position: relative;
 }
@@ -7530,8 +7563,9 @@ body.mobile-nav-active #mobile-nav {
 }
 @media only screen and (max-width: 768px) {
   .model-intro-section .intro-partner-wrapper .partner-box .lead {
-    font-size: 3rem;
+    font-size: 2.7rem;
     line-height: 3.8rem;
+    letter-spacing: -0.04em;
     text-align: left;
   }
 }
@@ -8025,7 +8059,7 @@ body.mobile-nav-active #mobile-nav {
   position: relative;
   font-size: 1.8rem;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 2.8rem;
   color: #231815;
   text-align: center;
 }
@@ -8033,6 +8067,12 @@ body.mobile-nav-active #mobile-nav {
   .support-intro-section .intro-worry-wrapper .worry-card .lead {
     font-size: 1.6rem;
     line-height: 2.4rem;
+  }
+}
+@media print, screen and (min-width: 769px) {
+  .support-intro-section .intro-worry-wrapper .worry-card .lead.fs {
+    font-size: 1.7rem;
+    letter-spacing: -0.03em;
   }
 }
 .support-intro-section .intro-group-wrapper {
@@ -8043,6 +8083,16 @@ body.mobile-nav-active #mobile-nav {
 @media only screen and (max-width: 768px) {
   .support-intro-section .intro-group-wrapper {
     margin-top: 8.4rem;
+  }
+}
+.support-intro-section .intro-group-wrapper .scroll-to {
+  position: absolute;
+  top: -8rem;
+  left: 0;
+}
+@media only screen and (max-width: 768px) {
+  .support-intro-section .intro-group-wrapper .scroll-to {
+    top: -6rem;
   }
 }
 .support-intro-section .intro-group-wrapper .container {
@@ -8112,7 +8162,7 @@ body.mobile-nav-active #mobile-nav {
   padding: 2.4rem 4rem 3.6rem;
   background: #FFFFFF;
   border: 0.1rem solid #B10080;
-  width: 48rem;
+  width: 52rem;
   max-width: 100%;
   height: 100%;
   z-index: 0;
@@ -8155,11 +8205,16 @@ body.mobile-nav-active #mobile-nav {
 .support-intro-section .intro-group-wrapper .section-content .group-card .card-body .content .icon {
   position: relative;
   width: 14rem;
-  float: left;
+}
+@media print, screen and (min-width: 769px) {
+  .support-intro-section .intro-group-wrapper .section-content .group-card .card-body .content .icon {
+    float: left;
+  }
 }
 @media only screen and (max-width: 768px) {
   .support-intro-section .intro-group-wrapper .section-content .group-card .card-body .content .icon {
     width: 10.8rem;
+    margin: 0 auto 2rem;
   }
 }
 .support-intro-section .intro-group-wrapper .section-content .group-card .card-body .content .desc {
@@ -8169,16 +8224,23 @@ body.mobile-nav-active #mobile-nav {
   line-height: 1.75;
   color: #231815;
   text-align: left;
-  float: right;
-  width: calc(100% - 16.4rem);
 }
 @media only screen and (max-width: 768px) {
   .support-intro-section .intro-group-wrapper .section-content .group-card .card-body .content .desc {
-    width: calc(100% - 12.8rem);
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    min-width: 24rem;
+    max-width: 100%;
+    margin: 0 auto;
     font-size: 1.6rem;
   }
 }
 @media print, screen and (min-width: 769px) {
+  .support-intro-section .intro-group-wrapper .section-content .group-card .card-body .content .desc {
+    float: right;
+    width: calc(100% - 16.4rem);
+  }
   .support-intro-section .intro-group-wrapper .section-content .group-card .card-body .content .desc.pt {
     padding-top: 1.2rem;
   }
@@ -8331,7 +8393,6 @@ body.mobile-nav-active #mobile-nav {
   width: -moz-fit-content;
   width: fit-content;
   max-width: 100%;
-  padding: 0 1.8rem;
   margin-bottom: 0.6rem;
 }
 @media only screen and (max-width: 768px) {
@@ -8339,46 +8400,6 @@ body.mobile-nav-active #mobile-nav {
     font-size: 1.4rem;
     padding: 0 1.6rem;
     margin-bottom: 0.6rem;
-  }
-}
-.support-operation-section .section-content .operation-card .title p::before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 1rem);
-  left: 0;
-  width: 1.2rem;
-  height: 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 19.4299L10.8658 20L0 0.570133L1.13314 0L12 19.4299Z' fill='%23B10080'/%3E%3C/svg%3E%0A");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 0;
-}
-@media only screen and (max-width: 768px) {
-  .support-operation-section .section-content .operation-card .title p::before {
-    top: calc(50% - 0.8rem);
-    width: 1rem;
-    height: 1.6rem;
-  }
-}
-.support-operation-section .section-content .operation-card .title p::after {
-  content: "";
-  position: absolute;
-  top: calc(50% - 1rem);
-  right: 0;
-  width: 1.2rem;
-  height: 2rem;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='20' viewBox='0 0 12 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-4.92437e-08 19.4299L1.1342 20L12 0.570133L10.8669 0L-4.92437e-08 19.4299Z' fill='%23B10080'/%3E%3C/svg%3E%0A");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 0;
-}
-@media only screen and (max-width: 768px) {
-  .support-operation-section .section-content .operation-card .title p::after {
-    top: calc(50% - 0.8rem);
-    width: 1rem;
-    height: 1.6rem;
   }
 }
 .support-operation-section .section-content .operation-card .title h4 {

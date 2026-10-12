@@ -2208,7 +2208,7 @@ img.ft__japhic-2 {
     -webkit-column-gap: calc(3 * var(--hf));
        -moz-column-gap: calc(3 * var(--hf));
             column-gap: calc(3 * var(--hf));
-    row-gap: calc(0.9 * var(--hf));
+    row-gap: calc(5 * var(--hf));
     margin-top: calc(5.4 * var(--hf));
     margin-left: calc(1.5 * var(--hf));
     -webkit-box-pack: start;

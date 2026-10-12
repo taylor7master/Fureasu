@@ -2207,7 +2207,7 @@ img.ft__japhic-2 {
       display: grid;
       grid-template-columns: calc(15 * var(--hf)) calc(15 * var(--hf));
       column-gap: calc(3 * var(--hf));
-      row-gap: calc(0.9 * var(--hf));
+      row-gap: calc(5 * var(--hf));
       margin-top: calc(5.4 * var(--hf));
       margin-left: calc(1.5 * var(--hf));
       justify-content: start;

@@ -130,7 +130,7 @@ get_header();
                             </figure>
                             <div class="info">
                                 <p class="num">POINT1.</p>
-                                <h4 class="lead">国が認めた健康保険適用の<br>「訪問型マッサージサービス」です。</h4>
+                                <h4 class="lead">国の制度を活用した<br>「医療保険適用の訪問マッサージ」サービス</h4>
                                 <p class="desc">リラクゼーションのマッサージとは違い、国に認められた「訪問型サービス」です。寝たきりの方や歩くことが難しい方のもとへ、国家資格を持つ鍼灸マッサージ師が伺い、かかりつけ医の同意があれば健康保険で受けられます。</p>
                             </div>
                         </div>
@@ -155,7 +155,7 @@ get_header();
                             <div class="info">
                                 <p class="num">POINT3.</p>
                                 <h4 class="lead">あなた自身は資格は不要です。<br>地域を支える仕組みを作る経営に専念できます。</h4>
-                                <p class="desc">オーナーであるあなたに、資格は要りません。施術をするのは、あなたが雇う国家資格者。あなたの役割は、開業エリアの運営とマネジメントです。「助けたい」を形にする仕組みを、地域につくっていきます。</p>
+                                <p class="desc">オーナーであるあなたに、資格は要りません。施術するのは、あなたと契約する国家資格者。あなたの役割は、開業エリアの運営とマネジメントです。「助けたい」を形にする仕組みを、地域につくっていきます。</p>
                             </div>
                         </div>
                     </li>
@@ -244,7 +244,7 @@ get_header();
                                 <img src="<?php echo T_DIRE_URI; ?>/assets/image/why04.png" alt="社会に必要とされる仕事" loading="lazy">
                             </figure>
                             <h3 class="title">その人のもとへ<br>誰かが行く</h3>
-                            <div class="desc">通院できない方のもとへ、<br>届けに行く人が求められています。</div>
+                            <div class="desc">おひとりで通院が困難な方のもとへ、<br>届けに行く人が求められています。</div>
                         </article>
                     </li>
                 </ul>
@@ -309,14 +309,14 @@ get_header();
                 </ul>
                 <p class="peak-note">出所：厚生労働省「2040年に向けた人口動態・医療需要等」ほか　※数値・年次は暫定掲載</p>
             </div>
-            <div class="section-sub"><em>訪問マッサージは、</em><b>流行り廃りのあるビジネスではありません。</b><span>日本でいちばん確実に起きると分かっている変化に、まっすぐ応える仕事です。</span></div>
+            <div class="section-sub"><em>訪問鍼伮マッサージは、</em><b>流行り廃りのあるビジネスではありません。</b><span>日本でいちばん確実に起きると分かっている変化に、まっすぐ応える仕事です。</span></div>
         </div>
     </section>
 
     <section id="request" class="top-request-section">
         <div class="container">
             <div class="section-lead">
-                <h2>この事業には、価格競争がありません。<br>詳しくは、資料請求もしくは<br class="sp-only">無料説明会でお話しさせて頂きます。</h2>
+                <h2>この事業には、価格競争がありません。<br>詳しくは、資料請求もしくは<br>無料説明会でお話しさせて頂きます。</h2>
             </div>
             <ul class="section-actions">
                 <li>

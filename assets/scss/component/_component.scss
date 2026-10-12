@@ -1223,6 +1223,22 @@ figure {
   }
 }
 
+.page-preparing {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 8.0rem 0 12.0rem;
+  font-size: 4.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: $color-primary;
+  line-height: 1.5;
+  @include sp {
+    padding: 6.0rem 0 10.0rem;
+    font-size: 3.2rem;
+  }
+}
+
 // ==========================================================================
 // Lenis smooth scroll
 // ==========================================================================

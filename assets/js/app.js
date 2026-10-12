@@ -51,7 +51,7 @@
   // Smooth scroll (Lenis + in-page anchors)
   var scrolltoOffset = getScrollOffset();
 
-  $(document).on('click', 'a.link, .scrollto, .nav-menu a, .mobile-nav-menu a, .footer-menu a', function(e) {
+  $(document).on('click', 'a.link, .scrollto, .nav-menu a, .mobile-nav-menu a, .footer-menu a, .ft a', function(e) {
     if (!this.hash || this.hash === '#') {
       return;
     }
@@ -87,16 +87,61 @@
     }
   });
 
-  $(document).ready(function() {
-    if (window.location.hash) {
-      var initial_nav = window.location.hash;
-      if ($(initial_nav).length) {
-        scrolltoOffset = getScrollOffset();
-        var scrollto = $(initial_nav).offset().top - scrolltoOffset;
-        smoothScrollTo(scrollto, 1.2);
-      }
+  var hashScrollMode = '';
+
+  function scrollToLocationHash() {
+    if (document.readyState !== 'complete') {
+      return;
     }
-  });
+    var hash = window.__pendingHash || window.location.hash;
+    if (!hash || hash === '#') {
+      return;
+    }
+    var $target;
+    try {
+      $target = $(hash);
+    } catch (err) {
+      return;
+    }
+    if (!$target.length) {
+      window.__hashScrollStarted = true;
+      return;
+    }
+    var useLenis = window.lenis && typeof window.lenis.scrollTo === 'function';
+    var mode = useLenis ? 'lenis' : 'native';
+    if (hashScrollMode === 'lenis' || hashScrollMode === mode) {
+      return;
+    }
+    hashScrollMode = mode;
+    window.__hashScrollStarted = true;
+    if (window.__pendingHash) {
+      history.replaceState(null, '', location.pathname + location.search + hash);
+      window.__pendingHash = '';
+    }
+    var top = Math.max(0, $target.offset().top - getScrollOffset());
+    var finish = function() {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+    };
+    if (useLenis) {
+      window.lenis.scrollTo(0, { immediate: true, force: true });
+      requestAnimationFrame(function() {
+        window.lenis.scrollTo(top, {
+          duration: 1.2,
+          lerp: null,
+          force: true,
+          onComplete: finish
+        });
+      });
+      return;
+    }
+    window.scrollTo(0, 0);
+    $('html, body').stop(true).animate({ scrollTop: top }, 1200, finish);
+  }
+
+  window.addEventListener('load', scrollToLocationHash);
+  if (document.readyState === 'complete') {
+    scrollToLocationHash();
+  }
 
   // Mobile Navigation（採用サイト由来の .hd があるときはそちらを使う）
   if (!$('.hd').length) {
@@ -173,6 +218,7 @@
   // Lenis smooth scroll (tojiro.net / Luxy-like inertia)
   function initLenis() {
     if (reduceMotion || typeof Lenis === 'undefined') {
+      scrollToLocationHash();
       return;
     }
 
@@ -196,6 +242,7 @@
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+    scrollToLocationHash();
   }
 
   function loadLenis(callback) {
@@ -207,6 +254,7 @@
     script.src = 'https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js';
     script.async = true;
     script.onload = callback;
+    script.onerror = scrollToLocationHash;
     document.head.appendChild(script);
   }
 

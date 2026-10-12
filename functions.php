@@ -91,7 +91,7 @@ function theme_add_files() {
     wp_enqueue_script('s-swiper-bundle', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', [], '1.0', true);
     wp_enqueue_script('s-scroll-hint', 'https://unpkg.com/scroll-hint@latest/js/scroll-hint.min.js', [], '1.0', true);
     wp_enqueue_script('s-aos', 'https://unpkg.com/aos@2.3.0/dist/aos.js', [], '1.0', true);
-    wp_enqueue_script('s-app', T_DIRE_URI.'/assets/js/app.js', [], '1.1', true);
+    wp_enqueue_script('s-app', T_DIRE_URI.'/assets/js/app.js', [], '1.6', true);
     wp_enqueue_script('s-theme', T_DIRE_URI.'/assets/js/theme.js', [], '1.0', true);
 }
 

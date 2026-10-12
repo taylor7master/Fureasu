@@ -2,6 +2,22 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja" style="margin-top: 0 !important;">
 
 <head>
+    <script>
+    (function () {
+      if (!location.hash || location.hash === '#') return;
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      window.__pendingHash = location.hash;
+      history.replaceState(null, '', location.pathname + location.search);
+      window.scrollTo(0, 0);
+      window.addEventListener('scroll', function hold() {
+        if (window.__hashScrollStarted) {
+          window.removeEventListener('scroll', hold);
+          return;
+        }
+        if (window.scrollY !== 0) window.scrollTo(0, 0);
+      });
+    })();
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta property="og:locale" content="ja_JP">
@@ -89,7 +105,7 @@ $fc_nav     = array(
     array( 'url' => HOME . 'support/', 'label' => '開業サポート', 'current' => $post_slug === 'support' ),
     array( 'url' => HOME . 'model/', 'label' => '収益モデル', 'current' => $post_slug === 'model' ),
     array( 'url' => HOME . 'voice/', 'label' => 'オーナーの声', 'current' => $post_slug === 'voice' ),
-    array( 'url' => HOME . 'faq/', 'label' => 'FAQ', 'current' => $post_slug === 'faq' ),
+    // array( 'url' => HOME . 'faq/', 'label' => 'FAQ', 'current' => $post_slug === 'faq' ),
     array( 'url' => HOME . 'column/', 'label' => 'コラム', 'current' => $post_slug === 'column' ),
 );
 $rc = T_DIRE_URI . '/assets/image/recruit';

@@ -3,7 +3,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 get_header();
 ?>
 
-<section class="model-intro-section">
+<section class="model-intro-section" id="model-calc">
     <div class="intro-main-wrapper">
         <div class="container">
             <div class="section-body">
@@ -11,10 +11,10 @@ get_header();
                     <h2 class="en">PROFIT MODEL</h2>
                     <p class="jp">収益モデル</p>
                 </div>
-                <div class="section-desc">「本当に回収できるのか」。<br>いちばん気になるお金の話を、シンプルにご説明します。</div>
+                <div class="section-desc">「手堅く、着実に利益を積み上げる」。<br>事業を安定化させるロジックをご説明します。</div>
                 <div class="section-block">
                     <h3 class="lead">収益の考え方（イメージ）</h3>
-                    <div class="desc">実際にどのくらいの収益になるのか、その考え方をシンプルな式でご説明します。<br>収益は「1人あたりの単価 × 担当できる人数」で決まる、とても分かりやすい構造です。</div>
+                    <div class="desc">実際にどのくらいの収益になるのか、その考え方をシンプルな式でご説明します。<br>収益は「ご利用者様1名あたりの月間売上（法定料金に基づく目安） × 担当人数」で決まる、とても分かりやすい構造です。</div>
                 </div>
             </div>
             <div class="section-pictures">
@@ -62,10 +62,11 @@ get_header();
         </div>
     </div>
     <div class="intro-partner-wrapper">
+        <div class="scroll-to" id="model-stock"></div>
         <div class="container">
             <div class="partner-box">
                 <p class="sup">一緒に働く仲間が増えれば、<br class="sp-only">笑顔が広がる。</p>
-                <h3 class="lead"><span>継続利用前提の<br class="sp-only">ストック型ビジネス</span></h3>
+                <h3 class="lead"><span>定期的なご利用が見込める<br class="sp-only">ストック型ビジネス</span></h3>
             </div>
             <div class="partner-note">※記載されている内容は、いくつかの前提に基づいたものであり、<br class="pc-only">将来の計画数値や施策の実現を確約したり保証したりするものではありません。</div>
         </div>
@@ -93,11 +94,11 @@ get_header();
     </div>
 </section>
 
-<section class="model-reason-section">
+<section class="model-reason-section" id="model-reason">
     <div class="container">
         <div class="section-label">
-            <h2>手堅いストックビジネスだからこそ、<br>初期投資を着実に回収できる確固たるロジックがあります。</h2>
-            <p>在宅マッサージは、単価を国が定め、利用者は費用の1〜3割の負担で続けられるストック型。<br>売上が読める仕組みに集客も人材も本部がサポートするので、先行投資でも着実に回収へ向かえます。</p>
+            <h2>手堅いストック型ビジネスだからこそ、<br>着実に利益を積み上げるロジックがあります。</h2>
+            <p>国の法定料金に基づくため売上が安定しやすく、原則1～3割負担で定期利用に繋がりやすい手堅いストック型ビジネスです。<br>見通しの立つ収益構造に本部の採用・集客支援が加わることで、異業種からでも参画しやすい事業です。</p>
         </div>
         <div class="section-content">
             <ul class="reason-list">
@@ -106,12 +107,12 @@ get_header();
                         <div class="card-body">
                             <h4 class="label">
                                 <em>1</em>
-                                <span>単価は「国」が<br>決めている</span>
+                                <span>サービス料金の基準は<br>「国」が定めている</span>
                             </h4>
                             <figure class="icon">
-                                <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/model/reason01.png" alt="単価は「国」が決めている" loading="lazy">
+                                <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/model/reason01.png" alt="サービス料金の基準は「国」が定めている" loading="lazy">
                             </figure>
-                            <div class="desc">在宅マッサージは、単価を国が定め、利用者は費用の1〜3割の負担で続けられるストック型。<br>売上が読める仕組みに集客も人材も本部が支えるので、先行投資でも着実に回収へ向かえます。</div>
+                            <div class="desc">国の算定基準に基づくため価格競争が起きません。ご利用者様は原則1～3割負担と利用しやすく、医師の同意に基づく継続的なご依頼（ストック収入）に繋がりやすい構造です。</div>
                         </div>
                         <div class="card-footer">
                             <p>＝ 売上が安定し、<br>回収の見通しが立つ</p>
@@ -128,10 +129,10 @@ get_header();
                             <figure class="icon">
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/model/reason02.png" alt="全国約440拠点分のノウハウがある" loading="lazy">
                             </figure>
-                            <div class="desc">在宅マッサージ事業所を4年で約4倍・全国約440拠点規模に拡大しました。直営店で積み上げた集客・運営ノウハウに加え、専任担当の営業サポートを提供します。だから、ゼロから始めても集客活動に不安はありません。</div>
+                            <div class="desc">在宅マッサージ事業所を4年で約4倍・全国約440拠点規模に拡大しました。直営店で積み上げた集客・運営ノウハウに加え、専任担当の営業サポートを提供します。だから、ゼロからのスタートでも迷わず営業活動に取り組めます。</div>
                         </div>
                         <div class="card-footer">
-                            <p>＝ 客ゼロから始めても<br>集客に困らない</p>
+                            <p>＝ 確立されたノウハウで、<br>集客開拓を強力に後押し</p>
                         </div>
                     </div>
                 </li>
@@ -145,7 +146,7 @@ get_header();
                             <figure class="icon">
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/model/reason03.png" alt="オーナーは資格・未経験でOK" loading="lazy">
                             </figure>
-                            <div class="desc">施術するのは、あなたが雇う国家資格者。オーナー自身に資格や経験はいりません。難しい採用や育成は本部がサポートします。あなたは運営に専念できます。</div>
+                            <div class="desc">施術するのは、あなたと契約する国家資格者。オーナー自身に資格や経験はいりません。難しい採用や育成は本部がサポートします。あなたは運営に専念できます。</div>
                         </div>
                         <div class="card-footer">
                             <p>＝ 資格がなくても、<br>始められる</p>
