@@ -15,7 +15,7 @@ html {
   }
   @include sp {
     font-size: 10px;
-    font-size: clamp(6px, 2.56411vw, 20px);
+    font-size: 2.56411vw;
   }
 }
 

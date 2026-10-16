@@ -58,7 +58,7 @@ get_header();
                             <div class="inner">
                                 <p class="count">ISSUE4</p>
                                 <figure class="icon">
-                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry01.png" alt="未経験からでも早期に投資回収（黒字化）できる？" loading="lazy">
+                                    <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/support/worry04.png" alt="未経験からでも早期に投資回収（黒字化）できる？" loading="lazy">
                                 </figure>
                                 <p class="lead fs">未経験からでも早期に<br>投資回収（黒字化）できる？</p>
                             </div>
@@ -72,7 +72,7 @@ get_header();
         <div class="scroll-to" id="support-system"></div>
         <div class="container">
             <div class="section-label section-label--center">
-                <h2>フレアスグループは<br>万全のサポート体制をご用意しています！</h2>
+                <h2>フレアスグループは<br>万全のサポート体制を<br class="sp-only">ご用意しています！</h2>
             </div>
             <div class="section-content">
                 <ul class="group-list">
@@ -149,7 +149,7 @@ get_header();
                                     <span>教育・研修サポート</span>
                                 </h4>
                             </div>
-                            <div class="desc">業界・経営未経験でも開業にあたり手厚いオーナー初期研修を実施。直営店での実体験、座学、システムなど、在宅マッサージに必要な知識を習得できます。加えて、雇用した施術者は本部からの育成トレーニングを無料で受けられます。また、専門動画サイトで好きな時間に学習できる環境や「フレアストレーニングセンター」での実技指導も用意されています。</div>
+                            <div class="desc">業界・経営未経験でも開業にあたり手厚いオーナー初期研修を実施。直営店での実体験、座学、システムなど、訪問鍼灸マッサージに必要な知識を習得できます。加えて、雇用した施術者は本部からの育成トレーニングを無料で受けられます。また、専門動画サイトで好きな時間に学習できる環境や「フレアストレーニングセンター」での実技指導も用意されています。</div>
                         </div>
                     </li>
                     <li>
@@ -245,7 +245,7 @@ get_header();
                 <li>
                     <div class="guide-line">
                         <p class="label">加盟費用</p>
-                        <div class="desc">480万円（研修費・加盟金・物件・什器等を含む目安）。<br>すでに治療院を開業されている方向けプラン等もございます。</div>
+                        <div class="desc">加盟費用 480万円（保証金100万円含む）<br>すでに治療院を開業されている方向けプラン等もございます。</div>
                     </div>
                 </li>
                 <li>

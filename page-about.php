@@ -64,7 +64,7 @@ get_header();
         <div class="vision-wrapper">
             <div class="section-lead">
                 <p>こんな方と一緒にやりたい</p>
-                <h2>未経験・無資格からでも、<br class="sp-only">強固な事業基盤が築けます。</h2>
+                <h2>未経験・無資格からでも、<br>強固な事業基盤が築けます。</h2>
             </div>
             <div class="section-content">
                 <ul class="vision-list">

@@ -18,6 +18,7 @@ get_header();
                                 <div class="desc"><em>441</em>拠点</div>
                             </div>
                         </div>
+                        <small class="note">※1</small>
                     </div>
                 </li>
                 <li>
@@ -31,6 +32,7 @@ get_header();
                                 <div class="desc"><em>95</em>％</div>
                             </div>
                         </div>
+                        <small class="note">※3</small>
                     </div>
                 </li>
                 <li>
@@ -47,7 +49,7 @@ get_header();
                     </div>
                 </li>
             </ul>
-            <p class="mainvisual-note">※1.　2026年5月現在 当社調べ<br>※2.　一般社団法人日本フランチャイズチェーン協会（JFA）正会員</p>
+            <p class="mainvisual-note">※1.　2026年5月現在 当社調べ<br>※2.　一般社団法人日本フランチャイズチェーン協会（JFA）正会員<br>※3. 2025年現在</p>
             <ul class="mainvisual-actions">
                 <li>
                     <a href="https://fureasu.youcanbook.me/" class="link-btn link-btn--outline" target="_blank" rel="noopener noreferrer">
@@ -130,7 +132,7 @@ get_header();
                             </figure>
                             <div class="info">
                                 <p class="num">POINT1.</p>
-                                <h4 class="lead">国の制度を活用した<br>「医療保険適用の訪問マッサージ」サービス</h4>
+                                <h4 class="lead">国の制度を活用した<br>「健康保険適用の訪問マッサージ」サービス</h4>
                                 <p class="desc">リラクゼーションのマッサージとは違い、国に認められた「訪問型サービス」です。寝たきりの方や歩くことが難しい方のもとへ、国家資格を持つ鍼灸マッサージ師が伺い、かかりつけ医の同意があれば健康保険で受けられます。</p>
                             </div>
                         </div>
@@ -176,7 +178,7 @@ get_header();
     <section id="voice" class="top-voice-section">
         <div class="container">
             <div class="section-title">
-                <h2 class="en">Voice</h2>
+                <h2 class="en">VOICE</h2>
                 <p class="jp">先輩オーナーの声</p>
             </div>
             <div class="section-content">
@@ -309,14 +311,14 @@ get_header();
                 </ul>
                 <p class="peak-note">出所：厚生労働省「2040年に向けた人口動態・医療需要等」ほか　※数値・年次は暫定掲載</p>
             </div>
-            <div class="section-sub"><em>訪問鍼伮マッサージは、</em><b>流行り廃りのあるビジネスではありません。</b><span>日本でいちばん確実に起きると分かっている変化に、まっすぐ応える仕事です。</span></div>
+            <div class="section-sub"><em>訪問鍼灸マッサージは、</em><b>流行り廃りのあるビジネスではありません。</b><span>日本でいちばん確実に起きると分かっている変化に、まっすぐ応える仕事です。</span></div>
         </div>
     </section>
 
     <section id="request" class="top-request-section">
         <div class="container">
             <div class="section-lead">
-                <h2>この事業には、価格競争がありません。<br>詳しくは、資料請求もしくは<br>無料説明会でお話しさせて頂きます。</h2>
+                <h2>この事業には、価格競争がありません。<br>詳しくは、資料請求もしくは<br>無料説明会でお話しさせて<br class="sp-only">頂きます。</h2>
             </div>
             <ul class="section-actions">
                 <li>

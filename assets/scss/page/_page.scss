@@ -250,6 +250,7 @@
       }
       .inner {
         position: relative;
+        z-index: 1;
         @include pc {
           display: flex;
           align-items: center;
@@ -353,6 +354,17 @@
           }
         }
       }
+      .note {
+        position: absolute;
+        right: 0.8rem;
+        bottom: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 0;
+        color: $color-gray;
+        z-index: 0;
+      }
     }
   }
 
@@ -366,7 +378,7 @@
     z-index: 2;
     @include pc {
       position: absolute;
-      bottom: -4.2rem;
+      bottom: -5.6rem;
       right: 2.0rem;
     }
     @include sp {
@@ -400,7 +412,7 @@
     background-image: url(../image/care-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 1920px auto;
+    background-size: 192.0rem auto;
     z-index: 0;
     @include full {
       background-size: cover;
@@ -466,7 +478,7 @@
         font-size: 2.4rem;
         line-height: 3.2rem;
         text-indent: -1.4rem;
-        margin-right: -1.0rem;
+        margin-right: -1.5rem;
         margin-bottom: 0.6rem;
       }
     }
@@ -1352,7 +1364,7 @@
   background-position: center;
   background-repeat: no-repeat;
   @include sp {
-    padding: 6.0rem 0 7.0rem;
+    padding: 4.5rem 0 7.0rem;
     background-image: url(../image/request-bg-sp.jpg);
     background-position: top center;
   }
@@ -2335,6 +2347,7 @@
           font-weight: 500;
           line-height: 2.4rem;
           color: $color-base;
+          white-space: nowrap;
           border-radius: 2.8rem;
           margin-left: 1.6rem;
           @include pc {
@@ -2680,8 +2693,8 @@
 
   .thanks-message {
     position: relative;
-    background: #F5F4F9;
-    min-height: 32.0rem;
+    // background: #F5F4F9;
+    // min-height: 32.0rem;
     padding: 5.0rem 2.0rem 6.0rem;
     overflow: hidden;
     z-index: 1;
@@ -2789,7 +2802,7 @@
     background-image: url(../image/about/about-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 1920px auto;
+    background-size: 192.0rem auto;
     z-index: 0;
     @include full {
       background-size: cover;
@@ -3112,9 +3125,10 @@
         color: $color-base;
         text-align: left;
         @include sp {
-          font-size: 3.0rem;
+          font-size: 2.7rem;
           font-weight: 600;
           line-height: 4.0rem;
+          margin-right: -1.5rem;
         }
       }
     }
@@ -3219,7 +3233,7 @@
     background-image: url(../image/model/model-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 1920px auto;
+    background-size: 192.0rem auto;
     z-index: 0;
     @include full {
       background-size: cover;
@@ -3550,8 +3564,9 @@
         @include sp {
           font-size: 2.7rem;
           line-height: 3.8rem;
-          letter-spacing: -0.04em;
+          letter-spacing: -0.048em;
           text-align: left;
+          margin-right: -1.5rem;
         }
         span {
           display: inline;
@@ -3846,7 +3861,7 @@
     background-image: url(../image/support/support-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 1920px auto;
+    background-size: 192.0rem auto;
     z-index: 0;
     @include full {
       background-size: cover;
@@ -4136,8 +4151,13 @@
 .support-operation-section {
   position: relative;
   padding: 10.0rem 0 10.0rem;
+  background-image: radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%), radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%);
+  background-size: 132.8rem 124.8rem, 132.8rem 124.8rem;
+  background-position: top -2.0rem center, top 104.8rem center;
+  background-repeat: no-repeat, no-repeat;
   @include sp {
     padding: 6.0rem 0 7.0rem;
+    background: none;
   }
   &::before {
     content: "";
@@ -4149,7 +4169,7 @@
     background-image: url(../image/support/support-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
-    background-size: 1920px auto;
+    background-size: 192.0rem auto;
     z-index: 0;
     @include full {
       background-size: cover;
@@ -4334,32 +4354,10 @@
   }
   .operation-before-wrapper {
     position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      top: calc(50% - 62.4rem);
-      left: calc(50% - 66.4rem);
-      width: 132.8rem;
-      height: 124.8rem;
-      max-width: 100%;
-      background: radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%);
-      z-index: -1;
-    }
   }
   .operation-after-wrapper {
     position: relative;
     margin-top: 10.0rem;
-    &::before {
-      content: "";
-      position: absolute;
-      top: calc(50% - 62.4rem);
-      left: calc(50% - 66.4rem);
-      width: 132.8rem;
-      height: 124.8rem;
-      max-width: 100%;
-      background: radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%);
-      z-index: -1;
-    }
   }
   .operation-bottom-wrapper {
     position: relative;
@@ -5635,10 +5633,10 @@
 // ==========================================================================
 .page-privacy {
   position: relative;
-  padding: 8.0rem 0 12.0rem;
-  background: $color-bg-soft;
+  padding: 4.0rem 0 12.0rem;
+  // background: $color-bg-soft;
   @include sp {
-    padding: 6.0rem 0 8.0rem;
+    padding: 2.0rem 0 8.0rem;
   }
 
   .privacy-body {

@@ -19,7 +19,7 @@ html {
 @media only screen and (max-width: 768px) {
   html {
     font-size: 10px;
-    font-size: clamp(6px, 2.56411vw, 20px);
+    font-size: 2.56411vw;
   }
 }
 
@@ -3742,6 +3742,7 @@ body.mobile-nav-active #mobile-nav {
 }
 .mainvisual-points .point-card .inner {
   position: relative;
+  z-index: 1;
 }
 @media print, screen and (min-width: 769px) {
   .mainvisual-points .point-card .inner {
@@ -3881,6 +3882,17 @@ body.mobile-nav-active #mobile-nav {
     margin-right: -1rem;
   }
 }
+.mainvisual-points .point-card .note {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: #5A5858;
+  z-index: 0;
+}
 .mainvisual-note {
   display: block;
   font-size: 1rem;
@@ -3893,7 +3905,7 @@ body.mobile-nav-active #mobile-nav {
 @media print, screen and (min-width: 769px) {
   .mainvisual-note {
     position: absolute;
-    bottom: -4.2rem;
+    bottom: -5.6rem;
     right: 2rem;
   }
 }
@@ -3926,7 +3938,7 @@ body.mobile-nav-active #mobile-nav {
   background-image: url(../image/care-bg.png);
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: 1920px auto;
+  background-size: 192rem auto;
   z-index: 0;
 }
 @media print, screen and (min-width: 1921px) {
@@ -4003,7 +4015,7 @@ body.mobile-nav-active #mobile-nav {
     font-size: 2.4rem;
     line-height: 3.2rem;
     text-indent: -1.4rem;
-    margin-right: -1rem;
+    margin-right: -1.5rem;
     margin-bottom: 0.6rem;
   }
 }
@@ -5003,7 +5015,7 @@ body.mobile-nav-active #mobile-nav {
 }
 @media only screen and (max-width: 768px) {
   .top-request-section {
-    padding: 6rem 0 7rem;
+    padding: 4.5rem 0 7rem;
     background-image: url(../image/request-bg-sp.jpg);
     background-position: top center;
   }
@@ -6172,6 +6184,7 @@ body.mobile-nav-active #mobile-nav {
   font-weight: 500;
   line-height: 2.4rem;
   color: #B10080;
+  white-space: nowrap;
   border-radius: 2.8rem;
   margin-left: 1.6rem;
 }
@@ -6533,8 +6546,6 @@ body.mobile-nav-active #mobile-nav {
 }
 .page-thanks .thanks-message {
   position: relative;
-  background: #F5F4F9;
-  min-height: 32rem;
   padding: 5rem 2rem 6rem;
   overflow: hidden;
   z-index: 1;
@@ -6659,7 +6670,7 @@ body.mobile-nav-active #mobile-nav {
   background-image: url(../image/about/about-bg.png);
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: 1920px auto;
+  background-size: 192rem auto;
   z-index: 0;
 }
 @media print, screen and (min-width: 1921px) {
@@ -7043,9 +7054,10 @@ body.mobile-nav-active #mobile-nav {
 }
 @media only screen and (max-width: 768px) {
   .about-vision-section .vision-wrapper .section-lead h2 {
-    font-size: 3rem;
+    font-size: 2.7rem;
     font-weight: 600;
     line-height: 4rem;
+    margin-right: -1.5rem;
   }
 }
 .about-vision-section .vision-wrapper .section-content {
@@ -7157,7 +7169,7 @@ body.mobile-nav-active #mobile-nav {
   background-image: url(../image/model/model-bg.png);
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: 1920px auto;
+  background-size: 192rem auto;
   z-index: 0;
 }
 @media print, screen and (min-width: 1921px) {
@@ -7565,8 +7577,9 @@ body.mobile-nav-active #mobile-nav {
   .model-intro-section .intro-partner-wrapper .partner-box .lead {
     font-size: 2.7rem;
     line-height: 3.8rem;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.048em;
     text-align: left;
+    margin-right: -1.5rem;
   }
 }
 .model-intro-section .intro-partner-wrapper .partner-box .lead span {
@@ -7918,7 +7931,7 @@ body.mobile-nav-active #mobile-nav {
   background-image: url(../image/support/support-bg.png);
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: 1920px auto;
+  background-size: 192rem auto;
   z-index: 0;
 }
 @media print, screen and (min-width: 1921px) {
@@ -8277,10 +8290,15 @@ body.mobile-nav-active #mobile-nav {
 .support-operation-section {
   position: relative;
   padding: 10rem 0 10rem;
+  background-image: radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%), radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%);
+  background-size: 132.8rem 124.8rem, 132.8rem 124.8rem;
+  background-position: top -2rem center, top 104.8rem center;
+  background-repeat: no-repeat, no-repeat;
 }
 @media only screen and (max-width: 768px) {
   .support-operation-section {
     padding: 6rem 0 7rem;
+    background: none;
   }
 }
 .support-operation-section::before {
@@ -8293,7 +8311,7 @@ body.mobile-nav-active #mobile-nav {
   background-image: url(../image/support/support-bg.png);
   background-position: top center;
   background-repeat: no-repeat;
-  background-size: 1920px auto;
+  background-size: 192rem auto;
   z-index: 0;
 }
 @media print, screen and (min-width: 1921px) {
@@ -8466,31 +8484,9 @@ body.mobile-nav-active #mobile-nav {
 .support-operation-section .operation-before-wrapper {
   position: relative;
 }
-.support-operation-section .operation-before-wrapper::before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 62.4rem);
-  left: calc(50% - 66.4rem);
-  width: 132.8rem;
-  height: 124.8rem;
-  max-width: 100%;
-  background: radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%);
-  z-index: -1;
-}
 .support-operation-section .operation-after-wrapper {
   position: relative;
   margin-top: 10rem;
-}
-.support-operation-section .operation-after-wrapper::before {
-  content: "";
-  position: absolute;
-  top: calc(50% - 62.4rem);
-  left: calc(50% - 66.4rem);
-  width: 132.8rem;
-  height: 124.8rem;
-  max-width: 100%;
-  background: radial-gradient(41.4% 40.87% at 50% 51.67%, rgba(229, 195, 246, 0.75) 0%, rgba(241, 216, 249, 0.75) 41%, rgba(255, 255, 255, 0.75) 100%);
-  z-index: -1;
 }
 .support-operation-section .operation-bottom-wrapper {
   position: relative;
@@ -9940,12 +9936,11 @@ body.mobile-nav-active #mobile-nav {
 
 .page-privacy {
   position: relative;
-  padding: 8rem 0 12rem;
-  background: #F5F4F9;
+  padding: 4rem 0 12rem;
 }
 @media only screen and (max-width: 768px) {
   .page-privacy {
-    padding: 6rem 0 8rem;
+    padding: 2rem 0 8rem;
   }
 }
 .page-privacy .privacy-body {

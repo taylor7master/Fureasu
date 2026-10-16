@@ -80,7 +80,7 @@ function theme_add_files() {
     wp_enqueue_style('c-aos', 'https://unpkg.com/aos@2.3.0/dist/aos.css', [], '1.0', 'all');
     wp_enqueue_style('c-app', T_DIRE_URI.'/assets/css/app.css', [], '1.0', 'all');
     wp_enqueue_style('c-style', T_DIRE_URI.'/style.css', [], '1.2', 'all');
-    wp_enqueue_style('c-theme', T_DIRE_URI.'/assets/css/theme.css', [], '1.1', 'all');
+    wp_enqueue_style('c-theme', T_DIRE_URI.'/assets/css/theme.css', [], '1.3', 'all');
 
     // WordPress本体のjquery.jsを読み込まない
     if(!is_admin()) {

@@ -288,7 +288,9 @@ br.br-sp {
   }
 
   &--line {
-    background: var(--gr);
+    background: #FFFFFF;
+    border: 1px solid var(--mg);
+    color: var(--mg);
   }
 
   &--tel {
@@ -308,7 +310,7 @@ br.br-sp {
     font-size: calc(1.55 * var(--hf));
     font-weight: 800;
     line-height: 1.15;
-    margin-top: calc(.2 * var(--hf));
+    // margin-top: calc(.2 * var(--hf));
   }
   /* 拡大版: エントリー／フォーム 2行 */
 
@@ -1392,7 +1394,19 @@ a.ft__pill.ft__pill--mirai {
     position: relative;
     left: calc(3.5 * var(--hf));
     top: calc(-.3 * var(--hf));
-    height: calc(10.6 * var(--hf));
+    height: auto;
+    align-items: stretch;
+
+    .hcta {
+      width: 100%;
+      height: auto;
+      min-height: calc(6.35 * var(--hf));
+    }
+    @media (max-width: 767px) {
+      .hcta--tel {
+        grid-column: span 2;
+      }
+    }
   }
 }
 

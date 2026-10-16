@@ -35,20 +35,16 @@ $rc         = T_DIRE_URI . '/assets/image/recruit';
           </div>
         </div>
         <div class="ft__ctas">
-          <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="fcta fcta--form">
-            <span class="fcta__lead">ご予約はこちら</span>
-            <span class="fcta__ttl">無料説明会</span>
-            <span class="fcta__btn">説明会に参加 →</span>
+          <a href="<?php echo esc_url( $fc_tel ); ?>" class="hcta hcta--tel">
+            <span class="hcta__lead">お問い合わせ</span>
+            <span class="hcta__tel">0120-14-2013</span>
+            <span class="hcta__lead">平日 9:00〜18:00</span>
           </a>
-          <a href="<?php echo esc_url( $fc_contact ); ?>" class="fcta fcta--line">
-            <span class="fcta__lead">無料でお届け</span>
-            <span class="fcta__ttl">資料請求</span>
-            <span class="fcta__btn">フォームで請求 →</span>
+          <a href="<?php echo esc_url( $fc_contact ); ?>" class="hcta hcta--form">
+            <span class="hcta__ttl">無料資料請求・<br>お問い合わせ</span>
           </a>
-          <a href="<?php echo esc_url( $fc_tel ); ?>" class="fcta fcta--tel">
-            <span class="fcta__lead">お問い合わせ</span>
-            <span class="fcta__ttl">0120-14-2013</span>
-            <span class="fcta__lead">平日 9:00〜18:00</span>
+          <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="hcta hcta--line">
+            <span class="hcta__ttl">無料説明会</span>
           </a>
         </div>
       </div>
@@ -89,11 +85,11 @@ $rc         = T_DIRE_URI . '/assets/image/recruit';
           </div>
         </div>
         <div class="ft__right-bottom">
-          <div class="ft__sns">
+          <!-- <div class="ft__sns">
             <a href="https://www.instagram.com/fureasu_recruit/" target="_blank" rel="noopener" class="sns-ic sns-ic--ig" aria-label="Instagram（新しいタブで開きます）"><img src="<?php echo esc_url( $rc . '/sns/instagram.png' ); ?>" alt="Instagram"></a>
             <a href="https://x.com/fureasu_recruit" target="_blank" rel="noopener" class="sns-ic sns-ic--x" aria-label="X（新しいタブで開きます）"><img src="<?php echo esc_url( $rc . '/sns/xcom.png' ); ?>" alt="X"></a>
             <a href="https://www.tiktok.com/@fureasu_recruit/" target="_blank" rel="noopener" class="sns-ic sns-ic--tiktok" aria-label="TikTok（新しいタブで開きます）"><img src="<?php echo esc_url( $rc . '/sns/tiktok.png' ); ?>" alt="TikTok"></a>
-          </div>
+          </div> -->
           <div class="ft__japhic"><img src="<?php echo esc_url( $rc . '/sns/japhic1.png' ); ?>" alt="JAPHICマーク" class="ft__japhic-1"><img src="<?php echo esc_url( $rc . '/sns/japhic2.png' ); ?>" alt="JAPHICマーク（メディカル）" class="ft__japhic-2"></div>
         </div>
         <div class="ft__legal">

@@ -41,7 +41,7 @@ $column_url = home_url( '/column/' );
             <h2 class="en">COLUMN</h2>
             <p class="jp">コラム</p>
         </div>
-        <?php if ( is_search() ) : ?>
+        <!-- <?php if ( is_search() ) : ?>
         <p class="section-desc">「<?php echo esc_html( get_search_query() ); ?>」の検索結果</p>
         <?php endif; ?>
 
@@ -88,7 +88,7 @@ $column_url = home_url( '/column/' );
             <?php else : ?>
             <p class="section-desc">記事が見つかりません。</p>
             <?php endif; ?>
-        </div>
-        <!-- <div class="page-preparing">掲載準備中</div> -->
+        </div> -->
+        <div class="page-preparing">掲載準備中</div>
     </div>
 </section>

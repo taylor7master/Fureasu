@@ -129,7 +129,7 @@ get_header();
                             <figure class="icon">
                                 <img src="<?php echo esc_url( T_DIRE_URI ); ?>/assets/image/model/reason02.png" alt="全国約440拠点分のノウハウがある" loading="lazy">
                             </figure>
-                            <div class="desc">在宅マッサージ事業所を4年で約4倍・全国約440拠点規模に拡大しました。直営店で積み上げた集客・運営ノウハウに加え、専任担当の営業サポートを提供します。だから、ゼロからのスタートでも迷わず営業活動に取り組めます。</div>
+                            <div class="desc">訪問鍼灸マッサージ事業所を4年で約4倍・全国約440拠点規模に拡大しました。直営店で積み上げた集客・運営ノウハウに加え、専任担当の営業サポートを提供します。だから、ゼロからのスタートでも迷わず営業活動に取り組めます。</div>
                         </div>
                         <div class="card-footer">
                             <p>＝ 確立されたノウハウで、<br>集客開拓を強力に後押し</p>

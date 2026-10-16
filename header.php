@@ -120,7 +120,6 @@ $rc = T_DIRE_URI . '/assets/image/recruit';
     <div class="hd__right">
       <div class="hd__navblock">
         <div class="hd__a11y">
-          <p class="hd__note">本サイトは、視覚的に閲覧が難しい方へ音声読み上げ対応をしております</p>
           <div class="a11y-bar" data-a11y-bar>
             <button type="button" class="a11y-btn a11y-btn--mono" data-a11y-mono aria-pressed="false">モノクロモード <span data-a11y-state>OFF</span></button>
           </div>
@@ -134,18 +133,16 @@ $rc = T_DIRE_URI . '/assets/image/recruit';
         </nav>
       </div>
       <div class="hd__ctas">
-        <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="hcta hcta--form">
-          <span class="hcta__lead">ご予約はこちら</span>
-          <span class="hcta__ttl">無料<br>説明会</span>
-        </a>
-        <a href="<?php echo esc_url( $fc_contact ); ?>" class="hcta hcta--line">
-          <span class="hcta__lead">無料でお届け</span>
-          <span class="hcta__ttl">資料請求</span>
-        </a>
         <a href="<?php echo esc_url( $fc_tel ); ?>" class="hcta hcta--tel">
           <span class="hcta__lead">お問い合わせ</span>
           <span class="hcta__tel">0120-14-2013</span>
           <span class="hcta__lead">平日 9:00〜18:00</span>
+        </a>
+        <a href="<?php echo esc_url( $fc_contact ); ?>" class="hcta hcta--form">
+          <span class="hcta__ttl">無料資料請求・<br>お問い合わせ</span>
+        </a>
+        <a href="<?php echo esc_url( $fc_meet ); ?>" target="_blank" rel="noopener" class="hcta hcta--line">
+          <span class="hcta__ttl">無料説明会</span>
         </a>
       </div>
     </div>

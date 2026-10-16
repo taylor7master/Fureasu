@@ -43,7 +43,7 @@ $filters = [
                 <h2 class="en">VOICE</h2>
                 <p class="jp">加盟オーナーの声</p>
             </div>
-            <div class="section-desc">同じ道を選んだ、仲間の声。<br>脱サラ・既存事業者・法人 ―<br>さまざまな背景のオーナーが活躍しています。 </div>
+            <div class="section-desc">同じ道を選んだ、仲間の声。<br>独立・起業・既存事業者・法人<br>さまざまな背景のオーナーが活躍しています。 </div>
         </div>
     </div>
     <picture class="firstview-effect">

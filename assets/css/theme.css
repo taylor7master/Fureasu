@@ -301,7 +301,9 @@ br.br-sp {
   background: var(--mg);
 }
 .hcta--line {
-  background: var(--gr);
+  background: #FFFFFF;
+  border: 1px solid var(--mg);
+  color: var(--mg);
 }
 .hcta--tel {
   background: var(--yl);
@@ -318,7 +320,6 @@ br.br-sp {
   font-size: calc(1.55 * var(--hf));
   font-weight: 800;
   line-height: 1.15;
-  margin-top: calc(0.2 * var(--hf));
 }
 .hcta {
   /* 拡大版: エントリー／フォーム 2行 */
@@ -1418,7 +1419,21 @@ a.ft__pill.ft__pill--mirai {
   position: relative;
   left: calc(3.5 * var(--hf));
   top: calc(-0.3 * var(--hf));
-  height: calc(10.6 * var(--hf));
+  height: auto;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+.ft__ctas .hcta {
+  width: 100%;
+  height: auto;
+  min-height: calc(6.35 * var(--hf));
+}
+@media (max-width: 767px) {
+  .ft__ctas .hcta--tel {
+    -ms-grid-column-span: 2;
+    grid-column: span 2;
+  }
 }
 
 .fcta {
