@@ -153,6 +153,22 @@ function fureasu_head_meta() {
     <?php
 }
 
+/**
+ * HTTPS and /author/ redirects stay in PHP on purpose.
+ * fc.fureasu.jp is served by nginx, which never reads .htaccess.
+ * On Apache, the same rules can run before PHP. Put them in the
+ * document root, outside the WordPress block, and only on a vhost
+ * whose site root is / (not a subdirectory):
+ *
+ * RewriteEngine On
+ * RewriteCond %{HTTPS} !=on
+ * RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+ * RewriteCond %{HTTP_HOST} (^|\.)fureasu\.jp$ [NC]
+ * RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ * RewriteCond %{QUERY_STRING} (^|&)author=[^&]+ [NC]
+ * RewriteRule ^ /? [L,R=301]
+ * RewriteRule ^author/ / [L,R=301]
+ */
 add_action( 'template_redirect', 'fureasu_force_https', 0 );
 
 function fureasu_force_https() {
@@ -165,14 +181,21 @@ function fureasu_force_https() {
     if ( is_ssl() ) {
         return;
     }
-    if ( ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && strtolower( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) === 'https' ) {
+    if ( ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && strtolower( wp_unslash( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) ) === 'https' ) {
         return;
     }
 
-    $host = isset( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : '';
-    $uri  = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '/';
+    $host = isset( $_SERVER['HTTP_HOST'] ) ? wp_unslash( $_SERVER['HTTP_HOST'] ) : '';
+    $uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '/';
+    if ( ! is_string( $host ) || ! preg_match( '/^[A-Za-z0-9.-]+(?::\d+)?$/', $host ) ) {
+        return;
+    }
+    if ( ! is_string( $uri ) || strpos( $uri, '/' ) !== 0 || preg_match( '/[\r\n]/', $uri ) ) {
+        return;
+    }
+
     $name = strtolower( preg_replace( '/:\d+$/', '', $host ) );
-    if ( $name === '' || ! preg_match( '/(^|\.)fureasu\.jp$/', $name ) ) {
+    if ( ! preg_match( '/(^|\.)fureasu\.jp$/', $name ) ) {
         return;
     }
 
@@ -210,6 +233,17 @@ function fureasu_remove_user_sitemap( $provider, $name ) {
     return $provider;
 }
 
+add_action( 'send_headers', 'fureasu_security_headers' );
+
+function fureasu_security_headers() {
+    if ( is_admin() ) {
+        return;
+    }
+    header( 'X-Content-Type-Options: nosniff' );
+    header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+    header( 'X-Frame-Options: SAMEORIGIN' );
+}
+
 add_filter( 'wp_sitemaps_posts_query_args', 'fureasu_exclude_thanks_from_sitemap', 10, 2 );
 
 function fureasu_exclude_thanks_from_sitemap( $args, $post_type ) {
@@ -228,7 +262,7 @@ function fureasu_exclude_thanks_from_sitemap( $args, $post_type ) {
 add_filter( 'rest_pre_dispatch', 'fureasu_hide_rest_users', 10, 3 );
 
 function fureasu_hide_rest_users( $result, $server, $request ) {
-    if ( is_user_logged_in() ) {
+    if ( current_user_can( 'list_users' ) ) {
         return $result;
     }
     $route = $request->get_route();

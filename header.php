@@ -26,11 +26,7 @@
     <?php fureasu_head_meta(); ?>
 
     <!-- favicon -->
-    <link rel="icon" href="<?php echo T_DIRE_URI; ?>/assets/image/favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="<?php echo esc_url( T_DIRE_URI . '/assets/image/favicon.ico' ); ?>" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
