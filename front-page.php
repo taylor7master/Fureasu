@@ -4,7 +4,7 @@ get_header();
 ?>
     <section id="top" class="mainvisual">
         <div class="container">
-            <h2 class="mainvisual-title">ありがとうが、<br>そのまま事業になる。</h2>
+            <h1 class="mainvisual-title">ありがとうが、<br>そのまま事業になる。</h1>
             <div class="mainvisual-desc">寝たきりでも、歩けなくても。自宅や施設で受けられるマッサージを、<br class="pc-only">日本中の、必要とされている方へ届けたい。<br><br>──その想いを、一緒に運ぶ仲間を募集しています。</div>
             <ul class="mainvisual-points">
                 <li>

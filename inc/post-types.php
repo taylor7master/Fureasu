@@ -164,3 +164,53 @@ function fureasu_save_voice_meta( $post_id ) {
     }
 }
 add_action( 'save_post_voice', 'fureasu_save_voice_meta' );
+
+add_action( 'init', 'fureasu_rename_post_labels' );
+add_filter( 'post_link', 'fureasu_column_permalink', 10, 2 );
+add_action( 'init', 'fureasu_column_rewrite' );
+
+function fureasu_rename_post_labels() {
+    global $menu, $submenu, $wp_post_types;
+
+    if ( isset( $menu[5][0] ) ) {
+        $menu[5][0] = 'コラム';
+    }
+    if ( isset( $submenu['edit.php'][5][0] ) ) {
+        $submenu['edit.php'][5][0] = 'すべてのコラム';
+    }
+
+    $labels = $wp_post_types['post']->labels;
+    $labels->name                     = 'コラム';
+    $labels->singular_name            = 'コラム';
+    $labels->add_new                  = '新規追加';
+    $labels->add_new_item             = '新規コラムを追加';
+    $labels->edit_item                = 'コラムを編集';
+    $labels->new_item                 = '新規コラム';
+    $labels->view_item                = 'コラムを表示';
+    $labels->search_items             = 'コラムを検索';
+    $labels->not_found                = 'コラムが見つかりません';
+    $labels->not_found_in_trash       = 'ゴミ箱にコラムはありません';
+    $labels->all_items                = 'すべてのコラム';
+    $labels->menu_name                = 'コラム';
+    $labels->name_admin_bar           = 'コラム';
+    $labels->archives                 = 'コラムアーカイブ';
+}
+
+function fureasu_column_permalink( $permalink, $post ) {
+    if ( $post->post_type !== 'post' ) {
+        return $permalink;
+    }
+
+    $categories = get_the_category( $post->ID );
+    $slug       = ( ! empty( $categories ) && ! is_wp_error( $categories ) ) ? $categories[0]->slug : 'uncategorized';
+
+    return home_url( '/column/' . $slug . '/' . $post->post_name . '/' );
+}
+
+function fureasu_column_rewrite() {
+    add_rewrite_rule(
+        '^column/([^/]+)/([^/]+)/?$',
+        'index.php?category_name=$matches[1]&name=$matches[2]',
+        'top'
+    );
+}

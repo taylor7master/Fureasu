@@ -147,5 +147,131 @@ function fureasu_head_meta() {
     <meta property="og:site_name" content="<?php echo esc_attr( FUREASU_SITE_NAME ); ?>" />
     <meta property="og:description" content="<?php echo esc_attr( $desc ); ?>" />
     <meta name="twitter:card" content="summary_large_image" />
+<?php if ( is_page( 'thanks' ) ) : ?>
+    <meta name="robots" content="noindex, nofollow" />
+<?php endif; ?>
     <?php
+}
+
+/**
+ * HTTPS and /author/ redirects stay in PHP on purpose.
+ * fc.fureasu.jp is served by nginx, which never reads .htaccess.
+ * On Apache, the same rules can run before PHP. Put them in the
+ * document root, outside the WordPress block, and only on a vhost
+ * whose site root is / (not a subdirectory):
+ *
+ * RewriteEngine On
+ * RewriteCond %{HTTPS} !=on
+ * RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+ * RewriteCond %{HTTP_HOST} (^|\.)fureasu\.jp$ [NC]
+ * RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+ * RewriteCond %{QUERY_STRING} (^|&)author=[^&]+ [NC]
+ * RewriteRule ^ /? [L,R=301]
+ * RewriteRule ^author/ / [L,R=301]
+ */
+add_action( 'template_redirect', 'fureasu_force_https', 0 );
+
+function fureasu_force_https() {
+    if ( is_admin() || wp_doing_ajax() || wp_doing_cron() ) {
+        return;
+    }
+    if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+        return;
+    }
+    if ( is_ssl() ) {
+        return;
+    }
+    if ( ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && strtolower( wp_unslash( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) ) === 'https' ) {
+        return;
+    }
+
+    $host = isset( $_SERVER['HTTP_HOST'] ) ? wp_unslash( $_SERVER['HTTP_HOST'] ) : '';
+    $uri  = isset( $_SERVER['REQUEST_URI'] ) ? wp_unslash( $_SERVER['REQUEST_URI'] ) : '/';
+    if ( ! is_string( $host ) || ! preg_match( '/^[A-Za-z0-9.-]+(?::\d+)?$/', $host ) ) {
+        return;
+    }
+    if ( ! is_string( $uri ) || strpos( $uri, '/' ) !== 0 || preg_match( '/[\r\n]/', $uri ) ) {
+        return;
+    }
+
+    $name = strtolower( preg_replace( '/:\d+$/', '', $host ) );
+    if ( ! preg_match( '/(^|\.)fureasu\.jp$/', $name ) ) {
+        return;
+    }
+
+    wp_redirect( 'https://' . $host . $uri, 301 );
+    exit;
+}
+
+add_action( 'init', 'fureasu_block_author_query', 1 );
+
+function fureasu_block_author_query() {
+    if ( is_admin() ) {
+        return;
+    }
+    if ( isset( $_GET['author'] ) && $_GET['author'] !== '' ) {
+        wp_safe_redirect( home_url( '/' ), 301 );
+        exit;
+    }
+}
+
+add_action( 'template_redirect', 'fureasu_block_author_archive' );
+
+function fureasu_block_author_archive() {
+    if ( is_author() ) {
+        wp_safe_redirect( home_url( '/' ), 301 );
+        exit;
+    }
+}
+
+add_filter( 'wp_sitemaps_add_provider', 'fureasu_remove_user_sitemap', 10, 2 );
+
+function fureasu_remove_user_sitemap( $provider, $name ) {
+    if ( 'users' === $name ) {
+        return false;
+    }
+    return $provider;
+}
+
+add_action( 'send_headers', 'fureasu_security_headers' );
+
+function fureasu_security_headers() {
+    if ( is_admin() ) {
+        return;
+    }
+    header( 'X-Content-Type-Options: nosniff' );
+    header( 'Referrer-Policy: strict-origin-when-cross-origin' );
+    header( 'X-Frame-Options: SAMEORIGIN' );
+}
+
+add_filter( 'wp_sitemaps_posts_query_args', 'fureasu_exclude_thanks_from_sitemap', 10, 2 );
+
+function fureasu_exclude_thanks_from_sitemap( $args, $post_type ) {
+    if ( 'page' !== $post_type ) {
+        return $args;
+    }
+    $thanks = get_page_by_path( 'thanks' );
+    if ( ! $thanks ) {
+        return $args;
+    }
+    $args['post__not_in']   = isset( $args['post__not_in'] ) ? (array) $args['post__not_in'] : array();
+    $args['post__not_in'][] = (int) $thanks->ID;
+    return $args;
+}
+
+add_filter( 'rest_pre_dispatch', 'fureasu_hide_rest_users', 10, 3 );
+
+function fureasu_hide_rest_users( $result, $server, $request ) {
+    if ( current_user_can( 'list_users' ) ) {
+        return $result;
+    }
+    $route = $request->get_route();
+    if ( is_string( $route ) && 0 === strpos( $route, '/wp/v2/users' ) ) {
+        return new WP_Error(
+            'rest_forbidden',
+            'この情報は公開していません。',
+            array( 'status' => 401 )
+        );
+    }
+    return $result;
 }

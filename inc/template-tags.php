@@ -83,6 +83,14 @@ function fureasu_trim_text( $text, $length = 80 ) {
     return mb_substr( $text, 0, $length ) . '…';
 }
 
+function catch_that_image( $post_id = null ) {
+    $post = get_post( $post_id );
+    if ( $post && preg_match( '/<img[^>]+src=[\'"]([^\'"]+)[\'"]/i', $post->post_content, $matches ) ) {
+        return $matches[1];
+    }
+    return T_DIRE_URI . '/assets/image/noimage.png';
+}
+
 function fureasu_post_image_url( $post_id = null ) {
     $post_id = $post_id ? $post_id : get_the_ID();
     if ( has_post_thumbnail( $post_id ) ) {

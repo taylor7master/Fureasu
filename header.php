@@ -21,15 +21,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta property="og:locale" content="ja_JP">
+    <meta name="google-site-verification" content="70bObMrYHQLo2saf6PV7anAxiZGObu8P3HK0TJpQ3Uc" />
 
     <?php fureasu_head_meta(); ?>
 
     <!-- favicon -->
-    <link rel="icon" href="<?php echo T_DIRE_URI; ?>/assets/image/favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="<?php echo esc_url( T_DIRE_URI . '/assets/image/favicon.ico' ); ?>" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,6 +44,14 @@
             }
         } catch (e) {}
     })();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SVQMJG8STK"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SVQMJG8STK');
     </script>
     <?php wp_head(); ?>
 
