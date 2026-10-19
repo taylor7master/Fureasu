@@ -6027,6 +6027,15 @@ body.mobile-nav-active #mobile-nav {
 .contact-detail-section .contact-form textarea::placeholder {
   color: rgba(35, 24, 21, 0.4);
 }
+.contact-detail-section .contact-form input[type=text].wpcf7-not-valid,
+.contact-detail-section .contact-form input[type=email].wpcf7-not-valid,
+.contact-detail-section .contact-form input[type=tel].wpcf7-not-valid,
+.contact-detail-section .contact-form input[type=number].wpcf7-not-valid,
+.contact-detail-section .contact-form input[type=password].wpcf7-not-valid,
+.contact-detail-section .contact-form select.wpcf7-not-valid,
+.contact-detail-section .contact-form textarea.wpcf7-not-valid {
+  border-color: #B42318;
+}
 .contact-detail-section .contact-form input[type=text],
 .contact-detail-section .contact-form input[type=email],
 .contact-detail-section .contact-form input[type=tel],
@@ -6285,9 +6294,9 @@ body.mobile-nav-active #mobile-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
@@ -6313,6 +6322,12 @@ body.mobile-nav-active #mobile-nav {
   width: fit-content;
   font: inherit;
   color: #B10080;
+  padding: 1.3rem 0 0;
+}
+@media only screen and (max-width: 768px) {
+  .contact-detail-section .contact-form .label {
+    padding: 1.4rem 0 0;
+  }
 }
 .contact-detail-section .contact-form .input {
   display: block;
@@ -6360,6 +6375,9 @@ body.mobile-nav-active #mobile-nav {
   }
 }
 @media only screen and (max-width: 768px) {
+  .contact-detail-section .contact-form .address-field .label {
+    padding: 0;
+  }
   .contact-detail-section .contact-form .address-field .wpcf7-row {
     gap: 1.2rem 1.6rem;
   }
@@ -8484,9 +8502,31 @@ body.mobile-nav-active #mobile-nav {
 .support-operation-section .operation-before-wrapper {
   position: relative;
 }
+.support-operation-section .operation-before-wrapper .scroll-to {
+  position: absolute;
+  top: -8rem;
+  left: 0;
+  z-index: 0;
+}
+@media only screen and (max-width: 768px) {
+  .support-operation-section .operation-before-wrapper .scroll-to {
+    top: -6rem;
+  }
+}
 .support-operation-section .operation-after-wrapper {
   position: relative;
   margin-top: 10rem;
+}
+.support-operation-section .operation-after-wrapper .scroll-to {
+  position: absolute;
+  top: -8rem;
+  left: 0;
+  z-index: 0;
+}
+@media only screen and (max-width: 768px) {
+  .support-operation-section .operation-after-wrapper .scroll-to {
+    top: -6rem;
+  }
 }
 .support-operation-section .operation-bottom-wrapper {
   position: relative;
