@@ -28,6 +28,10 @@ Text Domain: fureasu
   display: none;
 }
 
+[id] {
+  scroll-margin-top: var(--hd-offset, 0px);
+}
+
 .contact-form .wpcf7-not-valid-tip {
   display: block;
   margin-top: 1.2rem;

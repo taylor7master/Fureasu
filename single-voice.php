@@ -80,6 +80,33 @@ if ( have_posts() ) :
             </div>
             <?php endif; ?>
         </div>
+        <?php
+        $voice_label = static function ( $id ) {
+            $d = fureasu_get_voice_data( $id );
+            return $d['name'] !== '' ? $d['name'] : get_the_title( $id );
+        };
+        $prev = get_previous_post();
+        $next = get_next_post();
+        ?>  
+        <nav class="voice-nav" aria-label="オーナーの声のナビゲーション">
+            <?php if ( $prev ) : ?>
+            <a href="<?php echo esc_url( get_permalink( $prev ) ); ?>" class="voice-nav-prev">
+                <span class="label">前のオーナーの声へ</span>
+                <span class="title"><?php echo fureasu_voice_name_html( $voice_label( $prev->ID ) ); ?></span>
+            </a>
+            <?php endif; ?>
+            <?php if ( $next ) : ?>
+            <a href="<?php echo esc_url( get_permalink( $next ) ); ?>" class="voice-nav-next">
+                <span class="label">次のオーナーの声へ</span>
+                <span class="title"><?php echo fureasu_voice_name_html( $voice_label( $next->ID ) ); ?></span>
+            </a>
+            <?php endif; ?>
+        </nav>
+        <div class="voice-action">
+            <a href="<?php echo esc_url( get_post_type_archive_link( 'voice' ) ); ?>" class="action-btn action-btn--secondary">
+                <span>一覧に戻る</span>
+            </a>
+        </div>
     </div>
 </section>
 <?php endif; ?>

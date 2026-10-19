@@ -38,7 +38,7 @@ $rc         = T_DIRE_URI . '/assets/image/recruit';
           <a href="<?php echo esc_url( $fc_tel ); ?>" class="hcta hcta--tel">
             <span class="hcta__lead">お問い合わせ</span>
             <span class="hcta__tel">0120-14-2013</span>
-            <span class="hcta__lead">平日 9:00〜18:00</span>
+            <!-- <span class="hcta__lead">平日 9:00〜18:00</span> -->
           </a>
           <a href="<?php echo esc_url( $fc_contact ); ?>" class="hcta hcta--form">
             <span class="hcta__ttl">無料資料請求・<br>お問い合わせ</span>

@@ -1,6 +1,25 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+ * Production nginx returns 403 for pretty /wp-json/contact-form-7/... URLs.
+ * Query-string REST (/?rest_route=/contact-form-7/...) returns 200.
+ * CF7 builds requests as api.root + "contact-form-7/v1/...", so point
+ * api.root at /?rest_route=/ before the CF7 script runs.
+ */
+add_action( 'wpcf7_enqueue_scripts', 'fureasu_cf7_fix_api_root', 20 );
+
+function fureasu_cf7_fix_api_root() {
+    wp_add_inline_script(
+        'contact-form-7',
+        sprintf(
+            'if (window.wpcf7 && wpcf7.api) { wpcf7.api.root = %s; }',
+            wp_json_encode( home_url( '/?rest_route=/' ) )
+        ),
+        'before'
+    );
+}
+
 add_filter( 'wpcf7_validate_email', 'fureasu_cf7_confirm_email', 20, 2 );
 add_filter( 'wpcf7_validate_email*', 'fureasu_cf7_confirm_email', 20, 2 );
 
@@ -68,22 +87,28 @@ function fureasu_cf7_validate_text( $result, $tag ) {
             $result->invalidate( $tag, '電話番号は半角数字で入力してください。' );
             return $result;
         }
-    }
 
-    if ( in_array( $tag->name, array( 'your-tel1', 'your-tel2', 'your-tel3' ), true ) ) {
         $parts = array(
             fureasu_cf7_posted_value( $posted, 'your-tel1' ),
             fureasu_cf7_posted_value( $posted, 'your-tel2' ),
             fureasu_cf7_posted_value( $posted, 'your-tel3' ),
         );
+        $digits = preg_replace( '/\D+/', '', implode( '', $parts ) );
+        $length = strlen( $digits );
+
+        // 12桁以上は空欄の有無に関係なくエラーにする
+        if ( $length > 11 ) {
+            $result->invalidate( $tag, '電話番号の桁数が正しくありません。' );
+            return $result;
+        }
+
+        // 必須未入力は CF7 本体に任せる
         if ( in_array( '', $parts, true ) ) {
             return $result;
         }
-        $digits = strlen( implode( '', $parts ) );
-        if ( $digits < 10 ) {
+
+        if ( $length < 10 ) {
             $result->invalidate( $tag, '電話番号の桁数が足りません。' );
-        } elseif ( $digits > 11 ) {
-            $result->invalidate( $tag, '電話番号の桁数が正しくありません。' );
         }
     }
 

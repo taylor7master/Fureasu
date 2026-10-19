@@ -34,6 +34,12 @@
     return $bar.outerHeight() || 80;
   }
 
+  function setHeaderOffsetVar() {
+    document.documentElement.style.setProperty('--hd-offset', getScrollOffset() + 'px');
+  }
+  setHeaderOffsetVar();
+  $(window).on('load resize', setHeaderOffsetVar);
+
   function smoothScrollTo(top, durationSec) {
     durationSec = typeof durationSec === 'number' ? durationSec : 1.2;
     if (window.lenis && typeof window.lenis.scrollTo === 'function') {

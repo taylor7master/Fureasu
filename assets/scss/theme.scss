@@ -299,7 +299,8 @@ br.br-sp {
   }
 
   &__lead {
-    font-size: calc(1.05 * var(--hf));
+    // font-size: calc(1.05 * var(--hf));
+    font-size: calc(1.4 * var(--hf));
     font-weight: 700;
     white-space: nowrap;
     letter-spacing: -.03em;

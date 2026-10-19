@@ -22,27 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta property="og:locale" content="ja_JP">
 
-    <!-- SEO Meta Tags -->
-    <meta name="keywords" content="在宅鍼灸マッサージ,看護小規模多機能型居宅介護,訪問看護,訪問介護,フレアス" />
-    <meta name="description" content="在宅鍼灸マッサージや看護小規模多機能型居宅介護（かんたき）、訪問看護、訪問介護なら【株式会社フレアス】。株式会社フレアスは全国各地の事業所からご利用者様のご自宅・施設に直接訪問、マッサージや訪問看護・訪問介護サービスをお届けします。＜日本の在宅事情を明るくしたい＞。" />
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-    <meta property="og:title" content="株式会社フレアス" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fureasu.jp/" />
-    <meta property="og:image" content="<?php echo T_DIRE_URI; ?>/assets/image/OGP.jpg" />
-    <meta property="og:site_name" content="株式会社フレアス" />
-    <meta property="og:description" content="在宅鍼灸マッサージや看護小規模多機能型居宅介護（かんたき）、訪問看護、訪問介護なら【株式会社フレアス】。株式会社フレアスは全国各地の事業所からご利用者様のご自宅・施設に直接訪問、マッサージや訪問看護・訪問介護サービスをお届けします。＜日本の在宅事情を明るくしたい＞。" />
-
-    <!-- Webpage Title -->
-    <title>
-        <?php if (is_front_page() || is_home()) {
-            echo get_bloginfo('name');
-        } else {
-            wp_title('|', true, 'right');
-            echo bloginfo('name');
-        } ?>
-    </title>
+    <?php fureasu_head_meta(); ?>
 
     <!-- favicon -->
     <link rel="icon" href="<?php echo T_DIRE_URI; ?>/assets/image/favicon.ico" type="image/x-icon">
@@ -120,7 +100,7 @@ $rc = T_DIRE_URI . '/assets/image/recruit';
     <div class="hd__right">
       <div class="hd__navblock">
         <div class="hd__a11y">
-          <div class="a11y-bar" data-a11y-bar>
+          <div class="a11y-bar" data-a11y-bar style="opacity: 0; visibility: hidden; pointer-events: none;">
             <button type="button" class="a11y-btn a11y-btn--mono" data-a11y-mono aria-pressed="false">モノクロモード <span data-a11y-state>OFF</span></button>
           </div>
         </div>
@@ -136,7 +116,7 @@ $rc = T_DIRE_URI . '/assets/image/recruit';
         <a href="<?php echo esc_url( $fc_tel ); ?>" class="hcta hcta--tel">
           <span class="hcta__lead">お問い合わせ</span>
           <span class="hcta__tel">0120-14-2013</span>
-          <span class="hcta__lead">平日 9:00〜18:00</span>
+          <!-- <span class="hcta__lead">平日 9:00〜18:00</span> -->
         </a>
         <a href="<?php echo esc_url( $fc_contact ); ?>" class="hcta hcta--form">
           <span class="hcta__ttl">無料資料請求・<br>お問い合わせ</span>
@@ -196,7 +176,7 @@ $rc = T_DIRE_URI . '/assets/image/recruit';
       <a href="<?php echo esc_url( $fc_tel ); ?>" class="fcta fcta--tel">
         <span class="fcta__lead">お電話</span>
         <span class="fcta__ttl">0120-14-2013</span>
-        <span class="fcta__lead">平日 9:00〜18:00</span>
+        <!-- <span class="fcta__lead">平日 9:00〜18:00</span> -->
       </a>
       <a href="<?php echo esc_url( $fc_contact ); ?>" class="fcta fcta--contact">加盟に関する<br>お問い合わせ</a>
     </div>

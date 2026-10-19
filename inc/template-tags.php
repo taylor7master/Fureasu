@@ -98,6 +98,19 @@ function fureasu_post_image_url( $post_id = null ) {
     return T_DIRE_URI . '/assets/image/blog01.jpg';
 }
 
+function fureasu_voice_name_html( $name ) {
+    $html = esc_html( trim( (string) $name ) );
+    if ( $html === '' ) {
+        return '';
+    }
+    return preg_replace(
+        '/[\s\x{00A0}\x{3000}]*オーナー$/u',
+        ' <br class="sp-only">オーナー',
+        $html,
+        1
+    );
+}
+
 function fureasu_primary_category( $post_id = null ) {
     $post_id = $post_id ? $post_id : get_the_ID();
     $categories = get_the_category( $post_id );
@@ -131,6 +144,7 @@ function fureasu_pagination( $query, $add_args = [] ) {
 
     echo '<div class="wp-pagenavi" role="navigation">';
     foreach ( $links as $link ) {
+        $link = preg_replace( '#/page/1/?(?=["?&\#])#', '/', $link );
         $link = str_replace( 'page-numbers current', 'current', $link );
         $link = str_replace( 'class="prev page-numbers"', 'class="prevpostslink" rel="prev" aria-label="前のページ"', $link );
         $link = str_replace( 'class="next page-numbers"', 'class="nextpostslink" rel="next" aria-label="次のページ"', $link );

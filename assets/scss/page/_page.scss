@@ -5386,13 +5386,24 @@
       text-decoration: none;
       color: $color-primary;
       padding: 1.8rem 2.4rem;
-      border: 1px solid $color-base;
+      border: none;
       background: transparent;
       transition: all 0.3s ease;
       margin: 0;
       @include sp {
         padding: 1.6rem 1.8rem;
         width: calc(50% - 1.0rem);
+        background: $color-base;
+        color: $color-white;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        display: block;
+        background: none;
+        border: 1px solid $color-base;
+        z-index: 0;
       }
       .label {
         position: relative;
@@ -5406,6 +5417,7 @@
         z-index: 3;
         @include sp {
           font-size: 1.6rem;
+          color: $color-secondary;
         }
       }
       .title {
@@ -5420,6 +5432,7 @@
         z-index: 3;
         @include sp {
           font-size: 1.4rem;
+          color: $color-white;
         }
       }
       &::before {
@@ -5435,15 +5448,27 @@
         transition: transform 0.6s cubic-bezier(0.8, 0, 0.2, 1);
         transform-origin: right top;
         transform: scale(0, 1);
-        z-index: 1;
+        z-index: 3;
+        @include sp {
+          background: $color-white;
+        }
       }
       &:hover {
         color: $color-white;
+        @include sp {
+          color: $color-base;
+        }
         .label {
           color: $color-secondary;
+          @include sp {
+            color: $color-primary;
+          }
         }
         .title {
           color: $color-white;
+          @include sp {
+            color: $color-base;
+          }
         }
         &::before {
           transform-origin: left top;
@@ -5532,6 +5557,16 @@
     }
     .action-btn {
       margin: 0 auto;
+    }
+  }
+
+  &.voice-pager-section {
+    padding: 0 0 10rem;
+    @include sp {
+      padding: 0 0 6rem;
+    }
+    .blog-nav {
+      margin-top: 0;
     }
   }
 
