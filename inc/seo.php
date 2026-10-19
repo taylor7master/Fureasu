@@ -147,5 +147,97 @@ function fureasu_head_meta() {
     <meta property="og:site_name" content="<?php echo esc_attr( FUREASU_SITE_NAME ); ?>" />
     <meta property="og:description" content="<?php echo esc_attr( $desc ); ?>" />
     <meta name="twitter:card" content="summary_large_image" />
+<?php if ( is_page( 'thanks' ) ) : ?>
+    <meta name="robots" content="noindex, nofollow" />
+<?php endif; ?>
     <?php
+}
+
+add_action( 'template_redirect', 'fureasu_force_https', 0 );
+
+function fureasu_force_https() {
+    if ( is_admin() || wp_doing_ajax() || wp_doing_cron() ) {
+        return;
+    }
+    if ( defined( 'REST_REQUEST' ) && REST_REQUEST ) {
+        return;
+    }
+    if ( is_ssl() ) {
+        return;
+    }
+    if ( ! empty( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) && strtolower( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) === 'https' ) {
+        return;
+    }
+
+    $host = isset( $_SERVER['HTTP_HOST'] ) ? $_SERVER['HTTP_HOST'] : '';
+    $uri  = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '/';
+    $name = strtolower( preg_replace( '/:\d+$/', '', $host ) );
+    if ( $name === '' || ! preg_match( '/(^|\.)fureasu\.jp$/', $name ) ) {
+        return;
+    }
+
+    wp_redirect( 'https://' . $host . $uri, 301 );
+    exit;
+}
+
+add_action( 'init', 'fureasu_block_author_query', 1 );
+
+function fureasu_block_author_query() {
+    if ( is_admin() ) {
+        return;
+    }
+    if ( isset( $_GET['author'] ) && $_GET['author'] !== '' ) {
+        wp_safe_redirect( home_url( '/' ), 301 );
+        exit;
+    }
+}
+
+add_action( 'template_redirect', 'fureasu_block_author_archive' );
+
+function fureasu_block_author_archive() {
+    if ( is_author() ) {
+        wp_safe_redirect( home_url( '/' ), 301 );
+        exit;
+    }
+}
+
+add_filter( 'wp_sitemaps_add_provider', 'fureasu_remove_user_sitemap', 10, 2 );
+
+function fureasu_remove_user_sitemap( $provider, $name ) {
+    if ( 'users' === $name ) {
+        return false;
+    }
+    return $provider;
+}
+
+add_filter( 'wp_sitemaps_posts_query_args', 'fureasu_exclude_thanks_from_sitemap', 10, 2 );
+
+function fureasu_exclude_thanks_from_sitemap( $args, $post_type ) {
+    if ( 'page' !== $post_type ) {
+        return $args;
+    }
+    $thanks = get_page_by_path( 'thanks' );
+    if ( ! $thanks ) {
+        return $args;
+    }
+    $args['post__not_in']   = isset( $args['post__not_in'] ) ? (array) $args['post__not_in'] : array();
+    $args['post__not_in'][] = (int) $thanks->ID;
+    return $args;
+}
+
+add_filter( 'rest_pre_dispatch', 'fureasu_hide_rest_users', 10, 3 );
+
+function fureasu_hide_rest_users( $result, $server, $request ) {
+    if ( is_user_logged_in() ) {
+        return $result;
+    }
+    $route = $request->get_route();
+    if ( is_string( $route ) && 0 === strpos( $route, '/wp/v2/users' ) ) {
+        return new WP_Error(
+            'rest_forbidden',
+            'この情報は公開していません。',
+            array( 'status' => 401 )
+        );
+    }
+    return $result;
 }

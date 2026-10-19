@@ -21,6 +21,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta property="og:locale" content="ja_JP">
+    <meta name="google-site-verification" content="70bObMrYHQLo2saf6PV7anAxiZGObu8P3HK0TJpQ3Uc" />
 
     <?php fureasu_head_meta(); ?>
 
@@ -47,6 +48,14 @@
             }
         } catch (e) {}
     })();
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SVQMJG8STK"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SVQMJG8STK');
     </script>
     <?php wp_head(); ?>
 
